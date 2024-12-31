@@ -180,7 +180,7 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
-  { 
+  {
     name: 'Microsoft Office',
     skills: [
       {
@@ -194,10 +194,10 @@ export const skills: SkillGroup[] = [
       {
         name: 'Microsoft Powerpoint',
         level: 9,
-      }
-    ]
+      },
+    ],
 
-  }
+  },
 
 ];
 
