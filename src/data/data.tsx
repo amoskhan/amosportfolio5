@@ -180,7 +180,8 @@ export const skills: SkillGroup[] = [
       },
     ],
   },
-  { name: 'Microsoft Office',
+  { 
+    name: 'Microsoft Office',
     skills: [
       {
         name: 'Microsoft Word',
