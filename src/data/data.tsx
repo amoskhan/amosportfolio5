@@ -78,12 +78,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>, currently working
-        at <strong className="text-stone-100">Diagnostic Development Hub</strong> helping to create written and visual content which aligned with the company's branding and marketing objectives.
+        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>,
+        currently working at <strong className="text-stone-100">Diagnostic Development Hub</strong> helping to create
+        written and visual content which aligned with the company's branding and marketing objectives.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me playing  <strong className="text-stone-100">badminton</strong>,
-        Keeping fit <strong className="text-stone-100"> by exercising</strong>, or coaching / educating students
+        In my free time time, you can catch me playing <strong className="text-stone-100">badminton</strong>, Keeping
+        fit <strong className="text-stone-100"> by exercising</strong>, or coaching / educating students
       </p>
     </>
   ),
@@ -139,7 +140,6 @@ export const skills: SkillGroup[] = [
         name: 'Chinese',
         level: 6,
       },
-
     ],
   },
   {
@@ -196,9 +196,7 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
     ],
-
   },
-
 ];
 
 /**
@@ -206,8 +204,10 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Acute Effects of Cloth Mask on Physiological Indices (Lactate Threshold, VO2, VO2max, Rate of Perceived Exertion)',
-    description: 'Purpose: Examine the effects of cloth mask conditions on exercise performance between bothgenders in physiological indices such as Lactate Threshold (LT), Oxygen Consumption(VO2), Maximal Oxygen Consumption (VO2max) and Rate of Perceived Exhaustion (RPE).',
+    title:
+      'Acute Effects of Cloth Mask on Physiological Indices (Lactate Threshold, VO2, VO2max, Rate of Perceived Exertion)',
+    description:
+      'Purpose: Examine the effects of cloth mask conditions on exercise performance between bothgenders in physiological indices such as Lactate Threshold (LT), Oxygen Consumption(VO2), Maximal Oxygen Consumption (VO2max) and Rate of Perceived Exhaustion (RPE).',
     url: 'https://drive.google.com/file/d/19sb1y6dvbFv2JfBYW7uYjDiX7-FkL4eu/view?usp=sharing',
     image: portfolioImage13,
   },
@@ -251,7 +251,6 @@ export const portfolioItems: PortfolioItem[] = [
   //   url: 'https://reactresume.com',
   //   image: porfolioImage4,
   // },
-
 ];
 
 /**
@@ -262,24 +261,35 @@ export const education: TimelineItem[] = [
     date: 'Aug 2021 - Aug 2025',
     location: 'Nanyang Technological University | National Institute of Education',
     title: 'BSc Sports Science & Management',
-    content: <p>Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion</p>,
+    content: (
+      <p>
+        Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
+        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion
+      </p>
+    ),
   },
   {
     date: 'Feb 2024 - Jun 2024',
     location: 'Loughborough University',
     title: 'Sport and Exercise Science , Sports Science',
-    content: <p>
-    Student exchange at Loughborough University Y3S2.
-    Academic Modules enrolled: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology in Competitive Sport, Psychological Disorders in Society
-    </p>,
+    content: (
+      <p>
+        Student exchange at Loughborough University Y3S2. Academic Modules enrolled: Sports Engineering, Sports
+        Governance, Applied Sports Physiology, Applied Psychology in Competitive Sport, Psychological Disorders in
+        Society
+      </p>
+    ),
   },
   {
     date: 'Jan 2017 - Dec 2018',
     location: 'Raffles Institution',
     title: 'Cambridge A - Levels',
-    content: <p>Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics
-    2H1 subjects including General Paper, Economics. 
-    Badminton Team Vice Captain.</p>,
+    content: (
+      <p>
+        Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics 2H1 subjects including General
+        Paper, Economics. Badminton Team Vice Captain.
+      </p>
+    ),
   },
 ];
 
@@ -290,9 +300,9 @@ export const experience: TimelineItem[] = [
     title: 'Corporate Communications, Outreach and Talent Development Intern',
     content: (
       <p>
-• Created written and visual content to enhance DxD Hub’s visibility across multiple platforms (e.g LinkedIn)
-• Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers
-• Conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills
+        • Created written and visual content to enhance DxD Hub’s visibility across multiple platforms (e.g LinkedIn) •
+        Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers • Conducted
+        a comprehensive review of intern hiring trends using critical thinking and data analyst skills
       </p>
     ),
   },
@@ -302,9 +312,9 @@ export const experience: TimelineItem[] = [
     title: 'Assistant Data Analyst',
     content: (
       <p>
-      • Performed data cleaning for a Virtual Reality pilot project for senior citizens for recording purposes  
-      • Conducted data analysis of survey responses from 70+ VR clients to assess the viability of project
-      • Explored potential advantages Virtual Reality may help senior citizens for future projects
+        • Performed data cleaning for a Virtual Reality pilot project for senior citizens for recording purposes •
+        Conducted data analysis of survey responses from 70+ VR clients to assess the viability of project • Explored
+        potential advantages Virtual Reality may help senior citizens for future projects
       </p>
     ),
   },
@@ -313,7 +323,10 @@ export const experience: TimelineItem[] = [
     location: 'Pan-Malayan Pharmaceuticals',
     title: 'Operations Assistant',
     content: (
-      <p> • Under the supervision of Ocean Health Team • Tidying up warehouse utilising Dynamic 365 Business Central • Packaging of Shoppee/Lazada/Redmart orders
+      <p>
+        {' '}
+        • Under the supervision of Ocean Health Team • Tidying up warehouse utilising Dynamic 365 Business Central •
+        Packaging of Shoppee/Lazada/Redmart orders
       </p>
     ),
   },
@@ -324,9 +337,9 @@ export const experience: TimelineItem[] = [
     title: 'Data Processing Executive',
     content: (
       <p>
-      • Initiated opening of financial accounts and due diligence checks for 1000+ newly onboarded clients
-      • Ensured client’s compliance with MAS and guidelines related to AML to prevent fraudulent activities
-      • Conducted consistent and accurate data processing towards existing accounts to update overall system
+        • Initiated opening of financial accounts and due diligence checks for 1000+ newly onboarded clients • Ensured
+        client’s compliance with MAS and guidelines related to AML to prevent fraudulent activities • Conducted
+        consistent and accurate data processing towards existing accounts to update overall system
       </p>
     ),
   },
@@ -336,12 +349,15 @@ export const experience: TimelineItem[] = [
     location: 'Special Olympics Singapore',
     title: 'Internship',
     content: (
-      <p> • Organize sports events for 60 children with special needs to make a positive impact through sports • Communicated and participated in soccer and floorball with students from Rainbow Centre to improve their mental wellbeing
+      <p>
+        {' '}
+        • Organize sports events for 60 children with special needs to make a positive impact through sports •
+        Communicated and participated in soccer and floorball with students from Rainbow Centre to improve their mental
+        wellbeing
       </p>
     ),
   },
 ];
-
 
 /**
  * Testimonial section
@@ -357,7 +373,8 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Tony Png (Phillips Securities Pte Ltd)',
       text: 'Amos has also been effective in his efforts of know-your-customer, risk profiling and due diligence process in new clients onboarding. He has no issues in asking for clarifications when in doubt in the independent verification of client information. Amos is helpful and a proactive team player during special audit projects where investigations into old archives are required. I particularly appreciate Amos willingness to take initiative to help the company serve its internal and external customers more fully.',
-      image: 'https://media.licdn.com/dms/image/v2/C4E03AQEYxAXH2j21mA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1620199008897?e=1741219200&v=beta&t=nthmK82WYH8CyAuClYPJ6hcXM27x0b0FWUFdm6L9bs0',
+      image:
+        'https://media.licdn.com/dms/image/v2/C4E03AQEYxAXH2j21mA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1620199008897?e=1741219200&v=beta&t=nthmK82WYH8CyAuClYPJ6hcXM27x0b0FWUFdm6L9bs0',
     },
     // {
     //   name: 'Someone else',
