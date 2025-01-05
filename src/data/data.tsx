@@ -83,7 +83,7 @@ export const heroData: Hero = {
         written and visual content which aligned with the company's branding and marketing objectives.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me playing <strong className="text-stone-100">badminton</strong>, Keeping
+        In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping
         fit <strong className="text-stone-100"> by exercising</strong>, or coaching / educating students
       </p>
     </>
@@ -345,6 +345,16 @@ export const experience: TimelineItem[] = [
   },
 
   {
+    date: 'Nov 2018 - Jan 2019',
+    location: 'ST Lotigstics',
+    title: 'Data Admin Supervisor',
+    content: (
+      <p>• Supervised a group of part-timers and executed data entry of client’s details into software systems forprocessing • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
+      </p>
+    ),
+  },
+
+  {
     date: 'Apr 2016 - May 2016',
     location: 'Special Olympics Singapore',
     title: 'Internship',
@@ -411,6 +421,11 @@ export const contact: ContactSection = {
       type: ContactType.Github,
       text: 'AmosKhan',
       href: 'https://github.com/AmosKhan',
+    },
+    {
+      type: ContactType.Phone,
+      text: '+65 96182276',
+      href: 'tel:+6596182276',
     },
   ],
 };
