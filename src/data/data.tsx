@@ -346,7 +346,7 @@ export const experience: TimelineItem[] = [
 
   {
     date: 'Nov 2018 - Jan 2019',
-    location: 'ST Lotigstics',
+    location: 'ST Logistics',
     title: 'Data Admin Supervisor',
     content: (
       <p>• Supervised a group of part-timers and executed data entry of client’s details into software systems forprocessing • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
