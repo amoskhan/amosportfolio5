@@ -79,12 +79,12 @@ export const heroData: Hero = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>,
-        currently working at <strong className="text-stone-100">Diagnostic Development Hub</strong> helping to create
-        written and visual content which aligned with the company's branding and marketing objectives.
+        currently working at <strong className="text-stone-100">Home Team Science and Technology Agency (HTX) </strong>{' '}
+        assisted in research projects related to heat acclimation, heat maintenance and decay.
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping
-        fit <strong className="text-stone-100"> by exercising</strong>, or coaching / educating students
+        In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping fit{' '}
+        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton
       </p>
     </>
   ),
@@ -108,20 +108,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Since my early years as an athlete, challenges never fazed me. Learning has always been a passion of mine. As a student, communicating effectively and building positive interpersonal relationships are crucial in building up my professional career.
-
-Being deeply involved as a badminton athlete and coach has become integral to my identity. Besides striving for improvement in my sport, I also find immense fulfilment in mentoring the younger generation, building up their confidence while instilling life values through educational pedagogies. 
-
-Having a deep interest in sports analytics and data analysis, I find immense joy in transforming intricate datasets into compelling narratives. Research is a vital tool, allowing me to uncover patterns and connections between research variables.
-
-My professional journey has taken me through diverse industries including Logistics, Healthcare, and the Financial Sector.`,
+  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
     {label: 'Location', text: 'Singapore', Icon: MapIcon},
     {label: 'Age', text: '24', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
     {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
     {label: 'Study', text: 'Nanyang Technological University', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'DxD Hub', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'HTX (Home Team Science & Technology Agency)', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -295,6 +289,13 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
+    date: 'Jan 2025 - Present',
+    location: 'HTX (Home Team Science & Technology Agency)',
+    title: 'Human Factors and Simulation (Centre of Expertise) Intern',
+    content: <p>• Assisted in research projects related to heat acclimation, heat maintenance and decay.</p>,
+  },
+
+  {
     date: 'Jul 2024 - Dec 2024',
     location: 'Diagnostic Development Hub (A National Platform under A*STAR)',
     title: 'Corporate Communications, Outreach and Talent Development Intern',
@@ -349,7 +350,9 @@ export const experience: TimelineItem[] = [
     location: 'ST Logistics',
     title: 'Data Admin Supervisor',
     content: (
-      <p>• Supervised a group of part-timers and executed data entry of client’s details into software systems forprocessing • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
+      <p>
+        • Supervised a group of part-timers and executed data entry of client’s details into software systems
+        forprocessing • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
       </p>
     ),
   },
