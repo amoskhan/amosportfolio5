@@ -14,17 +14,18 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-// import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
-// import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
-// import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-// import porfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-// import porfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-// import porfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-// import porfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-// import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-// import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-// import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
-// import portfolioImage12 from '../images/portfolio/portfolio-12.jpg';
+import portfolioImage1 from '../images/portfolio/portfolio-1.jpg';
+import portfolioImage2 from '../images/portfolio/portfolio-2.jpg';
+// import portfolioImage3 from '../images/portfolio/portfolio-3.jpg';
+import portfolioImage4 from '../images/portfolio/portfolio-4.jpg';
+// import portfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+// import portfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+// import portfolioImage7 from '../images/portfolio/portfolio-7.jpg';
+// import portfolioImage8 from '../images/portfolio/portfolio-8.jpg';
+// import portfolioImage9 from '../images/portfolio/portfolio-9.jpg';
+// import portfolioImage10 from '../images/portfolio/portfolio-10.jpg';
+// import portfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import portfolioImage12 from '../images/portfolio/portfolio-12.jpg';
 import portfolioImage13 from '../images/portfolio/portfolio-13.jpg';
 import portfolioImage14 from '../images/portfolio/portfolio-14.jpg';
 import portfolioImage15 from '../images/portfolio/portfolio-15.jpg';
@@ -34,6 +35,7 @@ import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
+  BlogPost,
   ContactSection,
   ContactType,
   Hero,
@@ -65,10 +67,74 @@ export const SectionId = {
   Skills: 'skills',
   Stats: 'stats',
   Testimonials: 'testimonials',
+  Blog: 'blog',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
+// /**
+//  * Blog posts
+//  */
+// export const blogPosts: BlogPost[] = [
+//   {
+//     id: '1',
+//     title: 'Why am I doing this website?',
+//     date: '2025-07-02',
+//     content: 'Well, to answer this question, it all begins with me being an IT monitor back in primary school. Being deeply involved in technology was always something I was passionate in. With the rise of ChatGPT and OpenAI models, coding and generating websites has became super convenient and efficient. A simple prompt to the GPT allows me to identify coding mistakes and debug errors. Having graduated with just a Sports Science Degree from NTU, I truly believe that if you are interested in something, do not feel afraid to try it. Sure, CS graduates might need stellar grades to even pick up coding skills, but dont let your degree or path restrict you from what you want to achieve. Initially, my goal was to create a functional website to blog and showcase who I am in the internet without paying any $$. Which I can say for now, I have achieved it.',
+//     author: 'Amos Khan',
+//   },
+//   {
+//     id: '2',
+//     title: 'My experience in DxD Hub 2024',
+//     date: '2024-07-02',
+//     content: 'Having completed my internship in DxD Hub (National Platform under A*STAR), I have built strong connections within the medtech ecosystem and collaborating partners. It was a true honor to have experienced DxD Hubs 10th Year Anniversary event, having experience this event showed the milestones of what the company has accomplished. Me and my colleagues came up with a backstory and strong   ',
+//     author: 'Amos Khan',
+//   },
+//   {
+//     id: '3',
+//     title: 'Second Blog Post',
+//     date: '2023-10-02',
+//     content: 'This is the content of the second blog post.',
+//     author: 'Author Name',
+//   },
+// ];
+
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    title: 'Why am I doing this website?🤔',
+    date: '2025-07-02',
+    content: 'I started getting interested in technology back in primary school when I was an IT monitor. I have always enjoyed working with tech, and now with tools like ChatGPT and OpenAI, building websites and coding has become much easier. Whenever I run into coding mistakes, a quick prompt to GPT helps me figure things out. Even though I graduated with a Sports Science degree from NTU, I think anyone who is curious should give coding a try. You do not need to be a computer science graduate or have perfect grades to learn new skills. My main goal was to create a simple website to share my thoughts and experiences online without spending any money, and I am happy that I managed to do just that.',
+    author: 'Amos Khan',
+    image: portfolioImage1,
+    collageImages: [portfolioImage12, portfolioImage13 ,portfolioImage14],
+  },
+  {
+    id: 2,
+    title: 'DxD Hub Internship',
+    date: '2024-07-02',
+    content: 'Having completed my internship in DxD Hub (National Platform under A*STAR), I have built strong connections within the medtech ecosystem and collaborating partners. As a Outreach Communications Intern, I was given the experience to be the planning committee of DxD Hubs 10th Year Anniversary event. I ensured smooth logistics and supported event operations to deliver a professional and well-organised experience. Post event, I also proposed a design for a feature wall to further document the achievements of DxD Hub and enhance its branding. <split para> Beyond event planning, I also co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers. I conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills. This analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods. ',
+    author: 'Amos Khan',
+    image: portfolioImage2,
+  },
+  {
+    id: 3,
+    title: '📢 Final Year Project Presentation 2024 - Exercise Physiology',
+    date: '2025-18-02',
+    content: 'Research Topic: Acute Effects of Cloth Mask on Exercise Performance between Genders 👨‍🔬After more than 100 hours dedicated to data collection, meticulous data cleaning and report writing, I have completed my FYP report. This module was one of the most demanding yet rewarding parts of my journey in SSM. It gave me invaluable hands-on experience with physiological measurement tools (Gas Exchange Analyser, YSI 2900, Dual X-Ray absorptiometry etc...) and a chance to explore how mask impact exercise performance. ',
+    author: 'Amos Khan',
+    image: portfolioImage12,
+  },
+  {
+    id: 4,
+    title: 'HTX Internship',
+    date: '2025-22-07',
+    content: 'During my final-year internship, I had the rewarding opportunity to work closely with scientists and engineers from the Human Factors and Simulation department at HTX. This experience was truly eye-opening, as I was able to apply the practical knowledge I gained in school to real-world experiments. Our work focused on addressing real-life challenges faced by Home Team Officers, including conducting experiments related to thermal physiology, heat acclimatization, and maintaining optimal conditions for officers in the field. This hands-on experience not only deepened my understanding of the subject but also highlighted the importance of research in supporting those who serve on the front lines.',
+    author: 'Amos Khan',
+    image: portfolioImage4,
+  },
+];
 /**
  * Hero section
  */
@@ -78,13 +144,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Graduate</strong>,
-        currently pursuing a Post-Graduate Diploma in Education at <strong className="text-stone-100">National Institute of Education. </strong>{' '} My previous internship experiences include working as a {' '}
-        <strong className="text-stone-100"> Exercise Thermal Physiology Intern</strong>, at <strong> Home Team Science and Technology Agency (HTX)</strong>. 
+        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>,
+        currently working at <strong className="text-stone-100">Ministry of Education (MOE) </strong>{' '}
+        to be a trained <strong className="text-stone-100">Physical Education Teacher</strong>. Having a passion for <strong className="text-stone-100">education</strong>, I hope to inspire students to be the best version of themselves.{' '}
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping fit{' '}
-        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton. 
+        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton.
       </p>
     </>
   ),
@@ -108,13 +174,13 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, while empowering me to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
+  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
     {label: 'Location', text: 'Singapore', Icon: MapIcon},
     {label: 'Age', text: '25', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Hiking, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University', Icon: AcademicCapIcon},
+    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
+    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
     {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
   ],
 };
@@ -132,7 +198,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Chinese',
-        level: 6,
+        level: 7,
       },
     ],
   },
@@ -158,19 +224,19 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'SQL',
-        level: 8,
+        level: 7,
       },
       {
         name: 'R Programming',
-        level: 8,
+        level: 9,
       },
       {
         name: 'Excel VBA',
-        level: 7,
+        level: 8,
       },
       {
         name: 'Tableau',
-        level: 7,
+        level: 8,
       },
     ],
   },
@@ -252,25 +318,32 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
+    date: 'Jul 2025 - Present',
+    location: 'Ministry of Education (Singapore)',
+    title: 'Postgraduate Diploma in Education (PGDE) Trainee',
+    content: <p> Pursuing a Postgraduate Diploma in Education (PGDE) at the National Institute of Education, Singapore.</p>
+  },
+  {
     date: 'Aug 2021 - Aug 2025',
     location: 'Nanyang Technological University | National Institute of Education',
     title: 'BSc Sports Science & Management',
     content: (
       <p>
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
-        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion).
+        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion
       </p>
     ),
   },
   {
     date: 'Feb 2024 - Jun 2024',
     location: 'Loughborough University',
-    title: 'Sport and Exercise Science , Sports Science',
+    title: 'Sport and Exercise Science, Sports Science',
     content: (
       <p>
-        Student exchange at Loughborough University Y3S2. Academic Modules enrolled: Sports Engineering, Sports
+        Student exchange at Loughborough University Y3S2. 
+        <br /> Academic Modules: Sports Engineering, Sports
         Governance, Applied Sports Physiology, Applied Psychology in Competitive Sport, Psychological Disorders in
-        Society.
+        Society
       </p>
     ),
   },
@@ -280,8 +353,9 @@ export const education: TimelineItem[] = [
     title: 'Cambridge A - Levels',
     content: (
       <p>
-        Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics 2H1 subjects including General
-        Paper, Economics. Badminton Team Vice Captain.
+        Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics <br />
+        2H1 subjects including General Paper, Economics. 
+        <br />Badminton Team Vice Captain.
       </p>
     ),
   },
@@ -289,10 +363,20 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'Jan 2025 - Present',
+    date: 'Jul 2025 - Present',
+    location: 'Ministry of Education (Singapore)',
+    title: 'Postgraduate Diploma in Education (PGDE) Trainee',
+    content:<p>
+      • Engaging in a 2-year teaching programme to become a qualified Physical Educator in Singapore. <br />
+      • Additionally, I leverage on technology in education by integrating digital tools for lesson planning, student engagement, and assessment. <br />•Skills acquired include educational pedagogy, classroom management, and the use of EdTech platforms such as Google Classroom and Microsoft Teams to enhance learning experiences.
+    </p>
+  },
+
+  {
+    date: 'Jan 2025 - May 2025',
     location: 'HTX (Home Team Science & Technology Agency)',
-    title: 'Exercise Thermal Physiology Intern',
-    content: <p> • Conducted experiments on Home Team Officers concerning Thermal Physiology. • Utilised IBM SPSS for statistical analysis, identifying significant differences in physiological metrics while driving data-driven interpretations. • Automated manual Excel plotting using R Programming Language, improving workflow efficiency by ~80%.</p>,
+    title: 'Thermal Physiology Intern',
+    content: <p>• Conducted experiments on Home Team Officers concerning Thermal Physiology <br />• Utilised IBM SPSS for statistical analysis, identifying significant differences in physiological metrics while driving data-driven interpretations. <br />• Automated manual Excel plotting using R Programming Language, improving workflow efficiency by ~80%</p>,
   },
 
   {
@@ -301,9 +385,9 @@ export const experience: TimelineItem[] = [
     title: 'Corporate Communications, Outreach and Talent Development Intern',
     content: (
       <p>
-        • Created written and visual content to enhance DxD Hub’s visibility across multiple platforms (e.g LinkedIn) •
-        Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers • Conducted
-        a comprehensive review of intern hiring trends using critical thinking and data analyst skills
+        • Created written and visual content to enhance DxD Hub’s visibility across multiple platforms (e.g LinkedIn) <br />
+        • Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers <br />
+        • Conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills
       </p>
     ),
   },
@@ -313,9 +397,9 @@ export const experience: TimelineItem[] = [
     title: 'Assistant Data Analyst',
     content: (
       <p>
-        • Performed data cleaning for a Virtual Reality pilot project for senior citizens for recording purposes •
-        Conducted data analysis of survey responses from 70+ VR clients to assess the viability of project • Explored
-        potential advantages Virtual Reality may help senior citizens for future projects
+        • Performed data cleaning for a Virtual Reality pilot project for senior citizens for recording purposes <br />
+        • Conducted data analysis of survey responses from 70+ VR clients to assess the viability of project <br />
+        • Explored potential advantages Virtual Reality may help senior citizens for future projects
       </p>
     ),
   },
@@ -325,9 +409,9 @@ export const experience: TimelineItem[] = [
     title: 'Operations Assistant',
     content: (
       <p>
-        {' '}
-        • Under the supervision of Ocean Health Team • Tidying up warehouse utilising Dynamic 365 Business Central •
-        Packaging of Shoppee/Lazada/Redmart orders
+        • Under the supervision of Ocean Health Team <br />
+        • Tidying up warehouse utilising Dynamic 365 Business Central <br />
+        • Packaging of Shoppee/Lazada/Redmart orders
       </p>
     ),
   },
@@ -338,9 +422,9 @@ export const experience: TimelineItem[] = [
     title: 'Data Processing Executive',
     content: (
       <p>
-        • Initiated opening of financial accounts and due diligence checks for 1000+ newly onboarded clients • Ensured
-        client’s compliance with MAS and guidelines related to AML to prevent fraudulent activities • Conducted
-        consistent and accurate data processing towards existing accounts to update overall system
+        • Initiated opening of financial accounts and due diligence checks for 1000+ newly onboarded clients <br />
+        • Ensured client’s compliance with MAS and guidelines related to AML to prevent fraudulent activities <br />
+        • Conducted consistent and accurate data processing towards existing accounts to update overall system
       </p>
     ),
   },
@@ -352,7 +436,8 @@ export const experience: TimelineItem[] = [
     content: (
       <p>
         • Supervised a group of part-timers and executed data entry of client’s details into software systems
-        forprocessing • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
+        for processing <br />
+        • Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
       </p>
     ),
   },
@@ -363,10 +448,8 @@ export const experience: TimelineItem[] = [
     title: 'Internship',
     content: (
       <p>
-        {' '}
-        • Organize sports events for 60 children with special needs to make a positive impact through sports •
-        Communicated and participated in soccer and floorball with students from Rainbow Centre to improve their mental
-        wellbeing
+        • Organize sports events for 60 children with special needs to make a positive impact through sports <br />
+        • Communicated and participated in soccer and floorball with students from Rainbow Centre to improve their mental wellbeing
       </p>
     ),
   },
@@ -379,20 +462,19 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
-      name: 'Glenn Tan (HTX) - Home Team Science and Technology Agency ',
-      text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. As a competent individual, Amos will be  a great addition to any organisation he joins.',
-
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9DJ4nRFeU7ZHDBF8rHtiJIcccqEgL4rCW7g&s',
-    },
-    {
       name: 'Ho Yuan Lu (DxD Hub) - A National Platform under A*STAR ',
       text: 'Amos applied critical thinking and data analysis skills to conduct a comprehensive review of intern hiring trends from 2022 to 2024. His analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods. His professionalism, resourcefulness, and ability to build positive working relationships made him a valued member of the team.',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMHWu9j5HVnvkGAR-tfU2KRW8K6WjqmOlzqw&s',
     },
     {
       name: 'Tony Png (Phillips Securities Pte Ltd)',
-      text: 'Amos has also been effective in his efforts of know-your-customer, risk profiling and due diligence process in new clients onboarding. He has no issues in asking for clarifications when in doubt in the independent verification of client information. Amos is helpful and a proactive team player during special audit projects where investigations into old archives are required. I particularly appreciate Amos willingness to take initiative to help the company serve its internal and external customers more fully.',
+      text: 'Amos has also been effective in his efforts of know-your-customer, risk profiling and due diligence process in new clients onboarding. Amos is helpful and a proactive team player during special audit projects where investigations into old archives are required. I particularly appreciate Amos willingness to take initiative to help the company serve its internal and external customers more fully.',
       image: tonypng,
+    },
+        {
+      name: 'Glenn Tan (HTX - Home Team Science & Technology Agency)',
+      text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. Amos exhibited professionalism while handling trial participants, and constantly sought to improve himself',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9DJ4nRFeU7ZHDBF8rHtiJIcccqEgL4rCW7g&s',
     },
     // {
     //   name: 'Someone else',

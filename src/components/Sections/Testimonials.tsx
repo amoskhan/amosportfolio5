@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import Image from 'next/image';
 import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import {isApple, isMobile} from '../../config';
@@ -9,7 +8,6 @@ import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
-
 
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -115,41 +113,32 @@ const Testimonials: FC = memo(() => {
   );
 });
 
-const Testimonial: FC<{testimonial: Testimonial; isActive: boolean}> = memo(
-  ({testimonial: {text, name, image}, isActive}) => {
-    // Check if image is a local import (object) or a remote URL (string)
-    const isLocalImage = typeof image !== 'string';
+type TestimonialImage = string | { src: string };
 
-    return (
-      <div
-        className={classNames(
-          'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
-          isActive ? 'opacity-100' : 'opacity-0',
-        )}>
-        {image ? (
-          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-            <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
-            {isLocalImage ? (
-              <Image
-                alt={name}
-                className="h-full w-full rounded-full object-cover"
-                fill
-                sizes="64px"
-                src={image}
-              />
-            ) : (
-              <img alt={name} className="h-full w-full rounded-full object-cover" src={image} />
-            )}
-          </div>
-        ) : (
-          <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
-        )}
-        <div className="flex flex-col gap-y-4">
-          <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
-          <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
+const Testimonial: FC<{testimonial: Omit<Testimonial, 'image'> & { image?: TestimonialImage }; isActive: boolean}> = memo(
+  ({testimonial: {text, name, image}, isActive}) => (
+    <div
+      className={classNames(
+        'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
+        isActive ? 'opacity-100' : 'opacity-0',
+      )}>
+      {image ? (
+        <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
+          <img   
+          alt={name}
+          className="h-full w-full rounded-full"
+          src={typeof image === 'string' ? image : (image as { src: string }).src} />
         </div>
+      ) : (
+        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
+      )}
+      <div className="flex flex-col gap-y-4">
+        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
+        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
       </div>
-    );
-  }
+    </div>
+  ),
 );
+
 export default Testimonials;
