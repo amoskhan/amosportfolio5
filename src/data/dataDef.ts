@@ -148,3 +148,13 @@ export interface Social {
   Icon: FC<IconProps>;
   href: string;
 }
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  date: string;
+  content: string;
+  author: string;
+  image: string ;
+  collageImages?: string[];
+}
