@@ -14,7 +14,6 @@ import LinkedInIcon from '../components/Icon/LinkedInIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
-// import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 // import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 // import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 // import porfolioImage4 from '../images/portfolio/portfolio-4.jpg';
@@ -30,6 +29,7 @@ import portfolioImage13 from '../images/portfolio/portfolio-13.jpg';
 import portfolioImage14 from '../images/portfolio/portfolio-14.jpg';
 import portfolioImage15 from '../images/portfolio/portfolio-15.jpg';
 import portfolioImage16 from '../images/portfolio/portfolio-16.jpg';
+import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
 import {
@@ -78,13 +78,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>,
-        currently working at <strong className="text-stone-100">Home Team Science and Technology Agency (HTX) </strong>{' '}
-        assisted in research projects related to heat acclimation, heat maintenance and decay.
+        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Graduate</strong>,
+        currently pursuing a Post-Graduate Diploma in Education at <strong className="text-stone-100">National Institute of Education. </strong>{' '} My previous internship experiences include working as a {' '}
+        <strong className="text-stone-100"> Exercise Thermal Physiology Intern</strong>, at <strong> Home Team Science and Technology Agency (HTX)</strong>. 
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping fit{' '}
-        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton
+        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton. 
       </p>
     </>
   ),
@@ -108,14 +108,14 @@ export const heroData: Hero = {
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
+  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, while empowering me to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
     {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '24', Icon: CalendarIcon},
+    {label: 'Age', text: '25', Icon: CalendarIcon},
     {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
+    {label: 'Interests', text: 'Badminton, Hiking, Fitness, Data Analysis, Research', Icon: SparklesIcon},
     {label: 'Study', text: 'Nanyang Technological University', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'HTX (Home Team Science & Technology Agency)', Icon: BuildingOffice2Icon},
+    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -158,11 +158,11 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'SQL',
-        level: 7,
+        level: 8,
       },
       {
         name: 'R Programming',
-        level: 6,
+        level: 8,
       },
       {
         name: 'Excel VBA',
@@ -258,7 +258,7 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
-        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion
+        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion).
       </p>
     ),
   },
@@ -270,7 +270,7 @@ export const education: TimelineItem[] = [
       <p>
         Student exchange at Loughborough University Y3S2. Academic Modules enrolled: Sports Engineering, Sports
         Governance, Applied Sports Physiology, Applied Psychology in Competitive Sport, Psychological Disorders in
-        Society
+        Society.
       </p>
     ),
   },
@@ -291,8 +291,8 @@ export const experience: TimelineItem[] = [
   {
     date: 'Jan 2025 - Present',
     location: 'HTX (Home Team Science & Technology Agency)',
-    title: 'Human Factors and Simulation (Centre of Expertise) Intern',
-    content: <p>• Assisted in research projects related to heat acclimation, heat maintenance and decay.</p>,
+    title: 'Exercise Thermal Physiology Intern',
+    content: <p> • Conducted experiments on Home Team Officers concerning Thermal Physiology. • Utilised IBM SPSS for statistical analysis, identifying significant differences in physiological metrics while driving data-driven interpretations. • Automated manual Excel plotting using R Programming Language, improving workflow efficiency by ~80%.</p>,
   },
 
   {
@@ -379,6 +379,12 @@ export const testimonial: TestimonialSection = {
   imageSrc: testimonialImage,
   testimonials: [
     {
+      name: 'Glenn Tan (HTX) - Home Team Science and Technology Agency ',
+      text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. As a competent individual, Amos will be  a great addition to any organisation he joins.',
+
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9DJ4nRFeU7ZHDBF8rHtiJIcccqEgL4rCW7g&s',
+    },
+    {
       name: 'Ho Yuan Lu (DxD Hub) - A National Platform under A*STAR ',
       text: 'Amos applied critical thinking and data analysis skills to conduct a comprehensive review of intern hiring trends from 2022 to 2024. His analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods. His professionalism, resourcefulness, and ability to build positive working relationships made him a valued member of the team.',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMHWu9j5HVnvkGAR-tfU2KRW8K6WjqmOlzqw&s',
@@ -386,8 +392,7 @@ export const testimonial: TestimonialSection = {
     {
       name: 'Tony Png (Phillips Securities Pte Ltd)',
       text: 'Amos has also been effective in his efforts of know-your-customer, risk profiling and due diligence process in new clients onboarding. He has no issues in asking for clarifications when in doubt in the independent verification of client information. Amos is helpful and a proactive team player during special audit projects where investigations into old archives are required. I particularly appreciate Amos willingness to take initiative to help the company serve its internal and external customers more fully.',
-      image:
-        'https://media.licdn.com/dms/image/v2/C4E03AQEYxAXH2j21mA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1620199008897?e=1741219200&v=beta&t=nthmK82WYH8CyAuClYPJ6hcXM27x0b0FWUFdm6L9bs0',
+      image: tonypng,
     },
     // {
     //   name: 'Someone else',
@@ -403,7 +408,7 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Do reach out to be if you have further details.',
+  description: 'Do reach out to me if you have further details.',
   items: [
     {
       type: ContactType.Email,
