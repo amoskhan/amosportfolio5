@@ -1,5 +1,5 @@
+import {FC, memo, useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
-import {FC, memo, useRef, useEffect, useState} from 'react';
 import {certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
@@ -64,7 +64,6 @@ const Certificates: FC = memo(() => {
               aria-label={`View ${cert.title}`}
               style={{ wordBreak: 'break-word', textAlign: 'center' }}>
               <Image
-                src={cert.image}
                 alt={cert.title}
                 width={300}
                 height={200}
