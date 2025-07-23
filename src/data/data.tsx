@@ -33,6 +33,12 @@ import portfolioImage16 from '../images/portfolio/portfolio-16.jpg';
 import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
+import cert1 from '../images/certificates/Python For Everybody.jpg';
+import cert2 from '../images/certificates/Google Data Analytics.jpg';
+import cert3 from '../images/certificates/Google IT Support.jpg';
+import cert4 from '../images/certificates/Google Project Management.jpg';
+import cert5 from '../images/certificates/Web Design for Everybody.jpg';
+import cert6 from '../images/certificates/Google Business Intelligence.jpg';
 import {
   About,
   BlogPost,
@@ -130,10 +136,46 @@ export const blogPosts: BlogPost[] = [
     id: 4,
     title: 'HTX Internship',
     date: '2025-22-07',
-    content: 'During my final-year internship, I had the rewarding opportunity to work closely with scientists and engineers from the Human Factors and Simulation department at HTX. This experience was truly eye-opening, as I was able to apply the practical knowledge I gained in school to real-world experiments. Our work focused on addressing real-life challenges faced by Home Team Officers, including conducting experiments related to thermal physiology, heat acclimatization, and maintaining optimal conditions for officers in the field. This hands-on experience not only deepened my understanding of the subject but also highlighted the importance of research in supporting those who serve on the front lines.',
+    content: 'During my final-year internship, I had the rewarding opportunity to work closely with scientists and engineers from the Human Factors and Simulation department at HTX. This experience was truly eye-opening, as I was able to apply the practical knowledge I gained in school to real-world experiments. Our work focused on addressing real-life challenges faced by Home Team Officers, including conducting experiments related to Thermal Physiology and Heat Acclimatization while ensuring safe conditions for officers in the field. This hands-on experience not only deepened my understanding of the subject but also highlighted the importance of research in supporting those who serve on the front lines.',
     author: 'Amos Khan',
     image: portfolioImage4,
   },
+];
+
+// Certificates section
+export const certificates = [
+  {
+    title: 'Python For Everybody',
+    image: cert1,
+    url: 'https://coursera.org/share/b7b2ea884f78fa602aa786a371ca8ede'
+  },
+    {
+    title: 'Google Data Analytics',
+    image: cert2,
+    url: 'https://coursera.org/share/88c34a4692a8905982a144a076625fc3'
+  },
+    {
+    title: 'Google IT Support',
+    image: cert3,
+    url: 'https://coursera.org/share/7e00c0ff3a725a26b3be3ca93e67a61c'
+  },
+    {
+    title: 'Google Project Management',
+    image: cert4,
+    url: 'https://coursera.org/share/45ca7d5258d159c4ae76b329d72699b6'
+  },
+  {
+    title: 'Web Design for Everybody: Basics of Web Development & Coding',
+    image: cert5,
+    url: 'https://coursera.org/share/9a4b6c2afa8c8bb14038a5ea225c0e97'
+  },
+  {
+    title: 'Google Business Intelligence',
+    image: cert6,
+    url: 'https://coursera.org/share/cc62568b761ecab74de956843dda2a17'
+  },
+
+  // Add more certificates here
 ];
 /**
  * Hero section
@@ -319,7 +361,7 @@ export const portfolioItems: PortfolioItem[] = [
 export const education: TimelineItem[] = [
   {
     date: 'Jul 2025 - Present',
-    location: 'Ministry of Education (Singapore)',
+    location: 'National Institute of Singapore',
     title: 'Postgraduate Diploma in Education (PGDE) Trainee',
     content: <p> Pursuing a Postgraduate Diploma in Education (PGDE) at the National Institute of Education, Singapore.</p>
   },
@@ -330,7 +372,15 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
-        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion
+        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
+        <br />
+        <a
+          href="https://hdl.handle.net/10356/182647"
+          target="_blank"
+          style={{ color: '#2563eb' }} // Tailwind blue-600
+        >
+          https://hdl.handle.net/10356/182647
+        </a>
       </p>
     ),
   },
@@ -367,8 +417,8 @@ export const experience: TimelineItem[] = [
     location: 'Ministry of Education (Singapore)',
     title: 'Postgraduate Diploma in Education (PGDE) Trainee',
     content:<p>
-      • Engaging in a 2-year teaching programme to become a qualified Physical Educator in Singapore. <br />
-      • Additionally, I leverage on technology in education by integrating digital tools for lesson planning, student engagement, and assessment. <br />•Skills acquired include educational pedagogy, classroom management, and the use of EdTech platforms such as Google Classroom and Microsoft Teams to enhance learning experiences.
+      • Engaged in a 2-year teaching programme to become a qualified Physical Educator in Singapore. <br />
+      • Leveraged on technology in education by integrating digital tools for lesson planning, student engagement, and assessment. <br />•Acquired skills such as educational pedagogy, classroom management, and the use of EdTech platforms such as Google Classroom and Microsoft Teams to enhance learning experiences.
     </p>
   },
 
@@ -473,7 +523,7 @@ export const testimonial: TestimonialSection = {
     },
         {
       name: 'Glenn Tan (HTX - Home Team Science & Technology Agency)',
-      text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. Amos exhibited professionalism while handling trial participants, and constantly sought to improve himself',
+      text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. Amos exhibited professionalism while handling trial participants, and constantly sought to improve himself.',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9DJ4nRFeU7ZHDBF8rHtiJIcccqEgL4rCW7g&s',
     },
     // {
