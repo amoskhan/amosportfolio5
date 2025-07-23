@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { FC, memo, useEffect, useRef, useState } from 'react';
+import {FC, memo, useEffect, useRef, useState} from 'react';
 
-import { certificates, SectionId } from '../../data/data';
+import {certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
@@ -63,14 +63,14 @@ const Certificates: FC = memo(() => {
               tabIndex={0}
               role="button"
               aria-label={`View ${cert.title}`}
-              style={{ wordBreak: 'break-word', textAlign: 'center' }}>
+              style={{wordBreak: 'break-word', textAlign: 'center'}}>
               <Image
                 alt={cert.title}
                 className="rounded-lg shadow-lg object-cover"
                 height={200}
-                priority={idx === 0}
                 src={cert.image}
                 width={300}
+                priority={idx === 0}
               />
               <p className="mt-2 font-semibold w-full truncate">{cert.title}</p>
             </div>
