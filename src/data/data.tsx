@@ -74,6 +74,7 @@ export const SectionId = {
   Stats: 'stats',
   Testimonials: 'testimonials',
   Blog: 'blog',
+  Certificates: 'certificates',
 } as const;
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];

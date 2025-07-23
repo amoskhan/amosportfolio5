@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import { FC, memo, useState, useRef, useEffect } from 'react';
 import { certificates } from '../../data/data';
+import { SectionId } from '../../data/data';
 import Section from '../Layout/Section';
+
 
 const Certificates: FC = memo(() => {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
@@ -45,7 +47,7 @@ const Certificates: FC = memo(() => {
   }, []);
 
   return (
-    <Section className="bg-neutral-100" sectionId="certificates">
+    <Section className="bg-neutral-100" sectionId={SectionId.Certificates}>
       <h2 className="text-2xl font-bold text-center mb-8">Certificates</h2>
       <div className="overflow-x-hidden py-4 relative">
         <div
