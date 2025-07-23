@@ -65,10 +65,11 @@ const Certificates: FC = memo(() => {
               style={{ wordBreak: 'break-word', textAlign: 'center' }}>
               <Image
                 alt={cert.title}
-                width={300}
-                height={200}
                 className="rounded-lg shadow-lg object-cover"
+                height={200}
                 priority={idx === 0}
+                src={cert.image}
+                width={300}
               />
               <p className="mt-2 font-semibold w-full truncate">{cert.title}</p>
             </div>
