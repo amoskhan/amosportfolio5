@@ -64,6 +64,7 @@ const Certificates: FC = memo(() => {
               aria-label={`View ${cert.title}`}
               style={{ wordBreak: 'break-word', textAlign: 'center' }}>
               <Image
+                src={cert.image}
                 alt={cert.title}
                 width={300}
                 height={200}
