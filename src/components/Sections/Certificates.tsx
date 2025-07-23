@@ -1,6 +1,7 @@
-import {FC, memo, useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
-import {certificates, SectionId} from '../../data/data';
+import { FC, memo, useEffect, useRef, useState } from 'react';
+
+import { certificates, SectionId } from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
@@ -37,7 +38,7 @@ const Certificates: FC = memo(() => {
       e.preventDefault();
       el.scrollLeft += e.deltaY;
     };
-    el.addEventListener('wheel', onWheel, { passive: false });
+    el.addEventListener('wheel', onWheel, {passive: false});
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
@@ -108,9 +109,9 @@ const Certificates: FC = memo(() => {
               </a>
             )}
             <button
+              aria-label="Close"
               className="absolute top-2 right-2 text-black text-2xl font-bold"
-              onClick={() => setSelectedCert(null)}
-              aria-label="Close">
+              onClick={() => setSelectedCert(null)}>
               &times;
             </button>
           </div>
