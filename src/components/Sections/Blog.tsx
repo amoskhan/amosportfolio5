@@ -4,7 +4,6 @@ import {FC, memo, useState} from 'react';
 import {blogPosts} from '../../data/data';
 import Section from '../Layout/Section';
 
-
 const Blog: FC = memo(() => {
   const [posts] = useState(blogPosts);
   return (
@@ -21,13 +20,13 @@ const Blog: FC = memo(() => {
               <p className="text-base text-gray-300">{post.content}</p>
               {post.image && (
                 <div className="relative w-full overflow-hidden rounded-lg">
-                  <Image 
-                    alt={post.title} 
-                    height={475} 
-                    layout="responsive" 
-                    objectFit="cover" 
-                    src={post.image} 
-                    width={700} 
+                  <Image
+                    alt={post.title}
+                    height={475}
+                    layout="responsive"
+                    objectFit="cover"
+                    src={post.image}
+                    width={700}
                   />
                 </div>
               )}

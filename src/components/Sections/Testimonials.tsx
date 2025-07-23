@@ -113,9 +113,9 @@ const Testimonials: FC = memo(() => {
   );
 });
 
-type TestimonialImage = string | { src: string };
+type TestimonialImage = string | {src: string};
 
-const Testimonial: FC<{testimonial: Omit<Testimonial, 'image'> & { image?: TestimonialImage }; isActive: boolean}> = memo(
+const Testimonial: FC<{testimonial: Omit<Testimonial, 'image'> & {image?: TestimonialImage}; isActive: boolean}> = memo(
   ({testimonial: {text, name, image}, isActive}) => (
     <div
       className={classNames(
@@ -125,10 +125,11 @@ const Testimonial: FC<{testimonial: Omit<Testimonial, 'image'> & { image?: Testi
       {image ? (
         <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
           <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
-          <img   
-          alt={name}
-          className="h-full w-full rounded-full"
-          src={typeof image === 'string' ? image : (image as { src: string }).src} />
+          <img
+            alt={name}
+            className="h-full w-full rounded-full"
+            src={typeof image === 'string' ? image : (image as {src: string}).src}
+          />
         </div>
       ) : (
         <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />

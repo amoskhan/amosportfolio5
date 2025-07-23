@@ -155,6 +155,6 @@ export interface BlogPost {
   date: string;
   content: string;
   author: string;
-  image: string ;
+  image: string;
   collageImages?: string[];
 }

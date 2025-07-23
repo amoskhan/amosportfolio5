@@ -378,7 +378,7 @@ export const education: TimelineItem[] = [
         <a
           href="https://hdl.handle.net/10356/182647"
           target="_blank"
-          style={{ color: '#2563eb' }} // Tailwind blue-600
+          style={{color: '#2563eb'}} // Tailwind blue-600
         >
           https://hdl.handle.net/10356/182647
         </a>
