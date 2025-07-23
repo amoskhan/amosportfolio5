@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FC, memo, useRef, useEffect, useState } from 'react';
-import { certificates } from '../../data/data';
+import { certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 
