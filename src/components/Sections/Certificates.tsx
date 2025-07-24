@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import {FC, memo, useEffect, useRef, useState} from 'react';
+
 import {certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
@@ -17,10 +18,7 @@ const Certificates: FC = memo(() => {
 
     const scroll = () => {
       scrollContainer.scrollLeft += scrollSpeed;
-      if (
-        scrollContainer.scrollLeft >=
-        scrollContainer.scrollWidth - scrollContainer.clientWidth
-      ) {
+      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
         scrollContainer.scrollLeft = 0;
       }
       animationFrame = requestAnimationFrame(scroll);
@@ -55,8 +53,7 @@ const Certificates: FC = memo(() => {
             scrollBehavior: 'smooth',
             whiteSpace: 'nowrap',
             width: '100%',
-          }}
-        >
+          }}>
           {certificates.concat(certificates).map((cert, idx) => (
             <div
               aria-label={`View ${cert.title}`}
@@ -65,8 +62,7 @@ const Certificates: FC = memo(() => {
               onClick={() => setSelectedCert(idx % certificates.length)}
               role="button"
               style={{textAlign: 'center', wordBreak: 'break-word'}}
-              tabIndex={0}
-            >
+              tabIndex={0}>
               <Image
                 alt={cert.title}
                 className="rounded-lg shadow-lg object-cover w-full h-auto"
@@ -92,12 +88,8 @@ const Certificates: FC = memo(() => {
       {selectedCert !== null && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
-          onClick={() => setSelectedCert(null)}
-        >
-          <div
-            className="relative bg-white rounded-lg p-4 shadow-lg"
-            onClick={e => e.stopPropagation()}
-          >
+          onClick={() => setSelectedCert(null)}>
+          <div className="relative bg-white rounded-lg p-4 shadow-lg" onClick={e => e.stopPropagation()}>
             <Image
               alt={certificates[selectedCert].title}
               className="rounded-lg object-contain"
@@ -111,16 +103,14 @@ const Certificates: FC = memo(() => {
                 className="block text-center mt-4 text-blue-600 underline font-semibold"
                 href={certificates[selectedCert].url}
                 rel="noopener noreferrer"
-                target="_blank"
-              >
+                target="_blank">
                 View Certificate
               </a>
             )}
             <button
               aria-label="Close"
               className="absolute top-2 right-2 text-black text-2xl font-bold"
-              onClick={() => setSelectedCert(null)}
-            >
+              onClick={() => setSelectedCert(null)}>
               &times;
             </button>
           </div>

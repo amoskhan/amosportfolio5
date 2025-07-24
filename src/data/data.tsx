@@ -11,6 +11,12 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+import cert6 from '../images/certificates/Google Business Intelligence.jpg';
+import cert2 from '../images/certificates/Google Data Analytics.jpg';
+import cert3 from '../images/certificates/Google IT Support.jpg';
+import cert4 from '../images/certificates/Google Project Management.jpg';
+import cert1 from '../images/certificates/Python For Everybody.jpg';
+import cert5 from '../images/certificates/Web Design for Everybody.jpg';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
 import heroImage from '../images/header-background.webp';
@@ -33,12 +39,6 @@ import portfolioImage16 from '../images/portfolio/portfolio-16.jpg';
 import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
-import cert1 from '../images/certificates/Python For Everybody.jpg';
-import cert2 from '../images/certificates/Google Data Analytics.jpg';
-import cert3 from '../images/certificates/Google IT Support.jpg';
-import cert4 from '../images/certificates/Google Project Management.jpg';
-import cert5 from '../images/certificates/Web Design for Everybody.jpg';
-import cert6 from '../images/certificates/Google Business Intelligence.jpg';
 import {
   About,
   BlogPost,
