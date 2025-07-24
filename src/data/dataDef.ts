@@ -158,3 +158,9 @@ export interface BlogPost {
   image: string;
   collageImages?: string[];
 }
+
+export interface CertificateItem {
+  title: string;
+  image: string | StaticImageData;
+  url: string;
+}

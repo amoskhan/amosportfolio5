@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import {FC, memo, useEffect, useRef, useState} from 'react';
 
-import {certificates, SectionId} from '../../data/data';
+import {certificates} from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
@@ -43,7 +43,7 @@ const Certificates: FC = memo(() => {
   }, []);
 
   return (
-    <Section className="bg-neutral-100" sectionId={SectionId.Certificates}>
+    <Section className="bg-neutral-100" sectionId="certificates">
       <h2 className="text-2xl font-bold text-center mb-8">Certificates</h2>
       <div className="overflow-x-hidden py-4 relative">
         <div
@@ -92,26 +92,28 @@ const Certificates: FC = memo(() => {
           onClick={() => setSelectedCert(null)}>
           <div className="relative bg-white rounded-lg p-4 shadow-lg" onClick={e => e.stopPropagation()}>
             <Image
-              src={certificates[selectedCert].image}
               alt={certificates[selectedCert].title}
-              width={800}
-              height={600}
               className="rounded-lg object-contain"
+              height={600}
+              src={certificates[selectedCert].image}
+              width={800}
             />
             <p className="text-center mt-2 font-bold">{certificates[selectedCert].title}</p>
             {certificates[selectedCert].url && (
               <a
+                className="block text-center mt-4 text-blue-600 underline font-semibold"
                 href={certificates[selectedCert].url}
-                target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center mt-4 text-blue-600 underline font-semibold">
+                target="_blank"
+                >
                 View Certificate
               </a>
             )}
             <button
               aria-label="Close"
               className="absolute top-2 right-2 text-black text-2xl font-bold"
-              onClick={() => setSelectedCert(null)}>
+              onClick={() => setSelectedCert(null)}
+              >
               &times;
             </button>
           </div>
