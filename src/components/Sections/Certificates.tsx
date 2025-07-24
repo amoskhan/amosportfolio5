@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { FC, memo, useEffect, useRef, useState } from 'react';
-import { certificates, SectionId } from '../../data/data';
+import {FC, memo, useEffect, useRef, useState} from 'react';
+import {certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
@@ -39,7 +39,7 @@ const Certificates: FC = memo(() => {
       e.preventDefault();
       el.scrollLeft += e.deltaY;
     };
-    el.addEventListener('wheel', onWheel, { passive: false });
+    el.addEventListener('wheel', onWheel, {passive: false});
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
@@ -64,7 +64,7 @@ const Certificates: FC = memo(() => {
               key={idx}
               onClick={() => setSelectedCert(idx % certificates.length)}
               role="button"
-              style={{ textAlign: 'center', wordBreak: 'break-word' }}
+              style={{textAlign: 'center', wordBreak: 'break-word'}}
               tabIndex={0}
             >
               <Image
