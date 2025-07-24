@@ -368,9 +368,9 @@ export const education: TimelineItem[] = [
   {
     date: 'Jul 2025 - Present',
     location: 'National Institute of Singapore',
-    title: 'Postgraduate Diploma in Education (PGDE) Trainee',
+    title: 'Postgraduate Diploma in Education Physical Education (PGDE PE) Trainee',
     content: (
-      <p> Pursuing a Postgraduate Diploma in Education (PGDE) at the National Institute of Education, Singapore.</p>
+      <p> Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of Education, Singapore.</p>
     ),
   },
   {
@@ -419,7 +419,7 @@ export const experience: TimelineItem[] = [
   {
     date: 'Jul 2025 - Present',
     location: 'Ministry of Education (Singapore)',
-    title: 'Postgraduate Diploma in Education (PGDE) Trainee',
+    title: 'Postgraduate Diploma in Education Physical Education (PGDE PE) Trainee',
     content: (
       <p>
         • Engaged in a 2-year teaching programme to become a qualified Physical Educator in Singapore. <br />
