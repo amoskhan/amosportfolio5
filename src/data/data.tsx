@@ -45,7 +45,7 @@ import portfolioImage18 from '../images/portfolio/portfolio-18.jpg';
 import portfolioImage19 from '../images/portfolio/portfolio-19.jpg';
 import portfolioImage20 from '../images/portfolio/portfolio-20.jpg';
 import portfolioImage21 from '../images/portfolio/portfolio-21.jpg';
-import portfolioImage22 from '../images/portfolio/portfolio-22.jpg';
+// import portfolioImage22 from '../images/portfolio/portfolio-22.jpg';
 import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
