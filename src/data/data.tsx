@@ -200,15 +200,13 @@ export const heroData: Hero = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Undergraduate</strong>,
+        I'm a Singapore based <strong className="text-stone-100">Sports Science & Mangement Graduate</strong>,
         currently working at <strong className="text-stone-100">Ministry of Education (MOE) </strong> to be a trained{' '}
         <strong className="text-stone-100">Physical Education Teacher</strong>. Having a passion for{' '}
-        <strong className="text-stone-100">education</strong>, I hope to inspire students to be the best version of
-        themselves.{' '}
+        <strong className="text-stone-100">education </strong> , I hope to inspire students to be the best version of themselves.{' '}
       </p>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, keeping fit{' '}
-        <strong className="text-stone-100"> through exercise</strong>, or coaching / educating students badminton.
+        In my free time, you can catch me playing <strong className="text-stone-100">badminton</strong>, doing <strong className="text-stone-100"> data research</strong>, <strong className="text-stone-100"> coding</strong> or <strong className="text-stone-100">coaching</strong> students badminton.
       </p>
     </>
   ),
@@ -234,12 +232,12 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
-    {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
+    { label: 'Location', text: 'Singapore', Icon: MapIcon },
+    { label: 'Age', text: '25', Icon: CalendarIcon },
+    { label: 'Nationality', text: 'Singaporean', Icon: FlagIcon },
+    { label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon },
+    { label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon },
+    { label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon },
   ],
 };
 
@@ -401,7 +399,7 @@ export const education: TimelineItem[] = [
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
         (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
         <br />
-        <a href="https://hdl.handle.net/10356/182647" style={{color: '#2563eb'}} target="_blank">
+        <a href="https://hdl.handle.net/10356/182647" style={{ color: '#2563eb' }} target="_blank">
           https://hdl.handle.net/10356/182647
         </a>
       </p>
@@ -620,7 +618,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/' },
 ];
