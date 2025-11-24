@@ -6,6 +6,10 @@ import {
   FlagIcon,
   MapIcon,
   SparklesIcon,
+  ChatBubbleBottomCenterTextIcon,
+  BeakerIcon,
+  ComputerDesktopIcon,
+  DocumentTextIcon,
 } from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
@@ -24,18 +28,24 @@ import portfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import portfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 // import portfolioImage3 from '../images/portfolio/portfolio-3.jpg';
 import portfolioImage4 from '../images/portfolio/portfolio-4.jpg';
-// import portfolioImage5 from '../images/portfolio/portfolio-5.jpg';
-// import portfolioImage6 from '../images/portfolio/portfolio-6.jpg';
-// import portfolioImage7 from '../images/portfolio/portfolio-7.jpg';
-// import portfolioImage8 from '../images/portfolio/portfolio-8.jpg';
-// import portfolioImage9 from '../images/portfolio/portfolio-9.jpg';
-// import portfolioImage10 from '../images/portfolio/portfolio-10.jpg';
-// import portfolioImage11 from '../images/portfolio/portfolio-11.jpg';
+import portfolioImage5 from '../images/portfolio/portfolio-5.jpg';
+import portfolioImage6 from '../images/portfolio/portfolio-6.jpg';
+import portfolioImage7 from '../images/portfolio/portfolio-7.jpg';
+import portfolioImage8 from '../images/portfolio/portfolio-8.jpg';
+import portfolioImage9 from '../images/portfolio/portfolio-9.jpg';
+import portfolioImage10 from '../images/portfolio/portfolio-10.jpg';
+import portfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import portfolioImage12 from '../images/portfolio/portfolio-12.jpg';
 import portfolioImage13 from '../images/portfolio/portfolio-13.jpg';
 import portfolioImage14 from '../images/portfolio/portfolio-14.jpg';
 import portfolioImage15 from '../images/portfolio/portfolio-15.jpg';
 import portfolioImage16 from '../images/portfolio/portfolio-16.jpg';
+import portfolioImage17 from '../images/portfolio/portfolio-17.jpg';
+import portfolioImage18 from '../images/portfolio/portfolio-18.jpg';
+import portfolioImage19 from '../images/portfolio/portfolio-19.jpg';
+import portfolioImage20 from '../images/portfolio/portfolio-20.jpg';
+import portfolioImage21 from '../images/portfolio/portfolio-21.jpg';
+import portfolioImage22 from '../images/portfolio/portfolio-22.jpg';
 import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
@@ -224,12 +234,12 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
-    {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
+    { label: 'Location', text: 'Singapore', Icon: MapIcon },
+    { label: 'Age', text: '25', Icon: CalendarIcon },
+    { label: 'Nationality', text: 'Singaporean', Icon: FlagIcon },
+    { label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon },
+    { label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon },
+    { label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon },
   ],
 };
 
@@ -249,6 +259,25 @@ export const skills: SkillGroup[] = [
         level: 7,
       },
     ],
+    Icon: ChatBubbleBottomCenterTextIcon,
+  },
+  {
+    name: 'Microsoft Office',
+    skills: [
+      {
+        name: 'Word',
+        level: 10,
+      },
+      {
+        name: 'Excel',
+        level: 10,
+      },
+      {
+        name: 'Powerpoint',
+        level: 10,
+      },
+    ],
+    Icon: DocumentTextIcon,
   },
   {
     name: 'Sports Science Research',
@@ -258,24 +287,21 @@ export const skills: SkillGroup[] = [
         level: 9,
       },
       {
-        name: 'Research Writing',
+        name: 'Report Writing',
         level: 8,
       },
       {
-        name: 'Critical Analysis',
+        name: 'Critical Thinking',
         level: 8,
       },
     ],
+    Icon: BeakerIcon,
   },
   {
     name: 'Digital Technology',
     skills: [
       {
-        name: 'SQL',
-        level: 7,
-      },
-      {
-        name: 'R Programming',
+        name: 'R',
         level: 9,
       },
       {
@@ -286,25 +312,14 @@ export const skills: SkillGroup[] = [
         name: 'Tableau',
         level: 8,
       },
-    ],
-  },
-  {
-    name: 'Microsoft Office',
-    skills: [
       {
-        name: 'Microsoft Word',
-        level: 9,
-      },
-      {
-        name: 'Microsoft Excel',
-        level: 9,
-      },
-      {
-        name: 'Microsoft Powerpoint',
-        level: 9,
+        name: 'SQL',
+        level: 7,
       },
     ],
+    Icon: ComputerDesktopIcon,
   },
+
 ];
 
 /**
@@ -337,7 +352,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Badminton Coach',
     description: 'Check out my coaching services here',
-    url: 'https://youtu.be/bcC817-7-YM?si=9WsvCqhGHyy3Yk3f',
+    url: 'https://www.youtube.com/watch?v=1KYuPvBLjUg',
     image: portfolioImage16,
   },
 
@@ -370,8 +385,13 @@ export const education: TimelineItem[] = [
     location: 'National Institute of Singapore',
     title: 'Postgraduate Diploma in Education Physical Education (PGDE PE) Trainee',
     content: (
-      <p> Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of Education, Singapore.</p>
+      <p>
+        {' '}
+        Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of
+        Education, Singapore.
+      </p>
     ),
+    image: portfolioImage21,
   },
   {
     date: 'Aug 2021 - Aug 2025',
@@ -382,11 +402,12 @@ export const education: TimelineItem[] = [
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
         (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
         <br />
-        <a href="https://hdl.handle.net/10356/182647" style={{color: '#2563eb'}} target="_blank">
+        <a href="https://hdl.handle.net/10356/182647" style={{ color: '#2563eb' }} target="_blank">
           https://hdl.handle.net/10356/182647
         </a>
       </p>
     ),
+    image: portfolioImage20,
   },
   {
     date: 'Feb 2024 - Jun 2024',
@@ -399,6 +420,7 @@ export const education: TimelineItem[] = [
         Competitive Sport, Psychological Disorders in Society
       </p>
     ),
+    image: portfolioImage19,
   },
   {
     date: 'Jan 2017 - Dec 2018',
@@ -412,6 +434,7 @@ export const education: TimelineItem[] = [
         Badminton Team Vice Captain.
       </p>
     ),
+    image: portfolioImage18,
   },
 ];
 
@@ -429,6 +452,7 @@ export const experience: TimelineItem[] = [
         Google Classroom and Microsoft Teams to enhance learning experiences.
       </p>
     ),
+    image: portfolioImage5,
   },
 
   {
@@ -443,6 +467,7 @@ export const experience: TimelineItem[] = [
         efficiency by ~80%
       </p>
     ),
+    image: portfolioImage6,
   },
 
   {
@@ -457,6 +482,7 @@ export const experience: TimelineItem[] = [
         Conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills
       </p>
     ),
+    image: portfolioImage7,
   },
   {
     date: 'Jan 2023 - Apr 2023',
@@ -469,6 +495,7 @@ export const experience: TimelineItem[] = [
         Explored potential advantages Virtual Reality may help senior citizens for future projects
       </p>
     ),
+    image: portfolioImage8,
   },
   {
     date: 'Jun 2023 - Aug 2023',
@@ -480,6 +507,7 @@ export const experience: TimelineItem[] = [
         • Tidying up warehouse utilising Dynamic 365 Business Central <br />• Packaging of Shoppee/Lazada/Redmart orders
       </p>
     ),
+    image: portfolioImage9,
   },
 
   {
@@ -493,6 +521,7 @@ export const experience: TimelineItem[] = [
         Conducted consistent and accurate data processing towards existing accounts to update overall system
       </p>
     ),
+    image: portfolioImage10,
   },
 
   {
@@ -505,6 +534,7 @@ export const experience: TimelineItem[] = [
         processing <br />• Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
       </p>
     ),
+    image: portfolioImage11,
   },
 
   {
@@ -518,6 +548,7 @@ export const experience: TimelineItem[] = [
         wellbeing
       </p>
     ),
+    image: portfolioImage17,
   },
 ];
 
@@ -590,7 +621,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/' },
 ];

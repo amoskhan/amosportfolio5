@@ -1,7 +1,7 @@
-import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import { StaticImageData } from 'next/image';
+import { FC, ForwardRefExoticComponent, SVGProps } from 'react';
 
-import {IconProps} from '../components/Icon/Icon';
+import { IconProps } from '../components/Icon/Icon';
 
 export interface HomepageMeta {
   title: string;
@@ -71,6 +71,7 @@ export interface Skill {
 export interface SkillGroup {
   name: string;
   skills: Skill[];
+  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
 /**
@@ -91,6 +92,7 @@ export interface TimelineItem {
   location: string;
   title: string;
   content: JSX.Element;
+  image?: string | StaticImageData;
 }
 
 /**
@@ -158,4 +160,3 @@ export interface BlogPost {
   image: string;
   collageImages?: string[];
 }
-

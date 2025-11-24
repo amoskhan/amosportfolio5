@@ -1,95 +1,62 @@
-import Image from 'next/image';
-import {FC, memo, useEffect, useRef, useState} from 'react';
 
-import {certificates, SectionId} from '../../data/data';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { FC, memo, useState } from 'react';
+
+import { certificates, SectionId } from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll effect
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let animationFrame: number;
-    const scrollSpeed = 1; // pixels per frame
-
-    const scroll = () => {
-      scrollContainer.scrollLeft += scrollSpeed;
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        scrollContainer.scrollLeft = 0;
-      }
-      animationFrame = requestAnimationFrame(scroll);
-    };
-    animationFrame = requestAnimationFrame(scroll);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
-
-  // Allow vertical wheel to scroll horizontally
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const onWheel = (e: WheelEvent) => {
-      if (e.deltaY === 0) return;
-      e.preventDefault();
-      el.scrollLeft += e.deltaY;
-    };
-    el.addEventListener('wheel', onWheel, {passive: false});
-    return () => el.removeEventListener('wheel', onWheel);
-  }, []);
 
   return (
     <Section className="bg-neutral-100 w-full px-0" sectionId={SectionId.Certificates}>
       <h2 className="text-2xl font-bold text-center mb-8">Certificates</h2>
       <div className="overflow-x-hidden py-4 relative w-full">
         <div
-          className="flex gap-x-8 w-full no-scrollbar"
-          ref={scrollRef}
+          className="flex gap-x-8 w-full overflow-x-auto snap-x snap-mandatory pb-6 px-4 md:px-8"
           style={{
-            overflowX: 'auto',
             scrollBehavior: 'smooth',
-            whiteSpace: 'nowrap',
-            width: '100%',
+            WebkitOverflowScrolling: 'touch',
           }}>
-          {certificates.concat(certificates).map((cert, idx) => (
-            <div
-              aria-label={`View ${cert.title}`}
-              className="flex flex-col items-center flex-shrink-0 w-[calc(100vw/4)] max-w-[400px] cursor-pointer transition-transform hover:scale-105 bg-white rounded-lg p-2 mx-auto"
+          {certificates.map((cert, idx) => (
+            <motion.div
+              aria-label={`View ${cert.title} `}
+              className="flex flex-col items-center flex-shrink-0 w-[85vw] sm:w-[45vw] md:w-[30vw] lg:w-[22vw] max-w-[400px] cursor-pointer bg-white rounded-lg p-2 snap-center shadow-md hover:shadow-xl transition-shadow duration-300"
               key={idx}
-              onClick={() => setSelectedCert(idx % certificates.length)}
+              onClick={() => setSelectedCert(idx)}
               role="button"
-              style={{textAlign: 'center', wordBreak: 'break-word'}}
-              tabIndex={0}>
-              <Image
-                alt={cert.title}
-                className="rounded-lg shadow-lg object-cover w-full h-auto"
-                height={220}
-                priority={idx === 0}
-                src={cert.image}
-                width={350}
-              />
-              <p className="mt-2 font-semibold w-full truncate">{cert.title}</p>
-            </div>
+              style={{ textAlign: 'center', wordBreak: 'break-word' }}
+              tabIndex={0}
+              whileHover={{ scale: 1.02, zIndex: 10 }}
+              whileTap={{ scale: 0.98 }}>
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  alt={cert.title}
+                  className="object-cover"
+                  fill
+                  sizes="(max-width: 768px) 85vw, (max-width: 1200px) 45vw, 25vw"
+                  src={cert.image}
+                />
+              </div>
+              <p className="mt-4 font-semibold w-full px-2 text-sm md:text-base">{cert.title}</p>
+            </motion.div>
           ))}
         </div>
-        <style jsx>{`
-          .no-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
       </div>
       {selectedCert !== null && (
-        <div
+        <motion.div
+          animate={{ opacity: 1 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+          exit={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
           onClick={() => setSelectedCert(null)}>
-          <div className="relative bg-white rounded-lg p-4 shadow-lg" onClick={e => e.stopPropagation()}>
+          <motion.div
+            animate={{ scale: 1, opacity: 1 }}
+            className="relative bg-white rounded-lg p-4 shadow-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            onClick={e => e.stopPropagation()}>
             <Image
               alt={certificates[selectedCert].title}
               className="rounded-lg object-contain"
@@ -113,8 +80,8 @@ const Certificates: FC = memo(() => {
               onClick={() => setSelectedCert(null)}>
               &times;
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
     </Section>
   );
