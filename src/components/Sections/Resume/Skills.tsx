@@ -1,10 +1,9 @@
+import {FC, memo, PropsWithChildren, useMemo} from 'react';
 
-import { FC, memo, PropsWithChildren, useMemo } from 'react';
+import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/dataDef';
 
-import { Skill as SkillType, SkillGroup as SkillGroupType } from '../../../data/dataDef';
-
-export const SkillGroup: FC<PropsWithChildren<{ skillGroup: SkillGroupType }>> = memo(({ skillGroup }) => {
-  const { name, skills, Icon } = skillGroup;
+export const SkillGroup: FC<PropsWithChildren<{skillGroup: SkillGroupType}>> = memo(({skillGroup}) => {
+  const {name, skills, Icon} = skillGroup;
   return (
     <div className="flex flex-col items-center justify-center text-center p-6 bg-white rounded-3xl shadow-lg border border-neutral-200 relative overflow-hidden">
       {Icon && (
@@ -26,7 +25,7 @@ export const SkillGroup: FC<PropsWithChildren<{ skillGroup: SkillGroupType }>> =
 
 SkillGroup.displayName = 'SkillGroup';
 
-const CircularProgress: FC<{ percentage: number; level: number; max: number }> = memo(({ percentage, level, max }) => {
+const CircularProgress: FC<{percentage: number; level: number; max: number}> = memo(({percentage, level, max}) => {
   const radius = 20;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
@@ -54,15 +53,15 @@ const CircularProgress: FC<{ percentage: number; level: number; max: number }> =
           strokeWidth="4"
         />
       </svg>
-      <span className="absolute text-xs font-bold text-neutral-700">{`${level} /${max}`}</span >
-    </div >
+      <span className="absolute text-xs font-bold text-neutral-700">{`${level} /${max}`}</span>
+    </div>
   );
 });
 
 CircularProgress.displayName = 'CircularProgress';
 
-export const Skill: FC<{ skill: SkillType }> = memo(({ skill }) => {
-  const { name, level, max = 10 } = skill;
+export const Skill: FC<{skill: SkillType}> = memo(({skill}) => {
+  const {name, level, max = 10} = skill;
   const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
 
   return (

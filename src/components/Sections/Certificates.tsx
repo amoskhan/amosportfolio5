@@ -1,14 +1,12 @@
-
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 import Image from 'next/image';
-import { FC, memo, useState } from 'react';
+import {FC, memo, useState} from 'react';
 
-import { certificates, SectionId } from '../../data/data';
+import {certificates, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
 
 const Certificates: FC = memo(() => {
   const [selectedCert, setSelectedCert] = useState<number | null>(null);
-
 
   return (
     <Section className="bg-neutral-100 w-full px-0" sectionId={SectionId.Certificates}>
@@ -27,10 +25,10 @@ const Certificates: FC = memo(() => {
               key={idx}
               onClick={() => setSelectedCert(idx)}
               role="button"
-              style={{ textAlign: 'center', wordBreak: 'break-word' }}
+              style={{textAlign: 'center', wordBreak: 'break-word'}}
               tabIndex={0}
-              whileHover={{ scale: 1.02, zIndex: 10 }}
-              whileTap={{ scale: 0.98 }}>
+              whileHover={{scale: 1.02, zIndex: 10}}
+              whileTap={{scale: 0.98}}>
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
                   alt={cert.title}
@@ -47,15 +45,15 @@ const Certificates: FC = memo(() => {
       </div>
       {selectedCert !== null && (
         <motion.div
-          animate={{ opacity: 1 }}
+          animate={{opacity: 1}}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
-          exit={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
+          exit={{opacity: 0}}
+          initial={{opacity: 0}}
           onClick={() => setSelectedCert(null)}>
           <motion.div
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{scale: 1, opacity: 1}}
             className="relative bg-white rounded-lg p-4 shadow-lg"
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{scale: 0.8, opacity: 0}}
             onClick={e => e.stopPropagation()}>
             <Image
               alt={certificates[selectedCert].title}
