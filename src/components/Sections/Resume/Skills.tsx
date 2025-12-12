@@ -1,9 +1,9 @@
-import { FC, memo, PropsWithChildren, useMemo } from 'react';
+import {FC, memo, PropsWithChildren, useMemo} from 'react';
 
-import { Skill as SkillType, SkillGroup as SkillGroupType } from '../../../data/dataDef';
+import {Skill as SkillType, SkillGroup as SkillGroupType} from '../../../data/dataDef';
 
-export const SkillGroup: FC<PropsWithChildren<{ skillGroup: SkillGroupType }>> = memo(({ skillGroup }) => {
-  const { name, skills, Icon } = skillGroup;
+export const SkillGroup: FC<PropsWithChildren<{ skillGroup: SkillGroupType }>> = memo(({skillGroup}) => {
+  const {name, skills, Icon} = skillGroup;
   return (
     <div className="flex flex-col gap-y-4 p-6 bg-white rounded-2xl shadow-sm border border-neutral-100 hover:shadow-md transition-shadow duration-300">
       <div className="flex items-center gap-x-3 mb-2">
@@ -21,12 +21,12 @@ export const SkillGroup: FC<PropsWithChildren<{ skillGroup: SkillGroupType }>> =
 
 SkillGroup.displayName = 'SkillGroup';
 
-const LinearProgressBar: FC<{ percentage: number; level: number; max: number }> = memo(({ percentage }) => {
+const LinearProgressBar: FC<{ percentage: number; level: number; max: number }> = memo(({percentage}) => {
   return (
     <div className="w-full h-2.5 bg-neutral-200 rounded-full overflow-hidden">
       <div
         className="h-full bg-blue-400 rounded-full transition-all duration-1000 ease-out"
-        style={{ width: `${percentage}%` }}
+        style={{width: `${percentage}%`}}
       />
     </div>
   );
@@ -34,8 +34,8 @@ const LinearProgressBar: FC<{ percentage: number; level: number; max: number }> 
 
 LinearProgressBar.displayName = 'LinearProgressBar';
 
-export const Skill: FC<{ skill: SkillType }> = memo(({ skill }) => {
-  const { name, level, max = 10 } = skill;
+export const Skill: FC<{ skill: SkillType }> = memo(({skill}) => {
+  const {name, level, max = 10} = skill;
   const percentage = useMemo(() => Math.round((level / max) * 100), [level, max]);
 
   return (

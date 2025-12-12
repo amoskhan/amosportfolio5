@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { FC, memo, useCallback, useState } from 'react';
+import {FC, memo, useCallback, useState} from 'react';
 
-import { blogPosts, SectionId } from '../../data/data';
-import { BlogPost } from '../../data/dataDef';
+import {blogPosts, SectionId} from '../../data/data';
+import {BlogPost} from '../../data/dataDef';
 import Section from '../Layout/Section';
 import BlogModal from './BlogModal';
 
@@ -58,7 +58,7 @@ const Blog: FC = memo(() => {
                   <div className="flex flex-col flex-1 p-6">
                     <div className="flex items-center justify-between mb-3">
                       <span className="text-xs font-bold uppercase tracking-wider text-blue-400">
-                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                        {new Date(post.date).toLocaleDateString('en-US', {month: 'short', year: 'numeric'})}
                       </span>
                     </div>
 

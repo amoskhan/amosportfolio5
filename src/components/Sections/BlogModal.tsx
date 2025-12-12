@@ -1,9 +1,9 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {Dialog, Transition} from '@headlessui/react';
+import {XMarkIcon} from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { FC, Fragment, useEffect, useState } from 'react';
+import {FC, Fragment, useEffect, useState} from 'react';
 
-import { BlogPost } from '../../data/dataDef';
+import {BlogPost} from '../../data/dataDef';
 
 interface BlogModalProps {
     post: BlogPost | null;
@@ -11,7 +11,7 @@ interface BlogModalProps {
     onClose: () => void;
 }
 
-const BlogModal: FC<BlogModalProps> = ({ post, isOpen, onClose }) => {
+const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
     // Reset lightbox state when modal closes or post changes
@@ -87,7 +87,7 @@ const BlogModal: FC<BlogModalProps> = ({ post, isOpen, onClose }) => {
                                     <div className="relative p-6 sm:p-10 -mt-10 z-20">
                                         <div className="mb-6">
                                             <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full">
-                                                {new Date(post.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                                {new Date(post.date).toLocaleDateString('en-US', {day: 'numeric', month: 'long', year: 'numeric'})}
                                             </span>
                                             <Dialog.Title as="h3" className="text-3xl font-bold leading-tight text-white mb-2">
                                                 {post.title}
@@ -100,7 +100,7 @@ const BlogModal: FC<BlogModalProps> = ({ post, isOpen, onClose }) => {
                                         <div className="prose prose-invert prose-lg max-w-none text-neutral-300">
                                             {post.content.split(/<split para>|\n/).map((paragraph, index) => (
                                                 paragraph.trim() && (
-                                                    <p key={index} className="mb-4 leading-relaxed">
+                                                    <p className="mb-4 leading-relaxed" key={index}>
                                                         {paragraph.trim()}
                                                     </p>
                                                 )
