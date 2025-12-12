@@ -3,9 +3,7 @@ import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { isApple, isMobile } from '../../config';
 import { SectionId, testimonial } from '../../data/data';
-import type { Testimonial } from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
-import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
 
@@ -71,7 +69,8 @@ const Testimonials: FC = memo(() => {
                   <img
                     alt={activeTestimonial.name}
                     className="h-full w-full object-cover"
-                    src={typeof activeTestimonial.image === 'string' ? activeTestimonial.image : activeTestimonial.image.src}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    src={typeof activeTestimonial.image === 'string' ? activeTestimonial.image : (activeTestimonial.image as any).src}
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-neutral-800">
