@@ -1,69 +1,31 @@
 # Amos Khan - Personal Portfolio
 
-## About Me
+## Welcome to My Portfolio
 
-I'm a Singapore-based **Sports Science & Management Graduate**, currently working at the **Ministry of Education (MOE)** as a **Physical Education Teacher** trainee. I have a strong passion for education, data research, and coding.
+Hello! I'm Amos Khan, a **Sports Science & Management Graduate** based in Singapore. Currently, I'm nurturing the next generation as a **Physical Education Teacher** trainee at the Ministry of Education (MOE). My diverse passions span education, rigorous data research, and the dynamic world of coding.
 
-This portfolio showcases my journey, skills, and projects, ranging from sports science research to web development.
+This portfolio is a curated showcase of my journey, highlighting my skills and projects. Here, you'll find a blend of my interests, from in-depth sports science research to practical web development applications.
 
-## Features
+## Portfolio Highlights
 
--   **Responsive Design**: Fully optimized for mobile and desktop.
--   **Modern Tech Stack**: Built with React, Next.js, TypeScript, and Tailwind CSS.
--   **Dynamic Content**: Data-driven sections for easy updates.
--   **Interactive Elements**: Smooth animations and transitions.
+*   **Responsive & Intuitive Design**: Enjoy a seamless experience across all devices, from desktop to mobile.
+*   **Modern Web Technologies**: Built with a robust and contemporary stack for performance and scalability.
+*   **Dynamic Content Management**: Sections are data-driven, allowing for efficient updates and content flexibility.
+*   **Engaging User Experience**: Features smooth animations and interactive elements to bring the content to life.
 
-## Tech Stack
+## Technologies Utilized
 
--   [React](https://reactjs.org/)
--   [Next.js](https://nextjs.org/)
--   [TypeScript](https://www.typescriptlang.org/)
--   [Tailwind CSS](https://tailwindcss.com/)
+*   [React](https://reactjs.org/)
+*   [Next.js](https://nextjs.org/)
+*   [TypeScript](https://www.typescriptlang.org/)
+*   [Tailwind CSS](https://tailwindcss.com/)
 
-## Getting Started
+## Let's Connect
 
-To run this project locally, follow these steps:
+I'm always open to discussing new ideas, collaborations, or opportunities. Feel free to reach out!
 
-### Prerequisites
+*   **Email**: [khanamos1@gmail.com](mailto:khanamos1@gmail.com)
+*   **LinkedIn**: [Amos Khan](https://www.linkedin.com/in/AmosKhan)
+*   **GitHub**: [AmosKhan](https://github.com/AmosKhan)
+*   **Instagram**: [@afro_jacko](https://www.instagram.com/afro_jacko/)
 
-Ensure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed.
-
-### Installation
-
-1.  Clone the repository.
-2.  Navigate to the project directory.
-3.  Install dependencies:
-    ```bash
-    yarn install
-    ```
-
-### Running Locally
-
-Start the development server:
-
-```bash
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### Building for Production
-
-To build the application for production:
-
-```bash
-yarn build
-```
-
-## Contact
-
-Feel free to reach out!
-
--   **Email**: [khanamos1@gmail.com](mailto:khanamos1@gmail.com)
--   **LinkedIn**: [Amos Khan](https://www.linkedin.com/in/AmosKhan)
--   **GitHub**: [AmosKhan](https://github.com/AmosKhan)
--   **Instagram**: [@afro_jacko](https://www.instagram.com/afro_jacko/)
-
----
-
-*Based on the [React Resume Template](https://github.com/tbakerx/react-resume-template).*
