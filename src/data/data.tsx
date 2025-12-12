@@ -46,6 +46,7 @@ import portfolioImage18 from '../images/portfolio/portfolio-18.jpg';
 import portfolioImage19 from '../images/portfolio/portfolio-19.jpg';
 import portfolioImage20 from '../images/portfolio/portfolio-20.jpg';
 import portfolioImage21 from '../images/portfolio/portfolio-21.jpg';
+import portfolioImage22 from '../images/portfolio/portfolio-22.jpg';
 import tonypng from '../images/portfolio/tonypng.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
@@ -89,38 +90,11 @@ export const SectionId = {
 
 export type SectionId = (typeof SectionId)[keyof typeof SectionId];
 
-// /**
-//  * Blog posts
-//  */
-// export const blogPosts: BlogPost[] = [
-//   {
-//     id: '1',
-//     title: 'Why am I doing this website?',
-//     date: '2025-07-02',
-//     content: 'Well, to answer this question, it all begins with me being an IT monitor back in primary school. Being deeply involved in technology was always something I was passionate in. With the rise of ChatGPT and OpenAI models, coding and generating websites has became super convenient and efficient. A simple prompt to the GPT allows me to identify coding mistakes and debug errors. Having graduated with just a Sports Science Degree from NTU, I truly believe that if you are interested in something, do not feel afraid to try it. Sure, CS graduates might need stellar grades to even pick up coding skills, but dont let your degree or path restrict you from what you want to achieve. Initially, my goal was to create a functional website to blog and showcase who I am in the internet without paying any $$. Which I can say for now, I have achieved it.',
-//     author: 'Amos Khan',
-//   },
-//   {
-//     id: '2',
-//     title: 'My experience in DxD Hub 2024',
-//     date: '2024-07-02',
-//     content: 'Having completed my internship in DxD Hub (National Platform under A*STAR), I have built strong connections within the medtech ecosystem and collaborating partners. It was a true honor to have experienced DxD Hubs 10th Year Anniversary event, having experience this event showed the milestones of what the company has accomplished. Me and my colleagues came up with a backstory and strong   ',
-//     author: 'Amos Khan',
-//   },
-//   {
-//     id: '3',
-//     title: 'Second Blog Post',
-//     date: '2023-10-02',
-//     content: 'This is the content of the second blog post.',
-//     author: 'Author Name',
-//   },
-// ];
-
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: 'Why am I doing this website?🤔',
-    date: '2025-07-02',
+    date: '2024-05-02',
     content:
       'I started getting interested in technology back in primary school when I was an IT monitor. I have always enjoyed working with tech, and now with tools like ChatGPT and OpenAI, building websites and coding has become much easier. Whenever I run into coding mistakes, a quick prompt to GPT helps me figure things out. Even though I graduated with a Sports Science degree from NTU, I think anyone who is curious should give coding a try. You do not need to be a computer science graduate or have perfect grades to learn new skills. My main goal was to create a simple website to share my thoughts and experiences online without spending any money, and I am happy that I managed to do just that.',
     author: 'Amos Khan',
@@ -139,7 +113,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 3,
     title: '📢 Final Year Project Presentation 2024 - Exercise Physiology',
-    date: '2025-18-02',
+    date: '2024-07-18',
     content:
       'Research Topic: Acute Effects of Cloth Mask on Exercise Performance between Genders 👨‍🔬After more than 100 hours dedicated to data collection, meticulous data cleaning and report writing, I have completed my FYP report. This module was one of the most demanding yet rewarding parts of my journey in SSM. It gave me invaluable hands-on experience with physiological measurement tools (Gas Exchange Analyser, YSI 2900, Dual X-Ray absorptiometry etc...) and a chance to explore how mask impact exercise performance. ',
     author: 'Amos Khan',
@@ -148,7 +122,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 4,
     title: 'HTX Internship',
-    date: '2025-22-07',
+    date: '2025-07-22',
     content:
       'During my final-year internship, I had the rewarding opportunity to work closely with scientists and engineers from the Human Factors and Simulation department at HTX. This experience was truly eye-opening, as I was able to apply the practical knowledge I gained in school to real-world experiments. Our work focused on addressing real-life challenges faced by Home Team Officers, including conducting experiments related to Thermal Physiology and Heat Acclimatization while ensuring safe conditions for officers in the field. This hands-on experience not only deepened my understanding of the subject but also highlighted the importance of research in supporting those who serve on the front lines.',
     author: 'Amos Khan',
@@ -235,12 +209,12 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
-    {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
+    { label: 'Location', text: 'Singapore', Icon: MapIcon },
+    { label: 'Age', text: '25', Icon: CalendarIcon },
+    { label: 'Nationality', text: 'Singaporean', Icon: FlagIcon },
+    { label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon },
+    { label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon },
+    { label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon },
   ],
 };
 
@@ -327,8 +301,14 @@ export const skills: SkillGroup[] = [
  */
 export const portfolioItems: PortfolioItem[] = [
   {
+    title: 'SG PE Syllabus Bot',
+    description: 'The SG PE Syllabus Bot is an AI assistant designed to bridge the gap between policy and practice. It combines Computer Vision with LLMs to help educators navigate the 2024 PE Syllabus and analyze student performance in real-time.',
+    url: 'https://sg-pe-syllabus-bot.vercel.app/',
+    image: portfolioImage22,
+  },
+  {
     title:
-      'Acute Effects of Cloth Mask on Physiological Indices (Lactate Threshold, VO2, VO2max, Rate of Perceived Exertion)',
+      'Acute Effects of Cloth Mask on Physiological Indices',
     description:
       'Purpose: Examine the effects of cloth mask conditions on exercise performance between bothgenders in physiological indices such as Lactate Threshold (LT), Oxygen Consumption(VO2), Maximal Oxygen Consumption (VO2max) and Rate of Perceived Exhaustion (RPE).',
     url: 'https://drive.google.com/file/d/19sb1y6dvbFv2JfBYW7uYjDiX7-FkL4eu/view?usp=sharing',
@@ -402,7 +382,7 @@ export const education: TimelineItem[] = [
         Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
         (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
         <br />
-        <a href="https://hdl.handle.net/10356/182647" style={{color: '#2563eb'}} target="_blank">
+        <a href="https://hdl.handle.net/10356/182647" style={{ color: '#2563eb' }} target="_blank">
           https://hdl.handle.net/10356/182647
         </a>
       </p>
@@ -621,7 +601,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/' },
 ];

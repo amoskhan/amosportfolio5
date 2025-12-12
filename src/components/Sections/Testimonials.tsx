@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import {FC, memo, UIEventHandler, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 
-import {isApple, isMobile} from '../../config';
-import {SectionId, testimonial} from '../../data/data';
-import type {Testimonial} from '../../data/dataDef';
+import { isApple, isMobile } from '../../config';
+import { SectionId, testimonial } from '../../data/data';
+import type { Testimonial } from '../../data/dataDef';
 import useInterval from '../../hooks/useInterval';
 import useWindow from '../../hooks/useWindow';
 import QuoteIcon from '../Icon/QuoteIcon';
@@ -11,135 +11,113 @@ import Section from '../Layout/Section';
 
 const Testimonials: FC = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [scrollValue, setScrollValue] = useState(0);
   const [parallaxEnabled, setParallaxEnabled] = useState(false);
-
-  const itemWidth = useRef(0);
-  const scrollContainer = useRef<HTMLDivElement>(null);
-
-  const {width} = useWindow();
-
-  const {imageSrc, testimonials} = testimonial;
-
-  const resolveSrc = useMemo(() => {
-    if (!imageSrc) return undefined;
-    return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
-  }, [imageSrc]);
 
   // Mobile iOS doesn't allow background-fixed elements
   useEffect(() => {
     setParallaxEnabled(!(isMobile && isApple));
   }, []);
 
-  useEffect(() => {
-    itemWidth.current = scrollContainer.current ? scrollContainer.current.offsetWidth : 0;
-  }, [width]);
+  const { imageSrc, testimonials } = testimonial;
 
-  useEffect(() => {
-    if (scrollContainer.current) {
-      const newIndex = Math.round(scrollContainer.current.scrollLeft / itemWidth.current);
-      setActiveIndex(newIndex);
-    }
-  }, [itemWidth, scrollValue]);
+  const resolveSrc = useMemo(() => {
+    if (!imageSrc) return undefined;
+    return typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
+  }, [imageSrc]);
 
-  const setTestimonial = useCallback(
-    (index: number) => () => {
-      if (scrollContainer !== null && scrollContainer.current !== null) {
-        scrollContainer.current.scrollLeft = itemWidth.current * index;
-      }
-    },
-    [],
-  );
   const next = useCallback(() => {
-    if (activeIndex + 1 === testimonials.length) {
-      setTestimonial(0)();
-    } else {
-      setTestimonial(activeIndex + 1)();
-    }
-  }, [activeIndex, setTestimonial, testimonials.length]);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
 
-  const handleScroll = useCallback<UIEventHandler<HTMLDivElement>>(event => {
-    setScrollValue(event.currentTarget.scrollLeft);
+  const setIndex = useCallback((index: number) => {
+    setActiveIndex(index);
   }, []);
 
-  useInterval(next, 10000);
+  useInterval(next, 6000); // 6 seconds per slide
 
   // If no testimonials, don't render the section
   if (!testimonials.length) {
     return null;
   }
 
+  const activeTestimonial = testimonials[activeIndex];
+
   return (
     <Section noPadding sectionId={SectionId.Testimonials}>
       <div
         className={classNames(
-          'flex w-full items-center justify-center bg-cover bg-center px-4 py-16 md:py-24 lg:px-8',
+          'relative flex min-h-[500px] w-full items-center justify-center bg-cover bg-center py-16 md:py-24',
           parallaxEnabled && 'bg-fixed',
-          {'bg-neutral-700': !imageSrc},
+          { 'bg-neutral-800': !imageSrc }
         )}
-        style={imageSrc ? {backgroundImage: `url(${resolveSrc}`} : undefined}>
-        <div className="z-10 w-full max-w-screen-md px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/60 p-6 shadow-lg">
-            <div
-              className="no-scrollbar flex w-full touch-pan-x snap-x snap-mandatory gap-x-6 overflow-x-auto scroll-smooth"
-              onScroll={handleScroll}
-              ref={scrollContainer}>
-              {testimonials.map((testimonial, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <Testimonial isActive={isActive} key={`${testimonial.name}-${index}`} testimonial={testimonial} />
-                );
-              })}
+        style={imageSrc ? { backgroundImage: `url(${resolveSrc})` } : undefined}
+      >
+        {/* Dark Overlay for readability */}
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="z-10 w-full max-w-4xl px-4 md:px-6">
+          {/* Glass Card */}
+          <div className="relative flex flex-col items-center gap-y-8 rounded-3xl bg-neutral-900/40 p-8 text-center shadow-2xl backdrop-blur-md border border-white/10 md:p-14 transition-all duration-500 hover:bg-neutral-900/50 hover:border-blue-500/30">
+
+            {/* Quote Icon */}
+            <QuoteIcon className="absolute -top-6 -left-4 h-12 w-12 text-blue-500/80 md:-top-8 md:-left-8 md:h-16 md:w-16 rotate-180" />
+            <QuoteIcon className="absolute -bottom-6 -right-4 h-12 w-12 text-blue-500/80 md:-bottom-8 md:-right-8 md:h-16 md:w-16" />
+
+            {/* Avatar with Glow */}
+            <div className="relative shrink-0">
+              <div className="absolute -inset-4 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
+              <div className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-blue-500 shadow-xl md:h-32 md:w-32">
+                {activeTestimonial.image ? (
+                  <img
+                    alt={activeTestimonial.name}
+                    className="h-full w-full object-cover"
+                    src={typeof activeTestimonial.image === 'string' ? activeTestimonial.image : activeTestimonial.image.src}
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center bg-neutral-800">
+                    <QuoteIcon className="h-10 w-10 text-white/50" />
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="flex gap-x-4">
-              {[...Array(testimonials.length)].map((_, index) => {
+
+            {/* Content - with Fade Animation Key */}
+            <div className="flex flex-col items-center gap-y-6" key={activeIndex}>
+              <blockquote className="max-w-2xl text-lg font-light italic leading-relaxed text-neutral-200 md:text-2xl animate-fade-in-up">
+                "{activeTestimonial.text}"
+              </blockquote>
+
+              <div className="flex flex-col items-center gap-y-1 animate-fade-in-up delay-100">
+                <cite className="text-xl font-bold not-italic text-white md:text-2xl tracking-wide">
+                  {activeTestimonial.name}
+                </cite>
+                {/* Optional: Add title/company if available in data, otherwise just stick to name */}
+              </div>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="mt-4 flex gap-x-3">
+              {testimonials.map((_, index) => {
                 const isActive = index === activeIndex;
                 return (
                   <button
                     className={classNames(
-                      'h-3 w-3 rounded-full bg-gray-300 transition-all duration-500 sm:h-4 sm:w-4',
-                      isActive ? 'scale-100 opacity-100' : 'scale-75 opacity-60',
+                      'h-2.5 rounded-full transition-all duration-300 focus:outline-none',
+                      isActive ? 'w-8 bg-blue-500' : 'w-2.5 bg-neutral-500 hover:bg-neutral-400'
                     )}
-                    disabled={isActive}
-                    key={`select-button-${index}`}
-                    onClick={setTestimonial(index)}></button>
+                    key={`dot-${index}`}
+                    onClick={() => setIndex(index)}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
                 );
               })}
             </div>
+
           </div>
         </div>
       </div>
     </Section>
   );
 });
-
-type TestimonialImage = string | {src: string};
-
-const Testimonial: FC<{testimonial: Omit<Testimonial, 'image'> & {image?: TestimonialImage}; isActive: boolean}> = memo(
-  ({testimonial: {text, name, image}, isActive}) => (
-    <div
-      className={classNames(
-        'flex w-full shrink-0 snap-start snap-always flex-col items-start gap-y-4 p-2 transition-opacity duration-1000 sm:flex-row sm:gap-x-6',
-        isActive ? 'opacity-100' : 'opacity-0',
-      )}>
-      {image ? (
-        <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
-          <QuoteIcon className="absolute -left-2 -top-2 h-4 w-4 stroke-black text-white" />
-          <img
-            alt={name}
-            className="h-full w-full rounded-full"
-            src={typeof image === 'string' ? image : (image as {src: string}).src}
-          />
-        </div>
-      ) : (
-        <QuoteIcon className="h-5 w-5 shrink-0 text-white sm:h-8 sm:w-8" />
-      )}
-      <div className="flex flex-col gap-y-4">
-        <p className="prose prose-sm font-medium italic text-white sm:prose-base">{text}</p>
-        <p className="text-xs italic text-white sm:text-sm md:text-base lg:text-lg">-- {name}</p>
-      </div>
-    </div>
-  ),
-);
 
 export default Testimonials;
