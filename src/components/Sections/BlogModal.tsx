@@ -1,9 +1,9 @@
-import {Dialog, Transition} from '@headlessui/react';
-import {XMarkIcon} from '@heroicons/react/24/outline';
+import { Dialog, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import {FC, Fragment, useEffect, useState} from 'react';
+import { FC, Fragment, memo, useCallback, useEffect, useState } from 'react';
 
-import {BlogPost} from '../../data/dataDef';
+import { BlogPost } from '../../data/dataDef';
 
 interface BlogModalProps {
     post: BlogPost | null;
@@ -11,7 +11,7 @@ interface BlogModalProps {
     onClose: () => void;
 }
 
-const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
+const BlogModal: FC<BlogModalProps> = memo(({ post, isOpen, onClose }) => {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
     // Reset lightbox state when modal closes or post changes
@@ -20,6 +20,10 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
             setIsLightboxOpen(false);
         }
     }, [isOpen, post]);
+
+    const handleLightboxClose = useCallback(() => {
+        setIsLightboxOpen(false);
+    }, []);
 
     if (!post) return null;
 
@@ -87,7 +91,7 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
                                     <div className="relative p-6 sm:p-10 -mt-10 z-20">
                                         <div className="mb-6">
                                             <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full">
-                                                {new Date(post.date).toLocaleDateString('en-US', {day: 'numeric', month: 'long', year: 'numeric'})}
+                                                {new Date(post.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })}
                                             </span>
                                             <Dialog.Title as="h3" className="text-3xl font-bold leading-tight text-white mb-2">
                                                 {post.title}
@@ -116,7 +120,7 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
 
             {/* Lightbox - Nested Dialog for correct Portalling */}
             <Transition appear as={Fragment} show={isLightboxOpen}>
-                <Dialog as="div" className="relative z-[60]" onClose={() => setIsLightboxOpen(false)}>
+                <Dialog as="div" className="relative z-[60]" onClose={handleLightboxClose}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -132,7 +136,7 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
                     <div className="fixed top-6 right-6 z-[100]">
                         <button
                             className="rounded-full bg-black/50 p-3 text-white hover:bg-blue-500 transition-colors focus:outline-none backdrop-blur-md border border-white/10"
-                            onClick={() => setIsLightboxOpen(false)}
+                            onClick={handleLightboxClose}
                         >
                             <XMarkIcon className="h-8 w-8" />
                         </button>
@@ -152,7 +156,7 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
                                     {post.image && (
                                         <div
                                             className="relative w-full h-[80vh] rounded-lg overflow-hidden cursor-zoom-out"
-                                            onClick={() => setIsLightboxOpen(false)}
+                                            onClick={handleLightboxClose}
                                         >
                                             <Image
                                                 alt={post.title}
@@ -170,6 +174,6 @@ const BlogModal: FC<BlogModalProps> = ({post, isOpen, onClose}) => {
             </Transition>
         </>
     );
-};
+});
 
 export default BlogModal;
