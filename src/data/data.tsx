@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Why am I doing this website?🤔',
     date: '2024-05-02',
     content:
-      'I started getting interested in technology back in primary school when I was an IT monitor. I have always enjoyed working with tech, and now with tools like ChatGPT and OpenAI, building websites and coding has become much easier. Whenever I run into coding mistakes, a quick prompt to GPT helps me figure things out. Even though I graduated with a Sports Science degree from NTU, I think anyone who is curious should give coding a try. You do not need to be a computer science graduate or have perfect grades to learn new skills. My main goal was to create a simple website to share my thoughts and experiences online without spending any money, and I am happy that I managed to do just that.',
+      "I've been a tech geek since my primary school IT monitor days. To be real, tools like ChatGPT have made coding way less intimidating—whenever I'm stuck, I just ask for help and keep moving. I didn't study Computer Science; I actually have a Sports Science degree from NTU. But I think if you're curious, you should just go for it. You don't need a specific degree or straight A's to build something cool. My goal was just to have a free website to share my portfolio, and I'm honestly just happy I got it working.",
     author: 'Amos Khan',
     image: portfolioImage1,
     collageImages: [portfolioImage12, portfolioImage13, portfolioImage14],
@@ -209,12 +209,12 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
-    {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
+    { label: 'Location', text: 'Singapore', Icon: MapIcon },
+    { label: 'Age', text: '25', Icon: CalendarIcon },
+    { label: 'Nationality', text: 'Singaporean', Icon: FlagIcon },
+    { label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon },
+    { label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon },
+    { label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon },
   ],
 };
 
@@ -367,7 +367,7 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         {' '}
-        Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of
+        • Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of
         Education, Singapore.
       </p>
     ),
@@ -379,12 +379,13 @@ export const education: TimelineItem[] = [
     title: 'BSc Sports Science & Management',
     content: (
       <p>
-        Final Year Project (Exercise Physiology): Acute Effects of Cloth Mask on Physiological Indices between Genders
+        • Final Year Project (Exercise Physiology):{' '}
+        <a href="https://hdl.handle.net/10356/182647" style={{ color: '#2563eb' }} target="_blank" rel="noreferrer">
+          Acute Effects of Cloth Mask on Physiological Indices between Genders
+        </a>{' '}
         (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
         <br />
-        <a href="https://hdl.handle.net/10356/182647" style={{color: '#2563eb'}} target="_blank">
-          https://hdl.handle.net/10356/182647
-        </a>
+        • Teaching Award Scholarship Recipient
       </p>
     ),
     image: portfolioImage20,
@@ -395,8 +396,8 @@ export const education: TimelineItem[] = [
     title: 'Sport and Exercise Science, Sports Science',
     content: (
       <p>
-        Student exchange at Loughborough University Y3S2.
-        <br /> Academic Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology in
+        •Student exchange at Loughborough University Y3S2.
+        <br /> • Academic Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology in
         Competitive Sport, Psychological Disorders in Society
       </p>
     ),
@@ -408,10 +409,10 @@ export const education: TimelineItem[] = [
     title: 'Cambridge A - Levels',
     content: (
       <p>
-        Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics <br />
+        • Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics <br />
         2H1 subjects including General Paper, Economics.
         <br />
-        Badminton Team Vice Captain.
+        • Badminton Team Vice Captain.
       </p>
     ),
     image: portfolioImage18,
@@ -601,7 +602,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
+  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan' },
+  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan' },
+  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/' },
 ];
