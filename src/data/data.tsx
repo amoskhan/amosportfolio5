@@ -209,12 +209,12 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
   aboutItems: [
-    { label: 'Location', text: 'Singapore', Icon: MapIcon },
-    { label: 'Age', text: '25', Icon: CalendarIcon },
-    { label: 'Nationality', text: 'Singaporean', Icon: FlagIcon },
-    { label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon },
-    { label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon },
-    { label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon },
+    {label: 'Location', text: 'Singapore', Icon: MapIcon},
+    {label: 'Age', text: '25', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
+    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
+    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
   ],
 };
 
@@ -302,13 +302,13 @@ export const skills: SkillGroup[] = [
 export const portfolioItems: PortfolioItem[] = [
   {
     title: 'SG PE Syllabus Bot',
-    description: 'The SG PE Syllabus Bot is an AI assistant designed to bridge the gap between policy and practice. It combines Computer Vision with LLMs to help educators navigate the 2024 PE Syllabus and analyze student performance in real-time.',
+    description:
+      'The SG PE Syllabus Bot is an AI assistant designed to bridge the gap between policy and practice. It combines Computer Vision with LLMs to help educators navigate the 2024 PE Syllabus and analyze student performance in real-time.',
     url: 'https://sg-pe-syllabus-bot.vercel.app/',
     image: portfolioImage22,
   },
   {
-    title:
-      'Acute Effects of Cloth Mask on Physiological Indices',
+    title: 'Acute Effects of Cloth Mask on Physiological Indices',
     description:
       'Purpose: Examine the effects of cloth mask conditions on exercise performance between bothgenders in physiological indices such as Lactate Threshold (LT), Oxygen Consumption(VO2), Maximal Oxygen Consumption (VO2max) and Rate of Perceived Exhaustion (RPE).',
     url: 'https://drive.google.com/file/d/19sb1y6dvbFv2JfBYW7uYjDiX7-FkL4eu/view?usp=sharing',
@@ -380,12 +380,11 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         • Final Year Project (Exercise Physiology):{' '}
-        <a href="https://hdl.handle.net/10356/182647" style={{ color: '#2563eb' }} target="_blank" rel="noreferrer">
+        <a href="https://hdl.handle.net/10356/182647" rel="noreferrer" style={{color: '#2563eb'}} target="_blank">
           Acute Effects of Cloth Mask on Physiological Indices between Genders
         </a>{' '}
         (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
-        <br />
-        • Teaching Award Scholarship Recipient
+        <br />• Teaching Award Scholarship Recipient
       </p>
     ),
     image: portfolioImage20,
@@ -397,8 +396,8 @@ export const education: TimelineItem[] = [
     content: (
       <p>
         •Student exchange at Loughborough University Y3S2.
-        <br /> • Academic Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology in
-        Competitive Sport, Psychological Disorders in Society
+        <br /> • Academic Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology
+        in Competitive Sport, Psychological Disorders in Society
       </p>
     ),
     image: portfolioImage19,
@@ -411,8 +410,7 @@ export const education: TimelineItem[] = [
       <p>
         • Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics <br />
         2H1 subjects including General Paper, Economics.
-        <br />
-        • Badminton Team Vice Captain.
+        <br />• Badminton Team Vice Captain.
       </p>
     ),
     image: portfolioImage18,
@@ -602,7 +600,7 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  { label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan' },
-  { label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan' },
-  { label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/' },
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
 ];

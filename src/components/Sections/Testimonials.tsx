@@ -24,7 +24,7 @@ const Testimonials: FC = memo(() => {
   }, [imageSrc]);
 
   const next = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    setActiveIndex(prev => (prev + 1) % testimonials.length);
   }, [testimonials.length]);
 
   const setIndex = useCallback((index: number) => {
@@ -46,17 +46,15 @@ const Testimonials: FC = memo(() => {
         className={classNames(
           'relative flex min-h-[500px] w-full items-center justify-center bg-cover bg-center py-16 md:py-24',
           parallaxEnabled && 'bg-fixed',
-          {'bg-neutral-800': !imageSrc}
+          {'bg-neutral-800': !imageSrc},
         )}
-        style={imageSrc ? {backgroundImage: `url(${resolveSrc})`} : undefined}
-      >
+        style={imageSrc ? {backgroundImage: `url(${resolveSrc})`} : undefined}>
         {/* Dark Overlay for readability */}
         <div className="absolute inset-0 bg-black/70" />
 
         <div className="z-10 w-full max-w-4xl px-4 md:px-6">
           {/* Glass Card */}
           <div className="relative flex flex-col items-center gap-y-8 rounded-3xl bg-neutral-900/40 p-8 text-center shadow-2xl backdrop-blur-md border border-white/10 md:p-14 transition-all duration-500 hover:bg-neutral-900/50 hover:border-blue-500/30">
-
             {/* Quote Icon */}
             <QuoteIcon className="absolute -top-6 -left-4 h-12 w-12 text-blue-500/80 md:-top-8 md:-left-8 md:h-16 md:w-16 rotate-180" />
             <QuoteIcon className="absolute -bottom-6 -right-4 h-12 w-12 text-blue-500/80 md:-bottom-8 md:-right-8 md:h-16 md:w-16" />
@@ -69,8 +67,11 @@ const Testimonials: FC = memo(() => {
                   <img
                     alt={activeTestimonial.name}
                     className="h-full w-full object-cover"
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    src={typeof activeTestimonial.image === 'string' ? activeTestimonial.image : (activeTestimonial.image as any).src}
+                    src={
+                      typeof activeTestimonial.image === 'string'
+                        ? activeTestimonial.image
+                        : activeTestimonial.image?.src
+                    }
                   />
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-neutral-800">
@@ -103,7 +104,7 @@ const Testimonials: FC = memo(() => {
                     aria-label={`Go to testimonial ${index + 1}`}
                     className={classNames(
                       'h-2.5 rounded-full transition-all duration-300 focus:outline-none',
-                      isActive ? 'w-8 bg-blue-500' : 'w-2.5 bg-neutral-500 hover:bg-neutral-400'
+                      isActive ? 'w-8 bg-blue-500' : 'w-2.5 bg-neutral-500 hover:bg-neutral-400',
                     )}
                     key={`dot-${index}`}
                     onClick={() => setIndex(index)}
@@ -111,7 +112,6 @@ const Testimonials: FC = memo(() => {
                 );
               })}
             </div>
-
           </div>
         </div>
       </div>

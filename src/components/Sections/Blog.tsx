@@ -38,8 +38,7 @@ const Blog: FC = memo(() => {
                 <div
                   className="group flex flex-col rounded-2xl bg-neutral-800 overflow-hidden shadow-lg border border-neutral-700/50 hover:border-blue-500/50 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                   key={idx}
-                  onClick={() => handleOpenModal(post)}
-                >
+                  onClick={() => handleOpenModal(post)}>
                   {/* Image Container */}
                   {post.image && (
                     <div className="relative h-56 w-full overflow-hidden">
@@ -66,9 +65,7 @@ const Blog: FC = memo(() => {
                       {post.title}
                     </h3>
 
-                    <p className="text-neutral-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                      {post.content}
-                    </p>
+                    <p className="text-neutral-400 text-sm leading-relaxed mb-6 line-clamp-3">{post.content}</p>
 
                     <div className="mt-auto flex items-center gap-x-2 pt-4 border-t border-neutral-700">
                       <span className="text-xs font-medium text-neutral-500">
