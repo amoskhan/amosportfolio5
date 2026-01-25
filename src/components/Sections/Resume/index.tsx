@@ -1,11 +1,11 @@
-import { FC, memo, useCallback, useRef, useState } from 'react';
+import {FC, memo, useCallback, useRef, useState} from 'react';
 
-import { education, experience, SectionId, skills } from '../../../data/data';
+import {education, experience, SectionId, skills} from '../../../data/data';
 import useDetectOutsideClick from '../../../hooks/useDetectOutsideClick';
 import Section from '../../Layout/Section';
 import ScrollReveal from '../../ScrollReveal';
 import ResumeSection from './ResumeSection';
-import { SkillGroup } from './Skills';
+import {SkillGroup} from './Skills';
 import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {

@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useState, ChangeEvent, FormEvent } from 'react';
+import {ChangeEvent, FC, FormEvent, memo, useCallback, useState} from 'react';
 
 const ContactForm: FC = memo(() => {
   const [formData, setFormData] = useState({
@@ -10,36 +10,39 @@ const ContactForm: FC = memo(() => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const {name, value} = event.target;
+    setFormData(prev => ({...prev, [name]: value}));
   }, []);
 
-  const onSubmit = useCallback(async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true);
+  const onSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      setIsSubmitting(true);
 
-    try {
-      const response = await fetch('https://formspree.io/f/xykeaaqj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      try {
+        const response = await fetch('https://formspree.io/f/xykeaaqj', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-      if (response.ok) {
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        alert('Something went wrong. Please try again.');
+        if (response.ok) {
+          setIsSuccess(true);
+          setFormData({name: '', email: '', message: ''});
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Error sending message. Please try again later.');
+        console.error(error);
+      } finally {
+        setIsSubmitting(false);
       }
-    } catch (error) {
-      alert('Error sending message. Please try again later.');
-      console.error(error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  }, [formData]);
+    },
+    [formData],
+  );
 
   if (isSuccess) {
     return (
@@ -47,13 +50,12 @@ const ContactForm: FC = memo(() => {
         <h3 className="text-2xl font-bold text-green-500 mb-2">Message Sent!</h3>
         <p className="text-neutral-300">Thank you for reaching out. I'll get back to you shortly.</p>
         <button
-          onClick={() => setIsSuccess(false)}
           className="mt-6 text-sm font-medium text-green-400 hover:text-green-300 underline"
-        >
+          onClick={() => setIsSuccess(false)}>
           Send another message
         </button>
       </div>
-    )
+    );
   }
 
   const inputClasses =

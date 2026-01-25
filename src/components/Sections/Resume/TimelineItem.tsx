@@ -1,8 +1,8 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 import Image from 'next/image';
-import { FC, memo, useRef } from 'react';
+import {FC, memo, useRef} from 'react';
 
-import type { TimelineItem } from '../../../data/dataDef';
+import type {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItem: FC<{
   item: TimelineItem;
@@ -11,10 +11,10 @@ const TimelineItem: FC<{
   itemId: string;
   isFocused?: boolean;
   isBlurred?: boolean;
-}> = memo(({ item, onClick, itemId, isFocused, isBlurred }) => {
-  const { title, date, location, content, image } = item;
+}> = memo(({item, onClick, itemId, isFocused, isBlurred}) => {
+  const {title, date, location, content, image} = item;
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const {scrollYProgress} = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
@@ -36,10 +36,11 @@ const TimelineItem: FC<{
           filter: isBlurred ? 'blur(2px) grayscale(100%)' : 'none',
           opacity: isBlurred ? 0.5 : 1,
         }}
-        className={`flex flex-col rounded-2xl border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 p-6 shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer ${isFocused ? 'ring-2 ring-blue-500' : ''
-          }`}
+        className={`flex flex-col rounded-2xl border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 p-6 shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer ${
+          isFocused ? 'ring-2 ring-blue-500' : ''
+        }`}
         onClick={handleClick}
-        style={{ scale: isFocused ? 1.05 : scale }}>
+        style={{scale: isFocused ? 1.05 : scale}}>
         <div className="flex flex-col items-center gap-x-6 md:flex-row md:items-start">
           {image && (
             <div className="relative mb-4 h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm md:mb-0 md:h-28 md:w-28">

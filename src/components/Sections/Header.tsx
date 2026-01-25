@@ -1,12 +1,12 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { Bars3BottomRightIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import {Dialog, Transition} from '@headlessui/react';
+import {Bars3BottomRightIcon, MoonIcon, SunIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { FC, Fragment, memo, useCallback, useMemo, useState } from 'react';
+import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
 
-import { useTheme } from '../ThemeContext';
-import { SectionId } from '../../data/data';
-import { useNavObserver } from '../../hooks/useNavObserver';
+import {SectionId} from '../../data/data';
+import {useNavObserver} from '../../hooks/useNavObserver';
+import {useTheme} from '../ThemeContext';
 
 export const headerID = 'headerNav';
 
@@ -39,14 +39,16 @@ const Header: FC = memo(() => {
   );
 });
 
-const DesktopNav: FC<{ navSections: SectionId[]; currentSection: SectionId | null }> = memo(
-  ({ navSections, currentSection }) => {
+const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
+  ({navSections, currentSection}) => {
     const baseClass =
       '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:hover:text-blue-500 text-neutral-900 dark:text-neutral-100';
     const activeClass = classNames(baseClass, 'text-blue-500 dark:text-blue-500');
     const inactiveClass = classNames(baseClass, 'text-neutral-900 dark:text-neutral-100');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-white/50 dark:bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
+      <header
+        className="fixed top-0 z-50 hidden w-full bg-white/50 dark:bg-neutral-900/50 p-4 backdrop-blur sm:block"
+        id={headerID}>
         <nav className="flex justify-center gap-x-8 items-center">
           {navSections.map(section => (
             <NavItem
@@ -65,19 +67,19 @@ const DesktopNav: FC<{ navSections: SectionId[]; currentSection: SectionId | nul
 );
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+  const {theme, toggleTheme} = useTheme();
   return (
     <button
-      onClick={toggleTheme}
+      aria-label="Toggle Dark Mode"
       className="p-1 rounded-full text-neutral-900 dark:text-neutral-100 hover:text-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
-      aria-label="Toggle Dark Mode">
+      onClick={toggleTheme}>
       {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
     </button>
   );
 };
 
-const MobileNav: FC<{ navSections: SectionId[]; currentSection: SectionId | null }> = memo(
-  ({ navSections, currentSection }) => {
+const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
+  ({navSections, currentSection}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggleOpen = useCallback(() => {
@@ -86,7 +88,10 @@ const MobileNav: FC<{ navSections: SectionId[]; currentSection: SectionId | null
 
     const baseClass =
       'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
-    const activeClass = classNames(baseClass, 'bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-bold');
+    const activeClass = classNames(
+      baseClass,
+      'bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-bold',
+    );
     const inactiveClass = classNames(baseClass, 'text-neutral-700 dark:text-neutral-200 font-medium');
     return (
       <>
@@ -148,7 +153,7 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({ section, current, inactiveClass, activeClass, onClick }) => {
+}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}

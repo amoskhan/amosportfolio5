@@ -1,9 +1,9 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {Dialog, Transition} from '@headlessui/react';
+import {XMarkIcon} from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { FC, Fragment, memo, useCallback, useEffect, useState } from 'react';
+import {FC, Fragment, memo, useCallback, useEffect, useState} from 'react';
 
-import { BlogPost } from '../../data/dataDef';
+import {BlogPost} from '../../data/dataDef';
 
 interface BlogModalProps {
   post: BlogPost | null;
@@ -11,7 +11,7 @@ interface BlogModalProps {
   onClose: () => void;
 }
 
-const BlogModal: FC<BlogModalProps> = memo(({ post, isOpen, onClose }) => {
+const BlogModal: FC<BlogModalProps> = memo(({post, isOpen, onClose}) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   // Reset lightbox state when modal closes or post changes
@@ -96,7 +96,9 @@ const BlogModal: FC<BlogModalProps> = memo(({ post, isOpen, onClose }) => {
                           year: 'numeric',
                         })}
                       </span>
-                      <Dialog.Title as="h3" className="text-3xl font-bold leading-tight text-neutral-900 dark:text-white mb-2">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-3xl font-bold leading-tight text-neutral-900 dark:text-white mb-2">
                         {post.title}
                       </Dialog.Title>
                       <p className="text-sm text-neutral-600 dark:text-neutral-400">

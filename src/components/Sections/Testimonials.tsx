@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
+import {FC, memo, useCallback, useEffect, useMemo, useState} from 'react';
 
-import { isApple, isMobile } from '../../config';
-import { SectionId, testimonial } from '../../data/data';
+import {isApple, isMobile} from '../../config';
+import {SectionId, testimonial} from '../../data/data';
 import useInterval from '../../hooks/useInterval';
 import QuoteIcon from '../Icon/QuoteIcon';
 import Section from '../Layout/Section';
@@ -16,7 +16,7 @@ const Testimonials: FC = memo(() => {
     setParallaxEnabled(!(isMobile && isApple));
   }, []);
 
-  const { imageSrc, testimonials } = testimonial;
+  const {imageSrc, testimonials} = testimonial;
 
   const resolveSrc = useMemo(() => {
     if (!imageSrc) return undefined;
@@ -46,9 +46,9 @@ const Testimonials: FC = memo(() => {
         className={classNames(
           'relative flex min-h-[500px] w-full items-center justify-center bg-cover bg-center py-16 md:py-24',
           parallaxEnabled && 'bg-fixed',
-          { 'bg-neutral-50 dark:bg-neutral-800': !imageSrc },
+          {'bg-neutral-50 dark:bg-neutral-800': !imageSrc},
         )}
-        style={imageSrc ? { backgroundImage: `url(${resolveSrc})` } : undefined}>
+        style={imageSrc ? {backgroundImage: `url(${resolveSrc})`} : undefined}>
         {/* Dark Overlay for readability */}
         <div className="absolute inset-0 bg-white/60 dark:bg-black/70" />
 
