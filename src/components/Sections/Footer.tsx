@@ -1,13 +1,13 @@
 // import {BoltIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
-import {FC, memo} from 'react';
+import { FC, memo } from 'react';
 
-import {SectionId} from '../../data/data';
+import { SectionId } from '../../data/data';
 import Socials from '../Socials';
 
 const currentYear = new Date().getFullYear();
 
 const Footer: FC = memo(() => (
-  <div className="relative bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
+  <div className="relative bg-neutral-200 dark:bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
     <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
       <a
         className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
@@ -28,7 +28,7 @@ const Footer: FC = memo(() => (
           <span className="italic text-yellow">Resume</span>
         </span>
       </a> */}
-      <span className="text-sm text-neutral-700">© Copyright {currentYear} Amos Khan</span>
+      <span className="text-sm text-neutral-700 dark:text-neutral-500">© Copyright {currentYear} Amos Khan</span>
     </div>
   </div>
 ));

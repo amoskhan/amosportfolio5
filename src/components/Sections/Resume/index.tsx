@@ -1,11 +1,11 @@
-import {FC, memo, useCallback, useRef, useState} from 'react';
+import { FC, memo, useCallback, useRef, useState } from 'react';
 
-import {education, experience, SectionId, skills} from '../../../data/data';
+import { education, experience, SectionId, skills } from '../../../data/data';
 import useDetectOutsideClick from '../../../hooks/useDetectOutsideClick';
 import Section from '../../Layout/Section';
 import ScrollReveal from '../../ScrollReveal';
 import ResumeSection from './ResumeSection';
-import {SkillGroup} from './Skills';
+import { SkillGroup } from './Skills';
 import TimelineItem from './TimelineItem';
 
 const Resume: FC = memo(() => {
@@ -19,8 +19,8 @@ const Resume: FC = memo(() => {
   }, []);
 
   return (
-    <Section className="bg-neutral-100" sectionId={SectionId.Resume}>
-      <div className="flex flex-col divide-y-2 divide-neutral-300" ref={sectionRef}>
+    <Section className="bg-neutral-100 dark:bg-neutral-900" sectionId={SectionId.Resume}>
+      <div className="flex flex-col divide-y-2 divide-neutral-300 dark:divide-neutral-700" ref={sectionRef}>
         <ResumeSection title="Education">
           {education.map((item, index) => {
             const id = `education-${index}`;

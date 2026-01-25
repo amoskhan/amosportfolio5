@@ -1,7 +1,7 @@
-import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import { StaticImageData } from 'next/image';
+import { FC, ForwardRefExoticComponent, SVGProps } from 'react';
 
-import {IconProps} from '../components/Icon/Icon';
+import { IconProps } from '../components/Icon/Icon';
 
 export interface HomepageMeta {
   title: string;
@@ -160,3 +160,18 @@ export interface BlogPost {
   image: string;
   collageImages?: string[];
 }
+
+export const SectionId = {
+  Hero: 'hero',
+  About: 'about',
+  Contact: 'contact',
+  Portfolio: 'portfolio',
+  Resume: 'resume',
+  Skills: 'skills',
+  Stats: 'stats',
+  Testimonials: 'testimonials',
+  Blog: 'blog',
+  Certificates: 'certificates',
+} as const;
+
+export type SectionId = (typeof SectionId)[keyof typeof SectionId];

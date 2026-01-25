@@ -1,9 +1,9 @@
-import {Dialog, Transition} from '@headlessui/react';
-import {XMarkIcon} from '@heroicons/react/24/outline';
+import { Dialog, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import {FC, Fragment, memo, useCallback, useEffect, useState} from 'react';
+import { FC, Fragment, memo, useCallback, useEffect, useState } from 'react';
 
-import {BlogPost} from '../../data/dataDef';
+import { BlogPost } from '../../data/dataDef';
 
 interface BlogModalProps {
   post: BlogPost | null;
@@ -11,7 +11,7 @@ interface BlogModalProps {
   onClose: () => void;
 }
 
-const BlogModal: FC<BlogModalProps> = memo(({post, isOpen, onClose}) => {
+const BlogModal: FC<BlogModalProps> = memo(({ post, isOpen, onClose }) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   // Reset lightbox state when modal closes or post changes
@@ -55,7 +55,7 @@ const BlogModal: FC<BlogModalProps> = memo(({post, isOpen, onClose}) => {
                 leave="ease-in duration-200"
                 leaveFrom="opacity-100 scale-100 translate-y-0"
                 leaveTo="opacity-0 scale-95 translate-y-4">
-                <Dialog.Panel className="w-full max-w-3xl transform rounded-2xl bg-neutral-900 text-left align-middle shadow-xl transition-all border border-neutral-700">
+                <Dialog.Panel className="w-full max-w-3xl transform rounded-2xl bg-white dark:bg-neutral-900 text-left align-middle shadow-xl transition-all border border-neutral-200 dark:border-neutral-700">
                   {/* Close Button */}
                   <div className="absolute top-4 right-4 z-30">
                     <button
@@ -82,29 +82,29 @@ const BlogModal: FC<BlogModalProps> = memo(({post, isOpen, onClose}) => {
                           Click to view full image
                         </span>
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent pointer-events-none" />
                     </div>
                   )}
 
                   {/* Content */}
                   <div className="relative p-6 sm:p-10 -mt-10 z-20">
                     <div className="mb-6">
-                      <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full">
+                      <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-blue-500 dark:text-blue-400 uppercase bg-blue-100 dark:bg-blue-400/10 rounded-full">
                         {new Date(post.date).toLocaleDateString('en-US', {
                           day: 'numeric',
                           month: 'long',
                           year: 'numeric',
                         })}
                       </span>
-                      <Dialog.Title as="h3" className="text-3xl font-bold leading-tight text-white mb-2">
+                      <Dialog.Title as="h3" className="text-3xl font-bold leading-tight text-neutral-900 dark:text-white mb-2">
                         {post.title}
                       </Dialog.Title>
-                      <p className="text-sm text-neutral-400">
-                        Written by <span className="text-white font-medium">{post.author}</span>
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                        Written by <span className="text-neutral-900 dark:text-white font-medium">{post.author}</span>
                       </p>
                     </div>
 
-                    <div className="prose prose-invert prose-lg max-w-none text-neutral-300">
+                    <div className="prose prose-lg max-w-none text-neutral-700 dark:text-neutral-300 prose-invert dark:prose-invert-dark">
                       {post.content.split(/<split para>|\n/).map(
                         (paragraph, index) =>
                           paragraph.trim() && (

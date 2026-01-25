@@ -1,11 +1,12 @@
-import {Dialog, Transition} from '@headlessui/react';
-import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import { Dialog, Transition } from '@headlessui/react';
+import { Bars3BottomRightIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
-import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
+import { FC, Fragment, memo, useCallback, useMemo, useState } from 'react';
 
-import {SectionId} from '../../data/data';
-import {useNavObserver} from '../../hooks/useNavObserver';
+import { useTheme } from '../ThemeContext';
+import { SectionId } from '../../data/data';
+import { useNavObserver } from '../../hooks/useNavObserver';
 
 export const headerID = 'headerNav';
 
@@ -38,15 +39,15 @@ const Header: FC = memo(() => {
   );
 });
 
-const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
-  ({navSections, currentSection}) => {
+const DesktopNav: FC<{ navSections: SectionId[]; currentSection: SectionId | null }> = memo(
+  ({ navSections, currentSection }) => {
     const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:hover:text-blue-500 text-neutral-100';
-    const activeClass = classNames(baseClass, 'text-blue-500');
-    const inactiveClass = classNames(baseClass, 'text-neutral-100');
+      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:hover:text-blue-500 text-neutral-900 dark:text-neutral-100';
+    const activeClass = classNames(baseClass, 'text-blue-500 dark:text-blue-500');
+    const inactiveClass = classNames(baseClass, 'text-neutral-900 dark:text-neutral-100');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <nav className="flex justify-center gap-x-8">
+      <header className="fixed top-0 z-50 hidden w-full bg-white/50 dark:bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
+        <nav className="flex justify-center gap-x-8 items-center">
           {navSections.map(section => (
             <NavItem
               activeClass={activeClass}
@@ -56,14 +57,27 @@ const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null
               section={section}
             />
           ))}
+          <ThemeToggle />
         </nav>
       </header>
     );
   },
 );
 
-const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
-  ({navSections, currentSection}) => {
+const ThemeToggle = () => {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    <button
+      onClick={toggleTheme}
+      className="p-1 rounded-full text-neutral-900 dark:text-neutral-100 hover:text-blue-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+      aria-label="Toggle Dark Mode">
+      {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
+    </button>
+  );
+};
+
+const MobileNav: FC<{ navSections: SectionId[]; currentSection: SectionId | null }> = memo(
+  ({ navSections, currentSection }) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggleOpen = useCallback(() => {
@@ -72,8 +86,8 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
 
     const baseClass =
       'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
-    const activeClass = classNames(baseClass, 'bg-neutral-900 text-white font-bold');
-    const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
+    const activeClass = classNames(baseClass, 'bg-neutral-100 dark:bg-neutral-900 text-neutral-900 dark:text-white font-bold');
+    const inactiveClass = classNames(baseClass, 'text-neutral-700 dark:text-neutral-200 font-medium');
     return (
       <>
         <button
@@ -93,7 +107,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition-opacity ease-linear duration-300"
               leaveFrom="opacity-100"
               leaveTo="opacity-0">
-              <Dialog.Overlay className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+              <Dialog.Overlay className="fixed inset-0 bg-stone-900/75" />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -103,7 +117,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition ease-in-out duration-300 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-800">
+              <div className="relative w-4/5 bg-white dark:bg-stone-800">
                 <nav className="mt-5 flex flex-col gap-y-2 px-2">
                   {navSections.map(section => (
                     <NavItem
@@ -115,6 +129,9 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
                       section={section}
                     />
                   ))}
+                  <div className="px-2 py-2">
+                    <ThemeToggle />
+                  </div>
                 </nav>
               </div>
             </Transition.Child>
@@ -131,7 +148,7 @@ const NavItem: FC<{
   activeClass: string;
   inactiveClass: string;
   onClick?: () => void;
-}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
+}> = memo(({ section, current, inactiveClass, activeClass, onClick }) => {
   return (
     <Link
       className={classNames(current ? activeClass : inactiveClass)}
