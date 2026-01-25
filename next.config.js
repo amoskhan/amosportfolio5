@@ -13,6 +13,10 @@ const nextConfig = {
       rule.include = undefined;
     });
 
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+
     return config;
   },
   compress: true,
@@ -28,7 +32,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-      },{
+      }, {
         protocol: 'https',
         hostname: 'source.unsplash.com',
       },
