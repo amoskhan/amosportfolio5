@@ -9,9 +9,17 @@ import portfolioImage14 from '../../images/portfolio/portfolio-14.jpg';
 import portfolioImage15 from '../../images/portfolio/portfolio-15.jpg';
 import portfolioImage16 from '../../images/portfolio/portfolio-16.jpg';
 import portfolioImage22 from '../../images/portfolio/portfolio-22.jpg';
-import {PortfolioItem} from '../dataDef';
+import portfolioImage23 from '../../images/portfolio/portfolio-23.jpg';
+import { PortfolioItem } from '../dataDef';
 
 export const portfolioItems: PortfolioItem[] = [
+  {
+    title: 'Kinetix Lab',
+    description:
+      'AI-powered biomechanics analysis. Objective movement analysis: upload a video of a movement and receive analysis while capturing frames or snapshots of important movements.',
+    url: 'https://kinetix-lab.vercel.app/',
+    image: portfolioImage23,
+  },
   {
     title: 'SG PE Syllabus Bot',
     description:
