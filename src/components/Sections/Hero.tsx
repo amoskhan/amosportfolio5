@@ -37,12 +37,14 @@ const Hero: FC = memo(() => {
           transition={{staggerChildren: 0.12}}>
           {avatarSrc && (
             <motion.div
-              className="relative h-24 w-24 overflow-hidden rounded-full ring-4 ring-white/20 sm:h-28 sm:w-28"
+              className="relative h-24 w-24 overflow-hidden rounded-full bg-neutral-800 ring-4 ring-white/20 sm:h-28 sm:w-28"
               transition={{duration: 0.5}}
               variants={fadeUp}>
+              {/* Blur placeholder so the avatar is never an empty ring while the optimised image loads */}
               <Image
                 alt={`Portrait of ${name}`}
                 className="h-full w-full object-cover"
+                placeholder="blur"
                 priority
                 sizes="112px"
                 src={avatarSrc}
