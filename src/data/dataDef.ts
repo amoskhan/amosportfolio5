@@ -6,23 +6,21 @@ import {IconProps} from '../components/Icon/Icon';
 export interface HomepageMeta {
   title: string;
   description: string;
+  siteUrl?: string;
   ogImageUrl?: string;
-  twitterCardType?: 'summary' | 'summary_large';
-  twitterTitle?: string;
-  twitterSite?: string;
+  twitterCardType?: 'summary' | 'summary_large_image';
   twitterCreator?: string;
-  twitterDomain?: string;
-  twitterUrl?: string;
-  twitterDescription?: string;
-  twitterImageUrl?: string;
 }
 
 /**
  * Hero section
  */
 export interface Hero {
-  imageSrc: string;
+  imageSrc: string | StaticImageData;
+  avatarSrc?: string | StaticImageData;
   name: string;
+  status?: string;
+  headline: string;
   description: JSX.Element;
   actions: HeroActionItem[];
 }
@@ -31,6 +29,7 @@ interface HeroActionItem {
   href: string;
   text: string;
   primary?: boolean;
+  external?: boolean;
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
@@ -38,8 +37,9 @@ interface HeroActionItem {
  * About section
  */
 export interface About {
-  profileImageSrc?: string;
-  description: string;
+  profileImageSrc?: string | StaticImageData;
+  title: string;
+  paragraphs: string[];
   aboutItems: AboutItem[];
 }
 
@@ -50,27 +50,12 @@ export interface AboutItem {
 }
 
 /**
- * Stat section
- */
-export interface Stat {
-  title: string;
-  value: number;
-  Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
-}
-
-/**
  * Skills section
  */
 
-export interface Skill {
-  name: string;
-  level: number;
-  max?: number;
-}
-
 export interface SkillGroup {
   name: string;
-  skills: Skill[];
+  skills: string[];
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
@@ -81,6 +66,21 @@ export interface PortfolioItem {
   title: string;
   description: string;
   url: string;
+  linkLabel?: string;
+  sourceUrl?: string;
+  extraLinks?: {label: string; url: string}[];
+  tags?: string[];
+  featured?: boolean;
+  image: string | StaticImageData;
+}
+
+/**
+ * Certificates section
+ */
+export interface Certificate {
+  title: string;
+  issuer: string;
+  url?: string;
   image: string | StaticImageData;
 }
 
@@ -99,13 +99,13 @@ export interface TimelineItem {
  * Testimonial section
  */
 export interface TestimonialSection {
-  imageSrc?: string | StaticImageData;
   testimonials: Testimonial[];
 }
 
 export interface Testimonial {
   image?: string | StaticImageData;
   name: string;
+  title?: string;
   text: string;
 }
 
@@ -157,8 +157,8 @@ export interface BlogPost {
   date: string;
   content: string;
   author: string;
-  image: string;
-  collageImages?: string[];
+  image: string | StaticImageData;
+  collageImages?: (string | StaticImageData)[];
 }
 
 export const SectionId = {

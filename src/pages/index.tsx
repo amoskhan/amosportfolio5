@@ -3,8 +3,8 @@ import {FC, memo} from 'react';
 
 import Page from '../components/Layout/Page';
 import About from '../components/Sections/About';
-import Blog from '../components/Sections/Blog'; // Add this line
-import Certificates from '../components/Sections/Certificates'; // Ensure this import is correct
+import Blog from '../components/Sections/Blog';
+import Certificates from '../components/Sections/Certificates';
 import Contact from '../components/Sections/Contact';
 import Footer from '../components/Sections/Footer';
 import Hero from '../components/Sections/Hero';
@@ -17,18 +17,24 @@ import {homePageMeta} from '../data/data';
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
 const Home: FC = memo(() => {
-  const {title, description} = homePageMeta;
   return (
-    <Page description={description} title={title}>
+    <Page {...homePageMeta}>
+      <a
+        className="sr-only z-50 rounded-md bg-blue-600 px-4 py-2 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        href="#main">
+        Skip to content
+      </a>
       <Header />
-      <Hero />
-      <About />
-      <Resume />
-      <Blog />
-      <Certificates />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
+      <main id="main">
+        <Hero />
+        <About />
+        <Portfolio />
+        <Resume />
+        <Blog />
+        <Certificates />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </Page>
   );

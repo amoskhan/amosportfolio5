@@ -1,9 +1,9 @@
 import {
   AcademicCapIcon,
-  BuildingOffice2Icon,
-  CalendarIcon,
+  BriefcaseIcon,
+  ChatBubbleLeftRightIcon,
   FlagIcon,
-  MapIcon,
+  MapPinIcon,
   SparklesIcon,
 } from '@heroicons/react/24/outline';
 
@@ -12,13 +12,22 @@ import {About} from '../dataDef';
 
 export const aboutData: About = {
   profileImageSrc: profilepic,
-  description: `Welcome to my portfolio website! If you were to ask me, "Amos, what does an ideal lifestyle outside of work look like?" Fitness and exercise have always been at the heart of my life. I truly resonate with the saying, "A healthy body leads to a healthy mind." Beyond health, I have a strong passion for big data and research, particularly in exercise science. Analyzing datasets to uncover compelling insights brings me tremendous joy. Coaching has also played a significant role in my journey, enhancing my confidence, people management skills, and ability to instill life values in children through sports. Additionally, my interest in data analysis and coding has given me the opportunity to create this website and share my knowledge with others.`,
+  title: 'A healthy body leads to a healthy mind.',
+  paragraphs: [
+    "Fitness and sport have always been at the heart of my life, and I truly believe that a healthy body leads to a healthy mind. That belief led me to study Sports Science at NTU, and now to teaching: I'm training with the Ministry of Education to become a Physical Education teacher.",
+    'Alongside sport, I love data and research. My final-year project in exercise physiology and my thermal physiology internship at HTX taught me how to turn raw measurements into meaningful insights. Years of coaching badminton have built my confidence and people skills, and shown me how sport can instil life values in children.',
+    "Beyond this website, I've created Kinetix Lab and the SG PE Syllabus Bot, educational tech tools that use AI and computer vision to give pupils feedback on their movement skills and make the PE syllabus more accessible to teachers.",
+  ],
   aboutItems: [
-    {label: 'Location', text: 'Singapore', Icon: MapIcon},
-    {label: 'Age', text: '25', Icon: CalendarIcon},
+    {label: 'Currently', text: 'PGDE (PE) trainee, NIE / MOE', Icon: BriefcaseIcon},
+    {label: 'Education', text: 'BSc Sports Science & Management, NTU', Icon: AcademicCapIcon},
+    {label: 'Location', text: 'Singapore', Icon: MapPinIcon},
     {label: 'Nationality', text: 'Singaporean', Icon: FlagIcon},
-    {label: 'Interests', text: 'Badminton, Fitness, Data Analysis, Research', Icon: SparklesIcon},
-    {label: 'Study', text: 'Nanyang Technological University | National Institute of Singapore', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'MOE (Ministry of Education)', Icon: BuildingOffice2Icon},
+    {label: 'Languages', text: 'English, Chinese', Icon: ChatBubbleLeftRightIcon},
+    {
+      label: 'Interests',
+      text: 'Badminton, fitness, photography, data & research, building with AI',
+      Icon: SparklesIcon,
+    },
   ],
 };

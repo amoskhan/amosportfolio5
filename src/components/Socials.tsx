@@ -1,17 +1,24 @@
+import classNames from 'classnames';
 import {FC, memo} from 'react';
 
 import {socialLinks} from '../data/data';
 
-const Socials: FC = memo(() => {
+const Socials: FC<{className?: string}> = memo(({className}) => {
   return (
     <>
       {socialLinks.map(({label, Icon, href}) => (
         <a
           aria-label={label}
-          className="-m-1.5 rounded-md p-1.5 transition-all duration-300 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500  sm:-m-3 sm:p-3"
+          className={classNames(
+            'rounded-full p-2 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+            className,
+          )}
           href={href}
-          key={label}>
-          <Icon className="h-5 w-5 align-baseline sm:h-6 sm:w-6" />
+          key={label}
+          rel="noopener noreferrer"
+          target="_blank"
+          title={label}>
+          <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
         </a>
       ))}
     </>

@@ -1,36 +1,60 @@
-import classNames from 'classnames';
 import Image from 'next/image';
 import {FC, memo} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
+import SectionHeading from '../Layout/SectionHeading';
 
 const About: FC = memo(() => {
-  const {profileImageSrc, description, aboutItems} = aboutData;
+  const {profileImageSrc, title, paragraphs, aboutItems} = aboutData;
   return (
-    <Section className="bg-neutral-50 dark:bg-neutral-800" sectionId={SectionId.About}>
-      <div className={classNames('grid grid-cols-1 gap-y-4', {'md:grid-cols-4': !!profileImageSrc})}>
-        {!!profileImageSrc && (
-          <div className="col-span-1 flex justify-center md:justify-start">
-            <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-              <Image alt="about-me-image" className="h-full w-full object-cover" src={profileImageSrc} />
+    <Section className="bg-white dark:bg-neutral-950" sectionId={SectionId.About}>
+      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-5 md:gap-14">
+        {profileImageSrc && (
+          <div className="relative mx-auto w-full max-w-xs md:col-span-2 md:mx-0 md:max-w-none">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-3 -z-0 rounded-3xl bg-gradient-to-br from-blue-500/25 via-transparent to-emerald-400/20 blur-2xl"
+            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-neutral-200 shadow-xl dark:border-neutral-800">
+              <Image
+                alt="Portrait of Amos Khan"
+                className="h-full w-full object-cover"
+                placeholder="blur"
+                sizes="(min-width: 768px) 400px, 320px"
+                src={profileImageSrc}
+              />
             </div>
           </div>
         )}
-        <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!profileImageSrc})}>
-          <div className="flex flex-col gap-y-2">
-            <h2 className="text-2xl font-bold text-neutral-900 dark:text-white">About me</h2>
-            <p className="prose prose-sm text-gray-700 dark:text-gray-300 sm:prose-base">{description}</p>
-          </div>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {aboutItems.map(({label, text, Icon}, idx) => (
-              <li className="col-span-1 flex  items-start gap-x-2" key={idx}>
-                {Icon && <Icon className="h-5 w-5 text-neutral-900 dark:text-white" />}
-                <span className="text-sm font-bold text-neutral-900 dark:text-white">{label}:</span>
-                <span className=" text-sm text-gray-700 dark:text-gray-300">{text}</span>
-              </li>
+        <div className="flex flex-col gap-y-8 md:col-span-3">
+          <SectionHeading align="left" eyebrow="About me" title={title} />
+          <div className="flex flex-col gap-y-4 text-base leading-relaxed text-neutral-600 dark:text-neutral-300 sm:text-lg">
+            {paragraphs.map((paragraph, idx) => (
+              <p className="text-pretty" key={idx}>
+                {paragraph}
+              </p>
             ))}
-          </ul>
+          </div>
+          <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {aboutItems.map(({label, text, Icon}) => (
+              <div
+                className="flex items-start gap-x-3 rounded-xl border border-neutral-200 bg-neutral-50 p-3.5 dark:border-neutral-800 dark:bg-neutral-900"
+                key={label}>
+                {Icon && (
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                    <Icon aria-hidden="true" className="h-5 w-5" />
+                  </span>
+                )}
+                <div className="flex flex-col">
+                  <dt className="text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                    {label}
+                  </dt>
+                  <dd className="text-sm font-medium text-neutral-900 dark:text-neutral-100">{text}</dd>
+                </div>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </Section>

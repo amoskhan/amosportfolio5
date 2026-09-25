@@ -1,4 +1,4 @@
-// import {BoltIcon, ChevronUpIcon} from '@heroicons/react/24/solid';
+import {ArrowUpIcon} from '@heroicons/react/24/outline';
 import {FC, memo} from 'react';
 
 import {SectionId} from '../../data/data';
@@ -7,30 +7,28 @@ import Socials from '../Socials';
 const currentYear = new Date().getFullYear();
 
 const Footer: FC = memo(() => (
-  <div className="relative bg-neutral-200 dark:bg-neutral-900 px-4 pb-6 pt-12 sm:px-8 sm:pb-8 sm:pt-14">
-    <div className="absolute inset-x-0 -top-4 flex justify-center sm:-top-6">
-      <a
-        className="rounded-full bg-neutral-100 p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
-        href={`/#${SectionId.Hero}`}>
-        {/* <ChevronUpIcon className="h-6 w-6 bg-transparent sm:h-8 sm:w-8" /> */}
-      </a>
-    </div>
-    <div className="flex flex-col items-center gap-y-6">
-      <div className="flex gap-x-4 text-neutral-500">
-        <Socials />
-      </div>
-      {/* <a
-        className="-m-2 flex items-center gap-x-1 rounded-md p-2 ring-yellow focus:outline-none focus:ring-2"
-        href="https://reactresume.com">
-        <BoltIcon className="h-5 w-5 text-yellow" />
-        <span>
-          Provided by <span className="text-white">React</span>
-          <span className="italic text-yellow">Resume</span>
+  <footer className="border-t border-neutral-200 bg-neutral-50 px-4 py-10 dark:border-neutral-800 dark:bg-neutral-900 sm:px-6 lg:px-8">
+    <div className="mx-auto flex max-w-screen-lg flex-col items-center gap-6 sm:flex-row sm:justify-between">
+      <div className="flex flex-col items-center gap-y-1 text-center sm:items-start sm:text-left">
+        <span className="font-display text-base font-bold text-neutral-900 dark:text-white">
+          Amos Khan<span className="text-blue-500">.</span>
         </span>
-      </a> */}
-      <span className="text-sm text-neutral-700 dark:text-neutral-500">© Copyright {currentYear} Amos Khan</span>
+        <span className="text-sm text-neutral-500 dark:text-neutral-400">
+          © {currentYear} Amos Khan. Built with Next.js & Tailwind CSS.
+        </span>
+      </div>
+      <div className="flex items-center gap-x-1 text-neutral-500 dark:text-neutral-400">
+        <Socials className="hover:bg-neutral-200 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-white" />
+        <a
+          aria-label="Back to top"
+          className="ml-2 rounded-full border border-neutral-300 p-2 transition-colors hover:border-blue-500 hover:text-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-neutral-700 dark:hover:text-blue-400"
+          href={`/#${SectionId.Hero}`}
+          title="Back to top">
+          <ArrowUpIcon className="h-5 w-5" />
+        </a>
+      </div>
     </div>
-  </div>
+  </footer>
 ));
 
 Footer.displayName = 'Footer';

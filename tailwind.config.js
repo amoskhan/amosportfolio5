@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,css,scss}'],
@@ -7,10 +9,15 @@ module.exports = {
       colors: {
         yellow: '#efc603',
       },
+      fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+        // Headings share the body font; kept as its own token so it can diverge later
+        display: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
+      },
       keyframes: {
         typing: {
-          '0%, 100%': { width: '0%' },
-          '30%, 70%': { width: '100%' },
+          '0%, 100%': {width: '0%'},
+          '30%, 70%': {width: '100%'},
         },
         blink: {
           '0%': {
@@ -29,7 +36,7 @@ module.exports = {
         },
       },
       screens: {
-        touch: { raw: 'only screen and (pointer: coarse)' },
+        touch: {raw: 'only screen and (pointer: coarse)'},
       },
     },
   },
