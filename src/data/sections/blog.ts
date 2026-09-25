@@ -9,7 +9,7 @@ import {BlogPost} from '../dataDef';
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'Why am I doing this website?🤔',
+    title: 'Why did I build this website? 🤔',
     date: '2024-05-02',
     content:
       "I've been a tech geek since my primary school IT monitor days. To be real, tools like ChatGPT have made coding way less intimidating—whenever I'm stuck, I just ask for help and keep moving. I didn't study Computer Science; I actually have a Sports Science degree from NTU. But I think if you're curious, you should just go for it. You don't need a specific degree or straight A's to build something cool. My goal was just to have a free website to share my portfolio, and I'm honestly just happy I got it working.",
@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
     title: 'DxD Hub Internship',
     date: '2024-07-02',
     content:
-      'Having completed my internship in DxD Hub (National Platform under A*STAR), I have built strong connections within the medtech ecosystem and collaborating partners. As a Outreach Communications Intern, I was given the experience to be the planning committee of DxD Hubs 10th Year Anniversary event. I ensured smooth logistics and supported event operations to deliver a professional and well-organised experience. Post event, I also proposed a design for a feature wall to further document the achievements of DxD Hub and enhance its branding. <split para> Beyond event planning, I also co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers. I conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills. This analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods. ',
+      'Having completed my internship at DxD Hub (a national platform under A*STAR), I have built strong connections within the medtech ecosystem and collaborating partners. As an Outreach Communications Intern, I had the opportunity to serve on the planning committee of DxD Hub’s 10th Anniversary event. I ensured smooth logistics and supported event operations to deliver a professional and well-organised experience. Post event, I also proposed a design for a feature wall to further document the achievements of DxD Hub and enhance its branding. <split para> Beyond event planning, I also co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers. I conducted a comprehensive review of intern hiring trends using critical thinking and data analysis skills. This analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods.',
     author: 'Amos Khan',
     image: portfolioImage2,
   },
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
     title: '📢 Final Year Project Presentation 2024 - Exercise Physiology',
     date: '2024-07-18',
     content:
-      'Research Topic: Acute Effects of Cloth Mask on Exercise Performance between Genders 👨‍🔬After more than 100 hours dedicated to data collection, meticulous data cleaning and report writing, I have completed my FYP report. This module was one of the most demanding yet rewarding parts of my journey in SSM. It gave me invaluable hands-on experience with physiological measurement tools (Gas Exchange Analyser, YSI 2900, Dual X-Ray absorptiometry etc...) and a chance to explore how mask impact exercise performance. ',
+      'Research Topic: Acute Effects of Cloth Mask on Exercise Performance between Genders 👨‍🔬 <split para> After more than 100 hours dedicated to data collection, meticulous data cleaning and report writing, I have completed my FYP report. This module was one of the most demanding yet rewarding parts of my journey in SSM. It gave me invaluable hands-on experience with physiological measurement tools (Gas Exchange Analyser, YSI 2900, Dual X-Ray Absorptiometry, etc.) and a chance to explore how masks impact exercise performance.',
     author: 'Amos Khan',
     image: portfolioImage12,
   },

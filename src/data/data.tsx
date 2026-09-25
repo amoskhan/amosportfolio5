@@ -13,12 +13,11 @@ export * from './dataDef';
 
 // Meta data
 export const homePageMeta: HomepageMeta = {
-  title: 'Amos Portfolio',
-  description: 'Portolio of Amos Khan - Sports Science Graduate & PE Teacher Trainee',
-  ogImageUrl: 'assets/og-image.jpg', // You should add an actual OG image
-  twitterCardType: 'summary_large',
-  twitterTitle: 'Amos Portfolio',
+  title: 'Amos Khan | PE Teacher, Sports Scientist & Builder',
+  description:
+    'Portfolio of Amos Khan — a Singapore-based Sports Science & Management graduate (NTU) training with MOE to become a Physical Education teacher, and building AI tools for PE.',
+  siteUrl: 'https://amosportfolio.vercel.app',
+  ogImageUrl: '/og-image.jpg',
+  twitterCardType: 'summary_large_image',
   twitterCreator: '@afro_jacko',
-  twitterDescription: 'Portolio of Amos Khan - Sports Science Graduate & PE Teacher Trainee',
-  twitterUrl: 'https://amoskhan.com',
 };

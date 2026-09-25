@@ -4,8 +4,9 @@ import LinkedInIcon from '../../components/Icon/LinkedInIcon';
 import {ContactSection, ContactType, Social} from '../dataDef';
 
 export const contact: ContactSection = {
-  headerText: 'Get in touch.',
-  description: 'Do reach out to me if you have further details.',
+  headerText: "Let's connect.",
+  description:
+    "Whether it's PE, sports science research, badminton coaching or building tools for educators, I'd love to hear from you. Send me a message and I'll get back to you soon.",
   items: [
     {
       type: ContactType.Email,
@@ -13,9 +14,14 @@ export const contact: ContactSection = {
       href: 'mailto:khanamos1@gmail.com',
     },
     {
-      type: ContactType.Location,
-      text: 'Singapore',
-      href: 'https://www.google.com/maps/place/Singapore',
+      type: ContactType.LinkedIn,
+      text: 'in/amoskhan',
+      href: 'https://www.linkedin.com/in/amoskhan',
+    },
+    {
+      type: ContactType.Github,
+      text: 'amoskhan',
+      href: 'https://github.com/amoskhan',
     },
     {
       type: ContactType.Instagram,
@@ -23,20 +29,20 @@ export const contact: ContactSection = {
       href: 'https://www.instagram.com/afro_jacko/',
     },
     {
-      type: ContactType.Github,
-      text: 'AmosKhan',
-      href: 'https://github.com/AmosKhan',
+      type: ContactType.Phone,
+      text: '+65 9618 2276',
+      href: 'tel:+6596182276',
     },
     {
-      type: ContactType.Phone,
-      text: '+65 96182276',
-      href: 'tel:+6596182276',
+      type: ContactType.Location,
+      text: 'Singapore',
+      href: 'https://www.google.com/maps/place/Singapore',
     },
   ],
 };
 
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/AmosKhan'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/AmosKhan'},
+  {label: 'GitHub', Icon: GithubIcon, href: 'https://github.com/amoskhan'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/amoskhan'},
   {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/afro_jacko/'},
 ];

@@ -1,34 +1,26 @@
-import {ArrowTopRightOnSquareIcon} from '@heroicons/react/24/outline';
-import classNames from 'classnames';
+import {ArrowUpRightIcon} from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import {FC, memo, MouseEvent, useCallback, useEffect, useRef, useState} from 'react';
+import {FC, memo} from 'react';
 
-import {isMobile} from '../../config';
 import {portfolioItems, SectionId} from '../../data/data';
 import {PortfolioItem} from '../../data/dataDef';
-import useDetectOutsideClick from '../../hooks/useDetectOutsideClick';
+import GithubIcon from '../Icon/GithubIcon';
 import Section from '../Layout/Section';
+import SectionHeading from '../Layout/SectionHeading';
 
 const Portfolio: FC = memo(() => {
   return (
-    <Section className="bg-neutral-50 dark:bg-neutral-800" sectionId={SectionId.Portfolio}>
-      <div className="flex flex-col gap-y-8">
-        <h2 className="self-center text-xl font-bold text-neutral-900 dark:text-white">Check out some of my work</h2>
-        <div className=" w-full columns-2 md:columns-3 lg:columns-4">
-          {portfolioItems.map((item, index) => {
-            const {title, image} = item;
-            return (
-              <div className="pb-6" key={`${title}-${index}`}>
-                <div
-                  className={classNames(
-                    'relative h-max w-full overflow-hidden rounded-lg shadow-lg shadow-black/30 lg:shadow-xl',
-                  )}>
-                  <Image alt={title} className="h-full w-full" placeholder="blur" src={image} />
-                  <ItemOverlay item={item} />
-                </div>
-              </div>
-            );
-          })}
+    <Section className="bg-neutral-50 dark:bg-neutral-900" sectionId={SectionId.Portfolio}>
+      <div className="flex flex-col gap-y-12">
+        <SectionHeading
+          description="From AI tools that help PE teachers analyse movement, to exercise physiology research and life outside the lab."
+          eyebrow="Projects"
+          title="Things I've built & researched"
+        />
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {portfolioItems.map(item => (
+            <ProjectCard item={item} key={item.title} />
+          ))}
         </div>
       </div>
     </Section>
@@ -38,47 +30,71 @@ const Portfolio: FC = memo(() => {
 Portfolio.displayName = 'Portfolio';
 export default Portfolio;
 
-const ItemOverlay: FC<{item: PortfolioItem}> = memo(({item: {url, title, description}}) => {
-  const [mobile, setMobile] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const linkRef = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    // Avoid hydration styling errors by setting mobile in useEffect
-    if (isMobile) {
-      setMobile(true);
-    }
-  }, []);
-  useDetectOutsideClick(linkRef, () => setShowOverlay(false));
-
-  const handleItemClick = useCallback(
-    (event: MouseEvent<HTMLElement>) => {
-      if (mobile && !showOverlay) {
-        event.preventDefault();
-        setShowOverlay(!showOverlay);
-      }
-    },
-    [mobile, showOverlay],
-  );
-
-  return (
-    <a
-      className={classNames(
-        'absolute inset-0 h-full w-full  bg-gray-900 transition-all duration-300',
-        {'opacity-0 hover:opacity-80': !mobile},
-        showOverlay ? 'opacity-80' : 'opacity-0',
-      )}
-      href={url}
-      onClick={handleItemClick}
-      ref={linkRef}
-      target="_blank">
-      <div className="relative h-full w-full p-4">
-        <div className="flex h-full w-full flex-col gap-y-2 overflow-y-auto overscroll-contain">
-          <h2 className="text-center font-bold text-white opacity-100">{title}</h2>
-          <p className="text-xs text-white opacity-100 sm:text-sm">{description}</p>
+const ProjectCard: FC<{item: PortfolioItem}> = memo(
+  ({item: {title, description, url, linkLabel = 'View', sourceUrl, tags, featured, image}}) => (
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-neutral-800 dark:bg-neutral-950">
+      <a
+        aria-hidden="true"
+        className="relative block aspect-[16/10] overflow-hidden bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 dark:bg-neutral-800"
+        href={url}
+        rel="noopener noreferrer"
+        tabIndex={-1}
+        target="_blank">
+        <Image
+          alt=""
+          className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          fill
+          placeholder="blur"
+          sizes="(min-width: 1024px) 330px, (min-width: 640px) 50vw, 100vw"
+          src={image}
+        />
+        {featured && (
+          <span className="absolute left-3 top-3 rounded-full bg-blue-600 px-2.5 py-1 text-xs font-semibold text-white shadow">
+            Featured
+          </span>
+        )}
+      </a>
+      <div className="flex flex-1 flex-col gap-y-3 p-5">
+        {tags && tags.length > 0 && (
+          <ul aria-label="Tags" className="flex flex-wrap gap-1.5">
+            {tags.map(tag => (
+              <li
+                className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
+                key={tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
+        <h3 className="font-display text-lg font-bold text-neutral-900 dark:text-white">{title}</h3>
+        <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{description}</p>
+        <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+          <a
+            className="inline-flex items-center gap-x-1 rounded-md text-sm font-semibold text-blue-600 hover:text-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+            href={url}
+            rel="noopener noreferrer"
+            target="_blank">
+            {linkLabel}
+            <span className="sr-only"> for {title}</span>
+            <ArrowUpRightIcon
+              aria-hidden="true"
+              className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
+          {sourceUrl && (
+            <a
+              className="inline-flex items-center gap-x-1.5 rounded-md text-sm font-medium text-neutral-600 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-neutral-400 dark:hover:text-white"
+              href={sourceUrl}
+              rel="noopener noreferrer"
+              target="_blank">
+              <GithubIcon aria-hidden="true" className="h-4 w-4" />
+              Source<span className="sr-only"> code for {title}</span>
+            </a>
+          )}
         </div>
-        <ArrowTopRightOnSquareIcon className="absolute bottom-1 right-1 h-4 w-4 shrink-0 text-white sm:bottom-2 sm:right-2" />
       </div>
-    </a>
-  );
-});
+    </article>
+  ),
+);
+
+ProjectCard.displayName = 'ProjectCard';

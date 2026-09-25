@@ -1,83 +1,51 @@
 import {
+  AcademicCapIcon,
   BeakerIcon,
-  ChatBubbleBottomCenterTextIcon,
-  ComputerDesktopIcon,
-  DocumentTextIcon,
+  ChartBarIcon,
+  ChatBubbleLeftRightIcon,
+  CodeBracketIcon,
 } from '@heroicons/react/24/outline';
 
 import {SkillGroup} from '../dataDef';
 
 export const skills: SkillGroup[] = [
   {
-    name: 'Spoken languages',
+    name: 'Teaching & Coaching',
     skills: [
-      {
-        name: 'English',
-        level: 10,
-      },
-      {
-        name: 'Chinese',
-        level: 7,
-      },
+      'PE pedagogy',
+      'Classroom management',
+      'Badminton coaching',
+      'Sports event planning',
+      'Google Classroom',
+      'Microsoft Teams',
     ],
-    Icon: ChatBubbleBottomCenterTextIcon,
-  },
-  {
-    name: 'Microsoft Office',
-    skills: [
-      {
-        name: 'Word',
-        level: 10,
-      },
-      {
-        name: 'Excel',
-        level: 10,
-      },
-      {
-        name: 'Powerpoint',
-        level: 10,
-      },
-    ],
-    Icon: DocumentTextIcon,
+    Icon: AcademicCapIcon,
   },
   {
     name: 'Sports Science Research',
     skills: [
-      {
-        name: 'Data Analysis',
-        level: 9,
-      },
-      {
-        name: 'Report Writing',
-        level: 8,
-      },
-      {
-        name: 'Critical Thinking',
-        level: 8,
-      },
+      'Exercise physiology testing',
+      'Gas exchange analysis',
+      'Blood lactate (YSI 2900)',
+      'DXA body composition',
+      'Thermal physiology',
+      'Report writing',
     ],
     Icon: BeakerIcon,
   },
   {
-    name: 'Digital Technology',
-    skills: [
-      {
-        name: 'R',
-        level: 9,
-      },
-      {
-        name: 'Excel VBA',
-        level: 8,
-      },
-      {
-        name: 'Tableau',
-        level: 8,
-      },
-      {
-        name: 'SQL',
-        level: 7,
-      },
-    ],
-    Icon: ComputerDesktopIcon,
+    name: 'Data & Analytics',
+    skills: ['R', 'Python', 'SQL', 'Tableau', 'IBM SPSS', 'Excel & VBA', 'Microsoft Office'],
+    Icon: ChartBarIcon,
+  },
+  {
+    name: 'Web & AI Development',
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML', 'Git', 'LLM APIs (Gemini)', 'MediaPipe'],
+    Icon: CodeBracketIcon,
+  },
+  {
+    name: 'Languages',
+    skills: ['English', 'Chinese'],
+    Icon: ChatBubbleLeftRightIcon,
   },
 ];

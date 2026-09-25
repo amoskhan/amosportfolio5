@@ -14,56 +14,61 @@ import {TimelineItem} from '../dataDef';
 
 export const education: TimelineItem[] = [
   {
-    date: 'Jul 2025 - Present',
-    location: 'National Institute of Singapore',
-    title: 'Postgraduate Diploma in Education Physical Education (PGDE PE) Trainee',
+    date: 'Jul 2025 – Present',
+    location: 'National Institute of Education (NIE), Singapore',
+    title: 'Postgraduate Diploma in Education (Physical Education)',
     content: (
-      <p>
-        • Pursuing a Postgraduate Diploma in Education Physical Education (PGDE PE) at the National Institute of
-        Education, Singapore.
-      </p>
+      <ul>
+        <li>Training to become a qualified Physical Education teacher in Singapore schools.</li>
+      </ul>
     ),
     image: portfolioImage21,
   },
   {
-    date: 'Aug 2021 - Aug 2025',
-    location: 'Nanyang Technological University | National Institute of Education',
+    date: 'Aug 2021 – Aug 2025',
+    location: 'Nanyang Technological University (NTU) · National Institute of Education',
     title: 'BSc Sports Science & Management',
     content: (
-      <p>
-        • Final Year Project (Exercise Physiology):{' '}
-        <a href="https://hdl.handle.net/10356/182647" rel="noreferrer" style={{color: '#2563eb'}} target="_blank">
-          Acute Effects of Cloth Mask on Physiological Indices between Genders
-        </a>{' '}
-        (Lactate Threshold, VO2, VO2 Max and Rate of Perceived Exertion)
-        <br />• Teaching Award Scholarship Recipient
-      </p>
+      <ul>
+        <li>
+          Final Year Project (Exercise Physiology):{' '}
+          <a href="https://hdl.handle.net/10356/182647" rel="noreferrer" target="_blank">
+            Acute Effects of Cloth Mask on Physiological Indices between Genders
+          </a>{' '}
+          (lactate threshold, VO2, VO2max and rating of perceived exertion)
+        </li>
+        <li>MOE Teaching Award Scholarship recipient</li>
+        <li>Represented NTU at the Inter-Varsity Games</li>
+      </ul>
     ),
     image: portfolioImage20,
   },
   {
-    date: 'Feb 2024 - Jun 2024',
-    location: 'Loughborough University',
-    title: 'Sport and Exercise Science, Sports Science',
+    date: 'Feb 2024 – Jun 2024',
+    location: 'Loughborough University, United Kingdom',
+    title: 'Student Exchange, Sport & Exercise Science',
     content: (
-      <p>
-        •Student exchange at Loughborough University Y3S2.
-        <br /> • Academic Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology
-        in Competitive Sport, Psychological Disorders in Society
-      </p>
+      <ul>
+        <li>
+          Modules: Sports Engineering, Sports Governance, Applied Sports Physiology, Applied Psychology in Competitive
+          Sport, Psychological Disorders in Society
+        </li>
+        <li>Winner, Mixed Badminton Racket Cup (Intramural Games)</li>
+      </ul>
     ),
     image: portfolioImage19,
   },
   {
-    date: 'Jan 2017 - Dec 2018',
+    date: 'Jan 2017 – Dec 2018',
     location: 'Raffles Institution',
-    title: 'Cambridge A - Levels',
+    title: 'GCE A-Levels',
     content: (
-      <p>
-        • Activities and societies: 3H2 subjects including Chemistry, Biology, Mathematics <br />
-        2H1 subjects including General Paper, Economics.
-        <br />• Badminton Team Vice Captain.
-      </p>
+      <ul>
+        <li>H2 Chemistry, Biology and Mathematics; H1 General Paper and Economics</li>
+        <li>Vice-Captain, Badminton Team</li>
+        <li>Raffles Diploma Merit (Character & Leadership; Sports & Health)</li>
+        <li>Colours Award, Singapore Schools Sports Council (2017, 2018)</li>
+      </ul>
     ),
     image: portfolioImage18,
   },
@@ -71,113 +76,111 @@ export const education: TimelineItem[] = [
 
 export const experience: TimelineItem[] = [
   {
-    date: 'Jul 2025 - Present',
-    location: 'Ministry of Education (Singapore)',
-    title: 'Postgraduate Diploma in Education Physical Education (PGDE PE) Trainee',
+    date: 'Jul 2025 – Present',
+    location: 'Ministry of Education (MOE), Singapore',
+    title: 'Physical Education Teacher Trainee (PGDE PE)',
     content: (
-      <p>
-        • Engaged in a 2-year teaching programme to become a qualified Physical Educator in Singapore. <br />
-        • Leveraged on technology in education by integrating digital tools for lesson planning, student engagement, and
-        assessment. <br />
-        •Acquired skills such as educational pedagogy, classroom management, and the use of EdTech platforms such as
-        Google Classroom and Microsoft Teams to enhance learning experiences.
-      </p>
+      <ul>
+        <li>Undertaking a 2-year teaching programme to become a qualified Physical Educator in Singapore.</li>
+        <li>Integrating digital tools into lesson planning, student engagement and assessment.</li>
+        <li>
+          Building skills in PE pedagogy, classroom management and EdTech platforms such as Google Classroom and
+          Microsoft Teams.
+        </li>
+      </ul>
     ),
     image: portfolioImage5,
   },
-
   {
-    date: 'Jan 2025 - May 2025',
+    date: 'Jan 2025 – May 2025',
     location: 'HTX (Home Team Science & Technology Agency)',
-    title: 'Thermal Physiology Intern',
+    title: 'Thermal Physiology Intern, Human Factors & Simulation',
     content: (
-      <p>
-        • Conducted experiments on Home Team Officers concerning Thermal Physiology <br />• Utilised IBM SPSS for
-        statistical analysis, identifying significant differences in physiological metrics while driving data-driven
-        interpretations. <br />• Automated manual Excel plotting using R Programming Language, improving workflow
-        efficiency by ~80%
-      </p>
+      <ul>
+        <li>Conducted thermal physiology and heat acclimatisation experiments with Home Team Officers.</li>
+        <li>
+          Used IBM SPSS for statistical analysis, identifying significant differences in physiological metrics to drive
+          data-driven interpretations.
+        </li>
+        <li>Automated manual Excel plotting with R, improving workflow efficiency by ~80%.</li>
+      </ul>
     ),
     image: portfolioImage6,
   },
-
   {
-    date: 'Jul 2024 - Dec 2024',
-    location: 'Diagnostic Development Hub (A National Platform under A*STAR)',
-    title: 'Corporate Communications, Outreach and Talent Development Intern',
+    date: 'Jul 2024 – Dec 2024',
+    location: 'Diagnostics Development Hub (DxD Hub), A*STAR',
+    title: 'Corporate Communications, Outreach & Talent Development Intern',
     content: (
-      <p>
-        • Created written and visual content to enhance DxD Hub’s visibility across multiple platforms (e.g LinkedIn){' '}
-        <br />
-        • Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers <br />•
-        Conducted a comprehensive review of intern hiring trends using critical thinking and data analyst skills
-      </p>
+      <ul>
+        <li>Co-developed 15 LinkedIn articles, generating 64,305 impressions, 27,707 views and 453 new followers.</li>
+        <li>Served on the planning committee for DxD Hub's 10th Anniversary event.</li>
+        <li>Reviewed intern hiring trends from 2022 to 2024 to improve recruitment and manpower planning.</li>
+      </ul>
     ),
     image: portfolioImage7,
   },
   {
-    date: 'Jan 2023 - Apr 2023',
+    date: 'Jun 2023 – Aug 2023',
+    location: 'Pan-Malayan Pharmaceuticals',
+    title: 'Operations Assistant',
+    content: (
+      <ul>
+        <li>
+          Supported the Ocean Health team with warehouse operations using Microsoft Dynamics 365 Business Central.
+        </li>
+        <li>Packed and fulfilled e-commerce orders for Shopee, Lazada and RedMart.</li>
+      </ul>
+    ),
+    image: portfolioImage9,
+  },
+  {
+    date: 'Jan 2023 – Apr 2023',
     location: 'NTUC Health',
     title: 'Assistant Data Analyst',
     content: (
-      <p>
-        • Performed data cleaning for a Virtual Reality pilot project for senior citizens for recording purposes <br />
-        • Conducted data analysis of survey responses from 70+ VR clients to assess the viability of project <br />•
-        Explored potential advantages Virtual Reality may help senior citizens for future projects
-      </p>
+      <ul>
+        <li>Cleaned data for a Virtual Reality pilot project for senior citizens.</li>
+        <li>Analysed survey responses from 70+ VR clients to assess the viability of the project.</li>
+        <li>Explored how Virtual Reality could benefit senior citizens in future projects.</li>
+      </ul>
     ),
     image: portfolioImage8,
   },
   {
-    date: 'Jun 2023 - Aug 2023',
-    location: 'Pan-Malayan Pharmaceuticals',
-    title: 'Operations Assistant',
-    content: (
-      <p>
-        • Under the supervision of Ocean Health Team <br />
-        • Tidying up warehouse utilising Dynamic 365 Business Central <br />• Packaging of Shoppee/Lazada/Redmart orders
-      </p>
-    ),
-    image: portfolioImage9,
-  },
-
-  {
-    date: 'Feb 2021 - Jul 2021',
+    date: 'Feb 2021 – Jul 2021',
     location: 'Phillip Securities Pte Ltd',
     title: 'Data Processing Executive',
     content: (
-      <p>
-        • Initiated opening of financial accounts and due diligence checks for 1000+ newly onboarded clients <br />
-        • Ensured client’s compliance with MAS and guidelines related to AML to prevent fraudulent activities <br />•
-        Conducted consistent and accurate data processing towards existing accounts to update overall system
-      </p>
+      <ul>
+        <li>Opened financial accounts and ran due diligence checks for 1,000+ newly onboarded clients.</li>
+        <li>Ensured client compliance with MAS and AML guidelines to prevent fraudulent activities.</li>
+        <li>Processed data for existing accounts consistently and accurately to keep the system up to date.</li>
+      </ul>
     ),
     image: portfolioImage10,
   },
-
   {
-    date: 'Nov 2018 - Jan 2019',
+    date: 'Nov 2018 – Jan 2019',
     location: 'ST Logistics',
     title: 'Data Admin Supervisor',
     content: (
-      <p>
-        • Supervised a group of part-timers and executed data entry of client’s details into software systems for
-        processing <br />• Sorted 9000 orders in sequential order in Excel for the proper safekeeping of client details
-      </p>
+      <ul>
+        <li>Supervised a team of part-timers entering client details into software systems for processing.</li>
+        <li>Sorted 9,000 orders in Excel for the proper safekeeping of client details.</li>
+      </ul>
     ),
     image: portfolioImage11,
   },
-
   {
-    date: 'Apr 2016 - May 2016',
+    date: 'Apr 2016 – May 2016',
     location: 'Special Olympics Singapore',
-    title: 'Internship',
+    title: 'Intern',
     content: (
-      <p>
-        • Organize sports events for 60 children with special needs to make a positive impact through sports <br />•
-        Communicated and participated in soccer and floorball with students from Rainbow Centre to improve their mental
-        wellbeing
-      </p>
+      <ul>
+        <li>Organised sports events for 60 children with special needs to make a positive impact through sport.</li>
+        <li>Played soccer and floorball with students from Rainbow Centre to support their mental wellbeing.</li>
+      </ul>
     ),
     image: portfolioImage17,
   },

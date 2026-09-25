@@ -1,65 +1,44 @@
-import {motion, useScroll, useTransform} from 'framer-motion';
 import Image from 'next/image';
-import {FC, memo, useRef} from 'react';
+import {FC, memo} from 'react';
 
-import type {TimelineItem} from '../../../data/dataDef';
+import type {TimelineItem as TimelineItemType} from '../../../data/dataDef';
 
-const TimelineItem: FC<{
-  item: TimelineItem;
-  last?: boolean;
-  onClick?: (id: string) => void;
-  itemId: string;
-  isFocused?: boolean;
-  isBlurred?: boolean;
-}> = memo(({item, onClick, itemId, isFocused, isBlurred}) => {
+const TimelineItem: FC<{item: TimelineItemType}> = memo(({item}) => {
   const {title, date, location, content, image} = item;
-  const ref = useRef<HTMLDivElement>(null);
-  const {scrollYProgress} = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.02, 0.95]);
-
-  const handleClick = () => {
-    if (onClick) {
-      onClick(itemId);
-    }
-  };
 
   return (
-    <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left" ref={ref}>
-      <motion.div
-        animate={{
-          scale: isFocused ? 1.05 : 1,
-          zIndex: isFocused ? 10 : 1,
-          filter: isBlurred ? 'blur(2px) grayscale(100%)' : 'none',
-          opacity: isBlurred ? 0.5 : 1,
-        }}
-        className={`flex flex-col rounded-2xl border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 p-6 shadow-md transition-all duration-300 hover:shadow-lg cursor-pointer ${
-          isFocused ? 'ring-2 ring-blue-500' : ''
-        }`}
-        onClick={handleClick}
-        style={{scale: isFocused ? 1.05 : scale}}>
-        <div className="flex flex-col items-center gap-x-6 md:flex-row md:items-start">
+    <li className="relative pl-8 sm:pl-10">
+      {/* Timeline marker; the rail is drawn by the parent list */}
+      <span
+        aria-hidden="true"
+        className="absolute left-0 top-7 h-[15px] w-[15px] rounded-full border-[3px] border-white bg-blue-500 ring-1 ring-blue-500/40 dark:border-neutral-950"
+      />
+      <article className="rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition-colors duration-300 hover:border-blue-500/40 dark:border-neutral-800 dark:bg-neutral-900 sm:p-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
           {image && (
-            <div className="relative mb-4 h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm md:mb-0 md:h-28 md:w-28">
-              <Image alt={title} className="h-full w-full object-cover" src={image} />
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-neutral-200 bg-white dark:border-neutral-700">
+              <Image alt={`${location} logo`} className="h-full w-full object-contain" sizes="56px" src={image} />
             </div>
           )}
-          <div className="w-full flex-1">
-            <div className="flex flex-col items-center justify-between gap-y-2 md:flex-row md:items-start">
-              <h2 className="text-xl font-bold text-neutral-900 dark:text-white">{title}</h2>
-              <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{date}</span>
+          <div className="flex min-w-0 flex-1 flex-col gap-y-3">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex flex-col gap-y-0.5">
+                <h4 className="font-display text-lg font-bold leading-snug text-neutral-900 dark:text-white">
+                  {title}
+                </h4>
+                <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">{location}</p>
+              </div>
+              <span className="inline-flex w-fit shrink-0 items-center rounded-full bg-neutral-100 px-3 py-1 text-xs font-semibold text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+                {date}
+              </span>
             </div>
-            <div className="mt-1 flex flex-col items-center md:items-start">
-              <span className="text-sm font-medium italic text-gray-700 dark:text-gray-300">{location}</span>
+            <div className="timeline-content text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 [&_li]:pl-1 [&_li]:marker:text-blue-500 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-4">
+              {content}
             </div>
-            <div className="mt-4 text-justify text-gray-800 dark:text-gray-200">{content}</div>
           </div>
         </div>
-      </motion.div>
-    </div>
+      </article>
+    </li>
   );
 });
 
