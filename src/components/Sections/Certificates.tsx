@@ -27,32 +27,27 @@ const Certificates: FC = memo(() => {
           eyebrow="Certificates"
           title="Always learning"
         />
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Compact rows keep the section short; the full certificate opens in a dialog */}
+        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {certificates.map(cert => (
             <li key={cert.title}>
               <button
-                className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-neutral-800 dark:bg-neutral-900"
+                className="group flex h-full w-full items-center gap-x-4 rounded-xl border border-neutral-200 bg-white p-3 text-left shadow-sm transition duration-200 hover:border-blue-500/40 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900"
                 onClick={() => openCert(cert)}
                 type="button">
-                <div className="relative aspect-[22/17] w-full overflow-hidden border-b border-neutral-200 bg-neutral-100 dark:border-neutral-800">
-                  <Image
-                    alt=""
-                    className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    fill
-                    placeholder="blur"
-                    sizes="(min-width: 1024px) 330px, (min-width: 640px) 50vw, 100vw"
-                    src={cert.image}
-                  />
-                  <span className="absolute right-3 top-3 rounded-full bg-neutral-950/60 p-1.5 text-white opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-                    <MagnifyingGlassPlusIcon aria-hidden="true" className="h-4 w-4" />
-                  </span>
+                <div className="relative h-14 w-[72px] shrink-0 overflow-hidden rounded-md border border-neutral-200 bg-neutral-100 dark:border-neutral-700">
+                  <Image alt="" className="object-cover" fill placeholder="blur" sizes="72px" src={cert.image} />
                 </div>
-                <div className="flex flex-col gap-y-1 p-4">
-                  <span className="font-display text-base font-bold text-neutral-900 dark:text-white">
+                <div className="flex min-w-0 flex-1 flex-col gap-y-0.5">
+                  <span className="text-sm font-semibold leading-snug text-neutral-900 dark:text-white">
                     {cert.title}
                   </span>
-                  <span className="text-sm text-neutral-500 dark:text-neutral-400">{cert.issuer}</span>
+                  <span className="text-xs text-neutral-500 dark:text-neutral-400">{cert.issuer}</span>
                 </div>
+                <MagnifyingGlassPlusIcon
+                  aria-hidden="true"
+                  className="h-5 w-5 shrink-0 text-neutral-400 transition-colors group-hover:text-blue-500"
+                />
               </button>
             </li>
           ))}
