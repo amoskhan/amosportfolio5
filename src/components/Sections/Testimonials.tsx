@@ -32,8 +32,8 @@ const Testimonials: FC = memo(() => {
                 </blockquote>
                 <figcaption className="flex items-center gap-x-4 border-t border-neutral-200 pt-5 dark:border-neutral-800">
                   {image && (
-                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-neutral-200 bg-white dark:border-neutral-700">
-                      <Image alt="" className="h-full w-full object-cover" sizes="48px" src={image} />
+                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-neutral-200 bg-white dark:border-neutral-700">
+                      <Image alt="" className="h-full w-full object-cover" sizes="64px" src={image} />
                     </div>
                   )}
                   <div className="flex flex-col">

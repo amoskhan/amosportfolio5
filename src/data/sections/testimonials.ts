@@ -1,6 +1,6 @@
 import htxLogo from '../../images/portfolio/portfolio-6.jpg';
-import dxdHubLogo from '../../images/portfolio/portfolio-7.jpg';
 import tonypng from '../../images/portfolio/tonypng.jpg';
+import hoYuanLu from '../../images/testimonials/ho-yuan-lu.jpg';
 import {TestimonialSection} from '../dataDef';
 
 export const testimonial: TestimonialSection = {
@@ -15,7 +15,7 @@ export const testimonial: TestimonialSection = {
       name: 'Ho Yuan Lu',
       title: 'DxD Hub, a national platform under A*STAR',
       text: 'Amos applied critical thinking and data analysis skills to conduct a comprehensive review of intern hiring trends from 2022 to 2024. His analysis identified key opportunities to enhance recruitment strategies, optimize manpower planning, and address departmental needs during critical periods. His professionalism, resourcefulness, and ability to build positive working relationships made him a valued member of the team.',
-      image: dxdHubLogo,
+      image: hoYuanLu,
     },
     {
       name: 'Tony Png',
