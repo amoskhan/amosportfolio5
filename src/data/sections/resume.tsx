@@ -20,6 +20,24 @@ export const education: TimelineItem[] = [
     content: (
       <ul>
         <li>Training to become a qualified Physical Education teacher in Singapore schools.</li>
+        <li>
+          Accelerator team,{' '}
+          <a
+            href="https://www.ntu.edu.sg/nie/about-us/departments/units-under-director%27s-office/education-solutions-and-engagement/ai-in-education-innovation-challenge"
+            rel="noreferrer"
+            target="_blank">
+            NIE AI in Education Innovation Challenge
+          </a>{' '}
+          (with AWS): built an AI-Assisted Feedback Ecosystem for Physical Education that gives pupils feedback on their
+          movement skills and helps teachers manage assessment (
+          <a
+            href="https://video.nie.edu.sg/media/AUG1-+AI-Assisted+Feedback+Ecosystem+for+Physical+Education/0_5ljjd2ge/184871"
+            rel="noreferrer"
+            target="_blank">
+            watch pitch
+          </a>
+          )
+        </li>
       </ul>
     ),
     image: portfolioImage21,

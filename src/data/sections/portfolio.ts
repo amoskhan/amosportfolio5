@@ -8,8 +8,8 @@ import portfolioImage13 from '../../images/portfolio/portfolio-13.jpg';
 import portfolioImage14 from '../../images/portfolio/portfolio-14.jpg';
 import portfolioImage15 from '../../images/portfolio/portfolio-15.jpg';
 import portfolioImage16 from '../../images/portfolio/portfolio-16.jpg';
-import portfolioImage22 from '../../images/portfolio/portfolio-22.jpg';
 import portfolioImage23 from '../../images/portfolio/portfolio-23.jpg';
+import portfolioImage24 from '../../images/portfolio/portfolio-24.png';
 import {Certificate, PortfolioItem} from '../dataDef';
 
 export const portfolioItems: PortfolioItem[] = [
@@ -27,13 +27,23 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'SG PE Syllabus Bot',
     description:
-      'An AI assistant that bridges the gap between policy and practice. It combines computer vision with large language models to help educators navigate the 2024 PE Syllabus and analyse student performance in real time.',
+      "Selected for the Accelerator Stage of NIE's AI in Education Innovation Challenge. It combines computer vision with large language models to analyse pupils' Fundamental Movement Skills and Gymnastics: pairs film each other at a Practice Station and get checklist-based feedback, while teachers plan lessons, review every grade and ask questions about the 2024 PE Syllabus.",
     url: 'https://sg-pe-syllabus-bot.vercel.app/',
     linkLabel: 'Live app',
     sourceUrl: 'https://github.com/amoskhan/SG-PE-Syllabus-Bot',
-    tags: ['LLMs', 'Computer Vision', 'TypeScript'],
+    extraLinks: [
+      {
+        label: 'NIE challenge',
+        url: 'https://www.ntu.edu.sg/nie/about-us/departments/units-under-director%27s-office/education-solutions-and-engagement/ai-in-education-innovation-challenge',
+      },
+      {
+        label: 'Watch pitch',
+        url: 'https://video.nie.edu.sg/media/AUG1-+AI-Assisted+Feedback+Ecosystem+for+Physical+Education/0_5ljjd2ge/184871',
+      },
+    ],
+    tags: ['LLMs', 'Computer Vision', 'MediaPipe', 'Supabase'],
     featured: true,
-    image: portfolioImage22,
+    image: portfolioImage24,
   },
   {
     title: 'Cloth Masks & Exercise Performance (FYP)',

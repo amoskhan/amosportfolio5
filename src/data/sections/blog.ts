@@ -4,6 +4,7 @@ import portfolioImage4 from '../../images/portfolio/portfolio-4.jpg';
 import portfolioImage12 from '../../images/portfolio/portfolio-12.jpg';
 import portfolioImage13 from '../../images/portfolio/portfolio-13.jpg';
 import portfolioImage14 from '../../images/portfolio/portfolio-14.jpg';
+import portfolioImage25 from '../../images/portfolio/portfolio-25.jpg';
 import {BlogPost} from '../dataDef';
 
 export const blogPosts: BlogPost[] = [
@@ -43,5 +44,14 @@ export const blogPosts: BlogPost[] = [
       'During my final-year internship, I had the rewarding opportunity to work closely with scientists and engineers from the Human Factors and Simulation department at HTX. This experience was truly eye-opening, as I was able to apply the practical knowledge I gained in school to real-world experiments. Our work focused on addressing real-life challenges faced by Home Team Officers, including conducting experiments related to Thermal Physiology and Heat Acclimatization while ensuring safe conditions for officers in the field. This hands-on experience not only deepened my understanding of the subject but also highlighted the importance of research in supporting those who serve on the front lines.',
     author: 'Amos Khan',
     image: portfolioImage4,
+  },
+  {
+    id: 5,
+    title: '🚀 AI in Education Innovation Challenge: SG PE Syllabus Bot',
+    date: '2026-09-25',
+    content:
+      "I'm excited to share that our team has been selected for the Accelerator Stage of NIE's inaugural AI in Education Innovation Challenge, run with AWS. 18 teams of student-teachers showcased their projects in May 2026, and the judging panel picked ours as one with strong potential for further development. Our project, an AI-Assisted Feedback Ecosystem for Physical Education, grew out of the SG PE Syllabus Bot I first built to help teachers navigate the 2024 PE Syllabus. <split para> In a PE lesson, one teacher can't watch every pupil's throw, kick or roll. The bot uses computer vision to track each pupil's movement and large language models to check it against the Fundamental Movement Skills and Gymnastics checklists. Pupils work in pairs at a Practice Station: they scan the class QR code, film each other on an iPad and get feedback straight away. <split para> Since the showcase, I've kept building. Teachers can now plan lessons ahead, name each pair, and review or change every grade the AI gives, so the final call always stays with the teacher. Pupil videos and results are locked to their own teacher. Over the Accelerator Stage, we'll keep developing it with our faculty mentors, including more gymnastics, and I'm excited to test it in real PE lessons!",
+    author: 'Amos Khan',
+    image: portfolioImage25,
   },
 ];

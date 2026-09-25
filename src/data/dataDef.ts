@@ -68,6 +68,7 @@ export interface PortfolioItem {
   url: string;
   linkLabel?: string;
   sourceUrl?: string;
+  extraLinks?: {label: string; url: string}[];
   tags?: string[];
   featured?: boolean;
   image: string | StaticImageData;

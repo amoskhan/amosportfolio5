@@ -15,8 +15,8 @@ export const heroData: Hero = {
   description: (
     <p>
       I'm a <strong>Sports Science & Management</strong> graduate from NTU, training with the{' '}
-      <strong>Ministry of Education (MOE)</strong> to become a <strong>Physical Education teacher</strong>. I love
-      bridging sports science and technology — and I hope to inspire every student to be the best version of themselves.
+      <strong>Ministry of Education (MOE)</strong> to become a <strong>Physical Education teacher</strong>. I bridge
+       sports science and technology and I hope to inspire every student to be the best version of themselves.
     </p>
   ),
   actions: [

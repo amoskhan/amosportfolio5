@@ -31,7 +31,7 @@ Portfolio.displayName = 'Portfolio';
 export default Portfolio;
 
 const ProjectCard: FC<{item: PortfolioItem}> = memo(
-  ({item: {title, description, url, linkLabel = 'View', sourceUrl, tags, featured, image}}) => (
+  ({item: {title, description, url, linkLabel = 'View', sourceUrl, extraLinks, tags, featured, image}}) => (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0 dark:border-neutral-800 dark:bg-neutral-950">
       <a
         aria-hidden="true"
@@ -91,6 +91,17 @@ const ProjectCard: FC<{item: PortfolioItem}> = memo(
               Source<span className="sr-only"> code for {title}</span>
             </a>
           )}
+          {extraLinks?.map(link => (
+            <a
+              className="inline-flex items-center gap-x-1 rounded-md text-sm font-medium text-neutral-600 hover:text-neutral-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-neutral-400 dark:hover:text-white"
+              href={link.url}
+              key={link.url}
+              rel="noopener noreferrer"
+              target="_blank">
+              {link.label}
+              <ArrowUpRightIcon aria-hidden="true" className="h-3.5 w-3.5" />
+            </a>
+          ))}
         </div>
       </div>
     </article>
