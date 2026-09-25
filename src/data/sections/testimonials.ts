@@ -1,5 +1,5 @@
-import htxLogo from '../../images/portfolio/portfolio-6.jpg';
 import tonypng from '../../images/portfolio/tonypng.jpg';
+import glennTan from '../../images/testimonials/glenn-tan.jpg';
 import hoYuanLu from '../../images/testimonials/ho-yuan-lu.jpg';
 import {TestimonialSection} from '../dataDef';
 
@@ -9,7 +9,7 @@ export const testimonial: TestimonialSection = {
       name: 'Glenn Tan',
       title: 'HTX (Home Team Science & Technology Agency)',
       text: 'Amos displayed great enthusiasm when performing all tasks assigned to him. He often took the initiative to offer his assistance for tasks, and was unafraid to take on tasks outside of his comfort zone. Amos exhibited professionalism while handling trial participants, and constantly sought to improve himself.',
-      image: htxLogo,
+      image: glennTan,
     },
     {
       name: 'Ho Yuan Lu',
