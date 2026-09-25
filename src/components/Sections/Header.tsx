@@ -1,6 +1,7 @@
-import {Dialog, Transition} from '@headlessui/react';
-import {Bars3Icon, MoonIcon, SunIcon, XMarkIcon} from '@heroicons/react/24/outline';
+import {Dialog, Menu, Transition} from '@headlessui/react';
+import {Bars3Icon, ChevronDownIcon, MoonIcon, SunIcon, XMarkIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
+import {motion, useScroll, useSpring} from 'framer-motion';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useEffect, useMemo, useState} from 'react';
 
@@ -20,6 +21,10 @@ const sectionLabels: Partial<Record<SectionId, string>> = {
   [SectionId.Testimonials]: 'Testimonials',
   [SectionId.Contact]: 'Contact',
 };
+
+// Desktop shows the main sections directly and tucks the rest into a "More" dropdown.
+const primarySections: SectionId[] = [SectionId.About, SectionId.Portfolio, SectionId.Resume];
+const moreSections: SectionId[] = [SectionId.Blog, SectionId.Certificates, SectionId.Testimonials];
 
 const Header: FC = memo(() => {
   const [currentSection, setCurrentSection] = useState<SectionId | null>(null);
@@ -54,6 +59,10 @@ const Header: FC = memo(() => {
   // Over the hero image the header is transparent with light text; once scrolled it becomes a solid bar.
   const overHero = !scrolled;
 
+  // Reading progress bar along the bottom of the header
+  const {scrollYProgress} = useScroll();
+  const progress = useSpring(scrollYProgress, {stiffness: 200, damping: 30, restDelta: 0.001});
+
   return (
     <header
       className={classNames(
@@ -72,30 +81,102 @@ const Header: FC = memo(() => {
           href={`/#${SectionId.Hero}`}>
           Amos Khan<span className="text-blue-500">.</span>
         </Link>
-        <nav aria-label="Main" className="hidden items-center gap-x-1 lg:flex">
-          {navSections.map(section => (
-            <Link
-              aria-current={section === currentSection ? 'true' : undefined}
-              className={classNames(
-                'rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
-                section === currentSection
-                  ? overHero
-                    ? 'bg-white/15 text-white'
-                    : 'bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300'
-                  : overHero
-                    ? 'text-white/80 hover:text-white'
-                    : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white',
-              )}
-              href={`/#${section}`}
-              key={section}>
-              {sectionLabels[section]}
-            </Link>
+        <nav aria-label="Main" className="hidden items-center gap-x-1 md:flex">
+          {primarySections.map(section => (
+            <NavLink current={section === currentSection} key={section} light={overHero} section={section} />
           ))}
+          <MoreMenu currentSection={currentSection} light={overHero} />
+          <NavLink current={currentSection === SectionId.Contact} light={overHero} section={SectionId.Contact} />
           <ThemeToggle className="ml-2" light={overHero} />
         </nav>
         <MobileNav currentSection={currentSection} light={overHero} navSections={navSections} />
       </div>
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-x-0 -bottom-px h-0.5 origin-left bg-blue-500"
+        style={{scaleX: progress}}
+      />
     </header>
+  );
+});
+
+const navItemClass = (current: boolean, light: boolean) =>
+  classNames(
+    'relative rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
+    current
+      ? light
+        ? 'text-white'
+        : 'text-blue-700 dark:text-blue-300'
+      : light
+        ? 'text-white/80 hover:text-white'
+        : 'text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white',
+  );
+
+// Pill behind the active item; the shared layoutId makes it glide between items as you scroll.
+const ActivePill: FC<{light: boolean}> = memo(({light}) => (
+  <motion.span
+    aria-hidden="true"
+    className={classNames('absolute inset-0 rounded-full', light ? 'bg-white/15' : 'bg-blue-50 dark:bg-blue-500/15')}
+    layoutId="nav-active-pill"
+    transition={{type: 'spring', stiffness: 380, damping: 32}}
+  />
+));
+
+const NavLink: FC<{section: SectionId; current: boolean; light: boolean}> = memo(({section, current, light}) => (
+  <Link aria-current={current ? 'true' : undefined} className={navItemClass(current, light)} href={`/#${section}`}>
+    {current && <ActivePill light={light} />}
+    <span className="relative">{sectionLabels[section]}</span>
+  </Link>
+));
+
+const MoreMenu: FC<{currentSection: SectionId | null; light: boolean}> = memo(({currentSection, light}) => {
+  const current = !!currentSection && moreSections.includes(currentSection);
+  return (
+    <Menu as="div" className="relative">
+      {({open}) => (
+        <>
+          <Menu.Button className={navItemClass(current, light)}>
+            {current && <ActivePill light={light} />}
+            <span className="relative flex items-center gap-x-1">
+              {current ? sectionLabels[currentSection] : 'More'}
+              <ChevronDownIcon
+                aria-hidden="true"
+                className={classNames('h-4 w-4 transition-transform duration-200', {'rotate-180': open})}
+              />
+            </span>
+          </Menu.Button>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-150"
+            enterFrom="opacity-0 -translate-y-1 scale-95"
+            enterTo="opacity-100 translate-y-0 scale-100"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100 translate-y-0 scale-100"
+            leaveTo="opacity-0 -translate-y-1 scale-95">
+            <Menu.Items className="absolute right-0 mt-2 w-48 origin-top-right rounded-xl border border-neutral-200 bg-white p-1.5 shadow-lg focus:outline-none dark:border-neutral-800 dark:bg-neutral-900">
+              {moreSections.map(section => (
+                <Menu.Item key={section}>
+                  {({active}) => (
+                    <Link
+                      aria-current={section === currentSection ? 'true' : undefined}
+                      className={classNames(
+                        'block rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                        section === currentSection
+                          ? 'text-blue-700 dark:text-blue-300'
+                          : 'text-neutral-700 dark:text-neutral-200',
+                        {'bg-neutral-100 dark:bg-neutral-800': active},
+                      )}
+                      href={`/#${section}`}>
+                      {sectionLabels[section]}
+                    </Link>
+                  )}
+                </Menu.Item>
+              ))}
+            </Menu.Items>
+          </Transition>
+        </>
+      )}
+    </Menu>
   );
 });
 
@@ -128,7 +209,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null;
     const close = useCallback(() => setIsOpen(false), []);
 
     return (
-      <div className="flex items-center gap-x-1 lg:hidden">
+      <div className="flex items-center gap-x-1 md:hidden">
         <ThemeToggle light={light} />
         <button
           aria-label="Open menu"
@@ -143,7 +224,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null;
           <Bars3Icon className="h-6 w-6" />
         </button>
         <Transition.Root as={Fragment} show={isOpen}>
-          <Dialog as="div" className="relative z-50 lg:hidden" onClose={close}>
+          <Dialog as="div" className="relative z-50 md:hidden" onClose={close}>
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-200"
