@@ -26,7 +26,7 @@ const Blog: FC = memo(() => {
     <Section className="bg-neutral-50 dark:bg-neutral-900" sectionId={SectionId.Blog}>
       <div className="flex flex-col gap-y-12">
         <SectionHeading
-          description="Milestones, reflections and lessons from my journey in sports science, research and education."
+          description="Milestones and reflections from sport, research and teaching."
           eyebrow="Updates"
           title="Latest updates"
         />

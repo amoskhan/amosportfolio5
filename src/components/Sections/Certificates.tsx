@@ -68,7 +68,7 @@ const Certificates: FC = memo(() => {
     <Section className="bg-white dark:bg-neutral-950" sectionId={SectionId.Certificates}>
       <div className="flex flex-col gap-y-12">
         <SectionHeading
-          description="Professional certificates I've completed to sharpen my data, tech and project management skills."
+          description="Data, tech and project management courses I've completed."
           eyebrow="Certificates"
           title="Always learning"
         />

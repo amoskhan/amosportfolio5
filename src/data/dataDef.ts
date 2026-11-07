@@ -1,5 +1,5 @@
 import {StaticImageData} from 'next/image';
-import {FC, ForwardRefExoticComponent, SVGProps} from 'react';
+import {ComponentType, FC, ForwardRefExoticComponent, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
@@ -53,9 +53,14 @@ export interface AboutItem {
  * Skills section
  */
 
+export interface Skill {
+  name: string;
+  Icon: ComponentType<{className?: string}>;
+}
+
 export interface SkillGroup {
   name: string;
-  skills: string[];
+  skills: Skill[];
   Icon?: ForwardRefExoticComponent<Omit<SVGProps<SVGSVGElement>, 'ref'>>;
 }
 
@@ -72,6 +77,8 @@ export interface PortfolioItem {
   tags?: string[];
   featured?: boolean;
   image: string | StaticImageData;
+  /** Muted demo video (path under /public) that plays in place of the image while the card is on screen */
+  video?: string;
 }
 
 /**

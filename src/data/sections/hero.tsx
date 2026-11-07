@@ -14,9 +14,8 @@ export const heroData: Hero = {
   headline: 'Physical Educator in training. Sports scientist. Builder of AI tools for PE.',
   description: (
     <p>
-      I'm a <strong>Sports Science & Management</strong> graduate from NTU, training with the{' '}
-      <strong>Ministry of Education (MOE)</strong> to become a <strong>Physical Education teacher</strong>. I bridge
-       sports science and technology, and I hope to inspire every student to become the best version of themselves.
+      An NTU <strong>Sports Science</strong> graduate training with <strong>MOE</strong> to become a{' '}
+      <strong>PE teacher</strong>, using sport and technology to help every student be their best.
     </p>
   ),
   actions: [

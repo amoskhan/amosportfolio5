@@ -12,7 +12,7 @@ import {education, experience, resumeUrl, SectionId, skills} from '../../../data
 import Section from '../../Layout/Section';
 import SectionHeading from '../../Layout/SectionHeading';
 import ResumeSection from './ResumeSection';
-import {SkillGroup} from './Skills';
+import SkillCarousel from './Skills';
 import TimelineItem from './TimelineItem';
 
 // Roles shown before the "show earlier experience" toggle
@@ -81,11 +81,7 @@ const Resume: FC = memo(() => {
         </ResumeSection>
 
         <ResumeSection Icon={SparklesIcon} title="Skills">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {skills.map(skillGroup => (
-              <SkillGroup key={skillGroup.name} skillGroup={skillGroup} />
-            ))}
-          </div>
+          <SkillCarousel skillGroups={skills} />
         </ResumeSection>
       </div>
     </Section>
