@@ -18,7 +18,7 @@ const Testimonials: FC = memo(() => {
     <Section className="bg-neutral-50 dark:bg-neutral-900" sectionId={SectionId.Testimonials}>
       <div className="flex flex-col gap-y-12">
         <SectionHeading
-          description="Feedback from the people I've had the privilege of working with."
+          description="Feedback from people I've worked with."
           eyebrow="Testimonials"
           title="Kind words from supervisors"
         />

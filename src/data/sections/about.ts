@@ -14,9 +14,9 @@ export const aboutData: About = {
   profileImageSrc: profilepic,
   title: 'A healthy body leads to a healthy mind.',
   paragraphs: [
-    "Fitness and sport have always been at the heart of my life, and I truly believe that a healthy body leads to a healthy mind. That belief led me to study Sports Science at NTU, and now to teaching: I'm training with the Ministry of Education to become a Physical Education teacher.",
-    'Alongside sport, I love data and research. My final-year project in exercise physiology and my thermal physiology internship at HTX taught me how to turn raw measurements into meaningful insights. Years of coaching badminton have built my confidence and people skills, and shown me how sport can instil life values in children.',
-    "Beyond this website, I've created Kinetix Lab and the SG PE Syllabus Bot, educational tech tools that use AI and computer vision to give pupils feedback on their movement skills and make the PE syllabus more accessible to teachers.",
+    'Sport has always been at the heart of my life. That belief in a healthy body and mind led me to Sports Science at NTU, and now to teaching PE.',
+    'I also love data and research, from my exercise physiology FYP to a thermal physiology internship at HTX. Years of coaching badminton showed me how sport builds values in children.',
+    'I also build apps for teaching: Kampung Pals (with Akid), the SG PE Syllabus Bot and Kinetix Lab.',
   ],
   aboutItems: [
     {label: 'Currently', text: 'PGDE (PE) trainee, NIE / MOE', Icon: BriefcaseIcon},

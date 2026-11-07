@@ -10,24 +10,14 @@ import portfolioImage15 from '../../images/portfolio/portfolio-15.jpg';
 import portfolioImage16 from '../../images/portfolio/portfolio-16.jpg';
 import portfolioImage23 from '../../images/portfolio/portfolio-23.jpg';
 import portfolioImage24 from '../../images/portfolio/portfolio-24.png';
+import portfolioImage26 from '../../images/portfolio/portfolio-26.png';
 import {Certificate, PortfolioItem} from '../dataDef';
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Kinetix Lab',
-    description:
-      'AI-powered biomechanics analysis for PE. Upload a single- or dual-angle video of a movement and get frame-by-frame feedback on technique, joint angles and movement phases, with key frames captured for review.',
-    url: 'https://kinetix-lab.vercel.app/',
-    linkLabel: 'Live app',
-    sourceUrl: 'https://github.com/amoskhan/Kinetix-Lab',
-    tags: ['React', 'TypeScript', 'Gemini AI', 'MediaPipe'],
-    featured: true,
-    image: portfolioImage23,
-  },
-  {
     title: 'SG PE Syllabus Bot',
     description:
-      "Selected for the Accelerator Stage of NIE's AI in Education Innovation Challenge. It combines computer vision with large language models to analyse pupils' Fundamental Movement Skills and Gymnastics: pairs film each other at a Practice Station and get checklist-based feedback, while teachers plan lessons, review every grade and ask questions about the 2024 PE Syllabus.",
+      "Selected for the Accelerator Stage of NIE's AI in Education Innovation Challenge. Pupils film each other and get AI feedback on their movement skills, while teachers plan lessons and review every grade.",
     url: 'https://sg-pe-syllabus-bot.vercel.app/',
     linkLabel: 'Live app',
     sourceUrl: 'https://github.com/amoskhan/SG-PE-Syllabus-Bot',
@@ -44,11 +34,34 @@ export const portfolioItems: PortfolioItem[] = [
     tags: ['LLMs', 'Computer Vision', 'MediaPipe', 'Supabase'],
     featured: true,
     image: portfolioImage24,
+    video: '/videos/sg-pe-syllabus-bot-demo.mp4',
+  },
+  {
+    title: 'Kampung Pals',
+    description:
+      'A field-mapping app for Outdoor Education. Students walk a site and draw a map of it, and teachers watch the maps build live and mark them in red pen. Built with Akid.',
+    url: 'https://kampungpals.app/',
+    linkLabel: 'Live app',
+    sourceUrl: 'https://github.com/amoskhan/kampungpals',
+    tags: ['Outdoor Education', 'JavaScript', 'Supabase', 'Live Collaboration'],
+    featured: true,
+    image: portfolioImage26,
+  },
+  {
+    title: 'Kinetix Lab',
+    description:
+      'Upload a video of a movement and get frame-by-frame AI feedback on technique, joint angles and movement phases.',
+    url: 'https://kinetix-lab.vercel.app/',
+    linkLabel: 'Live app',
+    sourceUrl: 'https://github.com/amoskhan/Kinetix-Lab',
+    tags: ['React', 'TypeScript', 'Gemini AI', 'MediaPipe'],
+    featured: true,
+    image: portfolioImage23,
   },
   {
     title: 'Cloth Masks & Exercise Performance (FYP)',
     description:
-      'My final-year research in exercise physiology, examining how wearing a cloth mask affects exercise performance in both genders across lactate threshold, VO2, VO2max and rating of perceived exertion.',
+      'My final-year exercise physiology research on how wearing a cloth mask affects exercise performance in men and women.',
     url: 'https://drive.google.com/file/d/19sb1y6dvbFv2JfBYW7uYjDiX7-FkL4eu/view?usp=sharing',
     linkLabel: 'Read report',
     tags: ['Exercise Physiology', 'Research'],
@@ -57,7 +70,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'FYP Research Poster',
     description:
-      'A one-page summary of the methods and findings from my cloth mask study, presented at the 2024 Final Year Project presentations.',
+      'A one-page summary of my cloth mask study, presented at the 2024 FYP presentations.',
     url: 'https://drive.google.com/file/d/1e_oEndUPJW3prQD_6M55bwh-CZ-IuV22/view?usp=sharing',
     linkLabel: 'View poster',
     tags: ['Research', 'Science Communication'],
@@ -65,7 +78,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     title: 'Photography',
-    description: 'Photography is my creative outlet away from sport. Check out some of my shots on Instagram.',
+    description: 'My creative outlet away from sport. See my shots on Instagram.',
     url: 'https://www.instagram.com/afrojacks_/',
     linkLabel: 'See on Instagram',
     tags: ['Photography'],
@@ -74,7 +87,7 @@ export const portfolioItems: PortfolioItem[] = [
   {
     title: 'Badminton Coaching',
     description:
-      'I coach students in badminton, building skills, confidence and sportsmanship. Watch a clip from one of my sessions.',
+      'I coach students in badminton, building skills, confidence and sportsmanship. Watch a clip from a session.',
     url: 'https://www.youtube.com/watch?v=1KYuPvBLjUg',
     linkLabel: 'Watch on YouTube',
     tags: ['Coaching', 'Badminton'],

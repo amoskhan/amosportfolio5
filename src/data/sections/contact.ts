@@ -6,7 +6,7 @@ import {ContactSection, ContactType, Social} from '../dataDef';
 export const contact: ContactSection = {
   headerText: "Let's connect.",
   description:
-    "Whether it's PE, sports science research, badminton coaching or building tools for educators, I'd love to hear from you. Send me a message and I'll get back to you soon.",
+    "PE, sports science, badminton or edtech: I'd love to hear from you.",
   items: [
     {
       type: ContactType.Email,
@@ -27,11 +27,6 @@ export const contact: ContactSection = {
       type: ContactType.Instagram,
       text: '@afro_jacko',
       href: 'https://www.instagram.com/afro_jacko/',
-    },
-    {
-      type: ContactType.Phone,
-      text: '+65 9618 2276',
-      href: 'tel:+6596182276',
     },
     {
       type: ContactType.Location,
